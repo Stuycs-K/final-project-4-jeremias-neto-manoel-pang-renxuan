@@ -11,11 +11,11 @@ started work on Monkey / Dart classes
 info
 
 
-## GROUP MEMBER 2
+## GROUP MEMBER 2 Renxuan Pang
 
-### date x
+### date 5/22/24
 
-info
+finished basic map drawing draw loop, made the map randomizer based off of maze solver, tomorrow will start working on guider class and on balloon basic movement functions.
 
 ### date y
 
