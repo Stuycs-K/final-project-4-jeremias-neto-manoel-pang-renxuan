@@ -10,6 +10,7 @@ public class Map{
     }
     carveMaze(1,1);
     placeSE();
+    solve();
   }
   
   public void placeSE() {
