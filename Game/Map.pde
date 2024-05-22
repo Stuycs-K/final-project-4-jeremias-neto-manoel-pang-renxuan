@@ -24,7 +24,7 @@ public class Map{
       int rand = (int) (Math.random() * map.length);
       if (map[rand][1] == ' ') {
         map[rand][1] = 'S';
-        map[rand][0] = 'F';
+        map[rand][0] = 'B';
         startRow = rand;
         startCol = 1;
         placedS = true;
@@ -47,7 +47,7 @@ public class Map{
   
   private int solve(int row, int col){
     if (map[row][col] == 'E') {return 0;}
-    if (map[row][col] == '#' || map[row][col] == 'F') {return -1;}
+    if (map[row][col] == '#' || map[row][col] == 'F' || map[row][col] == 'B') {return -1;}
     if (map[row][col] == '@') {return -1;}
     if (map[row][col] == '.') {return -1;}
     else {
