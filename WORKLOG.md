@@ -1,10 +1,10 @@
 # Work Log
 
-## GROUP MEMBER 1
+## GROUP MEMBER 1 Manoel Jeremias-Neto
 
-### date x
+### date 5/22/24
 
-info
+started work on Monkey / Dart classes
 
 ### date y
 
