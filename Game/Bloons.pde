@@ -1,10 +1,10 @@
 import java.util.*;
 public class Bloons{
-  private LinkedList<Guiders> path = new LinkedList<Guiders>();
+  private ArrayList<Guiders> path = new ArrayList<Guiders>();
   private int row, col, hp, speed;
   private boolean alive = true;
   
-  public Bloons(int x, int y, int hp, int speed, LinkedList<Guiders> guide){
+  public Bloons(int x, int y, int hp, int speed, ArrayList<Guiders> guide){
     row = y; col = x; this.hp = hp; this.speed = speed; path = guide;
     alive = true;
   };
@@ -24,7 +24,7 @@ public class Bloons{
     }
     else if (distance < 5){
       guide.remove(0);
-      act();
+      //act();
     }
   }
   
