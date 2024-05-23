@@ -2,7 +2,7 @@ import java.util.*;
 char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons;
-LinkedList<Guiders> guide;
+LinkedList<Guiders> guide = new LinkedList<Guiders>();
 PImage grass;
 PImage road;
 
@@ -21,6 +21,7 @@ void setup(){
       if (map[row][col] == '@' || map[row][col] == 'E' || map[row][col] == 'F' || map[row][col] == 'B'){
         image(road,col*50, row*50);
         mapInfo.add(new int[] {row, col});
+        guide.add(new Guiders(col*50+25, row*50+25));
       }
     }
   }
@@ -35,4 +36,7 @@ void background(){
   image(grass, 750, 0);
   for (int[] x : mapInfo) 
   image(road, x[1]*50, x[0]*50);
+  for (Guiders x : guide){
+    circle(x.getX(), x.getY(), 10);
+  }
 }
