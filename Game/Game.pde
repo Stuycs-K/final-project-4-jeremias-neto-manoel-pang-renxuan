@@ -40,3 +40,6 @@ void background(){
     circle(x.getX(), x.getY(), 10);
   }
 }
+
+void bloons(){
+}
