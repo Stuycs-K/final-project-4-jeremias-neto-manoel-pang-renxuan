@@ -3,9 +3,11 @@ abstract class Monkey{
   protected int fireRate, damage, speed,projType, size, range;
   ArrayList<Dart> DartList = new ArrayList();
   protected int timeFired = 1000;
+  protected int placingTimer = 0;
+  protected color c; 
   
   public void update(){
-    drawMonkey();
+    drawMonkey(posx, posy);
     timeFired ++;
     Bloons b = checkTargets();
     if (b != null){
@@ -15,6 +17,27 @@ abstract class Monkey{
       Dart dart = (Dart)DartList.get(i);
       dart.update();
     }
+  }
+  
+  public boolean placing(){
+    placingTimer += 1;
+    boolean canPlace = false;
+    drawMonkey(mouseX, mouseY);
+    if (placingTimer >= 30){
+      if (mousePressed){
+        canPlace = true;
+        for (int[] roadBit : mapInfo){
+          if(mouseX < roadBit[0] + 50 + size && mouseX > roadBit[0] - 50 - size && mouseY < roadBit[1] + 50 + size && mouseY > roadBit[1] - 50 - size){
+            canPlace = false;
+          }
+        }
+        if (canPlace == true){
+          posx = mouseX;
+          posy = mouseY;
+        }
+      }
+    }
+    return canPlace;
   }
   
   protected Bloons checkTargets(){
@@ -34,12 +57,12 @@ abstract class Monkey{
     }
   }
   
-  protected void drawMonkey(){
+  protected void drawMonkey(int posX, int posY){
     fill(200, 100, 10);
-    circle(posx, posy, size);
+    circle(posX, posY, size);
     stroke(0);
     noFill();
-    circle(posx, posy, range*2);
+    circle(posX, posY, range*2);
     noStroke();
     fill(255);
   }
