@@ -2,10 +2,10 @@ import java.util.*;
 char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
-ArrayList<Guiders> guide = new ArrayList<Guiders>();
+ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 PImage grass;
 PImage road;
-int[] start = new int[2];
+int[] start = new int[4];
 
 void setup(){
   grass = loadImage("grass.jpg");
@@ -23,13 +23,16 @@ void setup(){
         if (map[row][col] == 'B'){
           start[0] = col*50-50;
           start[1] = row*50+25;
+          start[2] = col;
+          start[3] = row;
         }
         image(road,col*50, row*50);
         mapInfo.add(new int[] {row, col});
-        guide.add(new Guiders(col*50+25, row*50+25));
       }
     }
   }
+  placeGuiders(start[2], start[3]);
+  System.out.println(guide);
   bloons(start[0], start[1]);
 }
 
@@ -54,4 +57,20 @@ void background(){
 void bloons(int x, int y){
   Bloons red = new Bloons(x, y, 1, 3, guide);
   bloons.add(red);
+}
+
+void placeGuiders(int startx, int starty){
+  if (startx < 0 || starty < 0 || startx >= map[0].length || starty >= map.length) return;
+  char check = map[starty][startx];
+  if (check != 'E' && check != '@' && check != 'B' && check != 'F'){
+    return;
+  }
+  else{
+    guide.add(new Guiders(startx*50+25, starty*50+25));
+    map[starty][startx] = '#';
+    placeGuiders(startx+1, starty);
+    placeGuiders(startx-1, starty);
+    placeGuiders(startx, starty+1);
+    placeGuiders(startx, starty-1);
+  }
 }

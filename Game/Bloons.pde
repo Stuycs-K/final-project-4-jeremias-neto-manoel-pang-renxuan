@@ -3,6 +3,7 @@ public class Bloons{
   private ArrayList<Guiders> path = new ArrayList<Guiders>();
   private int row, col, hp, speed;
   private boolean alive = true;
+  private int counter = 0;
   
   public Bloons(int x, int y, int hp, int speed, ArrayList<Guiders> guide){
     row = y; col = x; this.hp = hp; this.speed = speed; path = guide;
@@ -10,21 +11,24 @@ public class Bloons{
   };
   
   public void act(){
-    float distance = dist(getX(), getY(), guide.get(0).getX(), guide.get(0).getY());
-    PVector position = new PVector(col, row);
-    if (alive && distance > 5){
-      float xComp = (guide.get(0).getX() - getX());
-      float yComp = (guide.get(0).getY() - getY());
+    if (counter != guide.size()){
+    float distance = dist(getX(), getY(), guide.get(counter).getX(), guide.get(counter).getY());
+    //System.out.println(distance);
+    if (alive && distance > 3){
+      float xComp = (guide.get(counter).getX() - this.getX());
+      float yComp = (guide.get(counter).getY() - this.getY());
       PVector move = new PVector(xComp, yComp);
       move.normalize();
       move.mult(speed);
-      position.add(move);
-      col = (int) position.x;
-      row = (int) position.y;
+      //System.out.println(move);
+      col = (int) move.x + col;
+      row = (int) move.y + row;
     }
     else if (distance < 5){
-      guide.remove(0);
-      //act();
+      counter ++;
+      if (counter != guide.size())
+      act();
+    }
     }
   }
   
