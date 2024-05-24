@@ -6,9 +6,27 @@
 
 started work on Monkey / Dart classes
 
-### date y
+### date 5/23/24
 
-info
+added the ability to place DartMonkeys, and the dartMonkeys now shoot at the first bloon in the Bloons arraylist that is in range. next i will work on a upgrade menu to allow for monkey upgrades and deletion (eventually, target priority as well)
+
+### date
+
+text here
+
+### date
+
+text here
+
+
+### date
+
+text here
+
+
+### date
+
+text here
 
 
 ## GROUP MEMBER 2 Renxuan Pang
