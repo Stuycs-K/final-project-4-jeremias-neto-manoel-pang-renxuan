@@ -49,6 +49,8 @@ void draw(){
     boolean canPlace = placingMonkey.placing();
     if (canPlace){
       monkeyList.add(placingMonkey);
+      placingMonkey.setX(mouseX);
+      placingMonkey.setY(mouseY);
       placingMonkey = null;
     }
   }
@@ -68,7 +70,9 @@ void background(){
 }
 
 void mouseClicked(){
-  placingMonkey = new DartMonkey();
+  if(mouseX > 1500){
+    placingMonkey = new DartMonkey();
+  }
 }
 
 void bloons(int x, int y){

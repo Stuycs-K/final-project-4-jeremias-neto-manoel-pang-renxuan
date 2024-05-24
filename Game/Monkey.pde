@@ -21,23 +21,22 @@ abstract class Monkey{
   
   public boolean placing(){
     placingTimer += 1;
-    boolean canPlace = false;
+    int shortestDist = 1000;
     drawMonkey(mouseX, mouseY);
     if (placingTimer >= 30){
-      if (mousePressed){
-        canPlace = true;
-        for (int[] roadBit : mapInfo){
-          if(mouseX < roadBit[0] + 50 + size && mouseX > roadBit[0] - 50 - size && mouseY < roadBit[1] + 50 + size && mouseY > roadBit[1] - 50 - size){
-            canPlace = false;
-          }
+      for (Guiders roadBit : guide){
+        if (dist(roadBit.getX(), roadBit.getY(), mouseX, mouseY) < shortestDist){
+          shortestDist = (int)(dist(roadBit.getX(), roadBit.getY(), mouseX, mouseY)+1);
         }
-        if (canPlace == true){
-          posx = mouseX;
-          posy = mouseY;
+      }
+      for (Monkey monkey : monkeyList){
+        if (dist(monkey.getX(), monkey.getY(), mouseX, mouseY) < shortestDist){
+          shortestDist = (int)(dist(monkey.getX(), monkey.getY(), mouseX, mouseY)+1);
         }
       }
     }
-    return canPlace;
+    text(shortestDist, 20,20);
+    return ((shortestDist > size/1.6 + 25 && mousePressed));
   }
   
   protected Bloons checkTargets(){
@@ -65,5 +64,17 @@ abstract class Monkey{
     circle(posX, posY, range*2);
     noStroke();
     fill(255);
+  }
+  public void setX(int x){
+    posx = x;
+  }
+  public void setY(int y){
+    posy = y;
+  }
+  public int getX(){
+    return posx;
+  }
+  public int getY(){
+    return posy;
   }
 }
