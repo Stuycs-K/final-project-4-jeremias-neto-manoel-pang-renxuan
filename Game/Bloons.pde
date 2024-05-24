@@ -27,8 +27,8 @@ public class Bloons{
     else if (distance < 5){
       counter ++;
       if (counter != guide.size())
-      act();
-    }
+        act();
+      }
     }
   }
   

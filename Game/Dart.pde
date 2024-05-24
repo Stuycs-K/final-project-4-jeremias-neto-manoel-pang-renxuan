@@ -1,4 +1,4 @@
-public class Dart{
+  public class Dart{
   PVector launch = new PVector(0,0);
   PVector position = new PVector(0,0);
   int damage;
