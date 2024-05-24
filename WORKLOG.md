@@ -17,6 +17,6 @@ info
 
 finished basic map drawing draw loop, made the map randomizer based off of maze solver, tomorrow will start working on guider class and on balloon basic movement functions.
 
-### date y
+### date 5/23/24
 
-info
+finished bloon pathing, got them to move. I wrote a new recursive function to place in guiders in the right order, this was not on the class diagram. I did this because I realized the previous wasn't working. Tomorrow I will not be in class due to choir, but I will update on the homework. I will change the graphics, and look into implementing life system.
