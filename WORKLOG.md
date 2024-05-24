@@ -10,9 +10,9 @@ started work on Monkey / Dart classes
 
 added the ability to place DartMonkeys, and the dartMonkeys now shoot at the first bloon in the Bloons arraylist that is in range. next i will work on a upgrade menu to allow for monkey upgrades and deletion (eventually, target priority as well)
 
-### date
+### date 5/24/24
 
-text here
+monkeys no longer able to be placed on other monkeys or the track. the spacing is kinda scuffed due to how i did it but thats probably fine for demo / MVP. next (tommorow) i will work on the sidebar funtionality (buying dartmonkeys or upgrading existing dartmonkeys) as well as adding dartmonkey upgrades.
 
 ### date
 
