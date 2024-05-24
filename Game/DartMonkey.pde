@@ -4,9 +4,9 @@ public class DartMonkey extends Monkey{
     posy = Y;
     fireRate = 50;
     damage = 1;
-    speed = 10;
+    speed = 15;
     projType = 1;
     size = 40;
-    range = 250;
+    range = 150;
   }
 }
