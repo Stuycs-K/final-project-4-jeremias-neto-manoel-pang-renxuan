@@ -11,4 +11,8 @@ public class Guiders{
   public int getY(){
     return Y;
   }
+  
+  public String toString(){
+    return "(" + getX() + ", " + getY() + ")";
+  }
 }
