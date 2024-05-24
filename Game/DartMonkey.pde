@@ -1,12 +1,11 @@
 public class DartMonkey extends Monkey{
-  public DartMonkey(int X, int Y){
-    posx = X;
-    posy = Y;
+  public DartMonkey(){
     fireRate = 50;
     damage = 1;
-    speed = 10;
+    speed = 15;
     projType = 1;
     size = 40;
-    range = 250;
+    range = 150;
+    c = color(163, 71, 0);
   }
 }

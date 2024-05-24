@@ -4,9 +4,11 @@ ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
 ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
+Monkey placingMonkey;
 PImage grass;
 PImage road;
 int[] start = new int[4];
+int sideBarMode = 1;
 
 void setup(){
   grass = loadImage("grass.jpg");
@@ -43,6 +45,13 @@ void draw(){
     circle(b.getX(), b.getY(), 50);
     b.act();
   }
+  if (placingMonkey != null){
+    boolean canPlace = placingMonkey.placing();
+    if (canPlace){
+      monkeyList.add(placingMonkey);
+      placingMonkey = null;
+    }
+  }
   for (Monkey m : monkeyList){
     m.update();
   }
@@ -59,7 +68,7 @@ void background(){
 }
 
 void mouseClicked(){
-  monkeyList.add(new DartMonkey(mouseX, mouseY));
+  placingMonkey = new DartMonkey();
 }
 
 void bloons(int x, int y){
