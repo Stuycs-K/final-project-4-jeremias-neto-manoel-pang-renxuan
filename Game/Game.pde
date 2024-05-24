@@ -3,6 +3,7 @@ char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
 ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
+ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 PImage grass;
 PImage road;
 int[] start = new int[4];
@@ -42,6 +43,9 @@ void draw(){
     circle(b.getX(), b.getY(), 50);
     b.act();
   }
+  for (Monkey m : monkeyList){
+    m.update();
+  }
 }
 
 void background(){
@@ -52,6 +56,10 @@ void background(){
   for (Guiders x : guide){
     circle(x.getX(), x.getY(), 10);
   }
+}
+
+void mouseClicked(){
+  monkeyList.add(new DartMonkey(mouseX, mouseY));
 }
 
 void bloons(int x, int y){
