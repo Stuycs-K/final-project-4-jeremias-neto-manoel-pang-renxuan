@@ -24,7 +24,7 @@ public class Bloons{
       col = (int) move.x + col;
       row = (int) move.y + row;
     }
-    else if (distance < 5){
+    else if (distance < speed*2){
       counter ++;
       if (counter != guide.size())
         act();

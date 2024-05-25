@@ -7,13 +7,20 @@ ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 Monkey placingMonkey;
 PImage grass;
 PImage road;
+PImage red;
+PImage dartMonki;
+PImage monkiDart;
 int[] start = new int[4];
 int sideBarMode = 1;
 
 void setup(){
   grass = loadImage("grass.jpg");
   road = loadImage("road.jpg");
+  red = loadImage("R.png");
+  dartMonki = loadImage("Dart.png");
+  monkiDart = loadImage("monkiDart.png");
   size(1800, 1000);
+  fill(203, 145, 79);
   rect(1500,0,300,1000);
   map = new Map(20,30).getMap();
   grass.resize(750,1000);
@@ -42,7 +49,9 @@ void setup(){
 void draw(){
   background();
   for (Bloons b : bloons){
-    circle(b.getX(), b.getY(), 50);
+    //circle(b.getX(), b.getY(), 50);
+    red.resize(0,120);
+    image(red, b.getX()-60, b.getY()-80);
     b.act();
   }
   if (placingMonkey != null){
@@ -64,13 +73,17 @@ void background(){
   image(grass, 750, 0);
   for (int[] x : mapInfo) 
   image(road, x[1]*50, x[0]*50);
-  for (Guiders x : guide){
-    circle(x.getX(), x.getY(), 10);
-  }
+  fill(203, 145, 79);
+  rect(1500,0,300,1000);
+  dartMonki.resize(0,150);
+  image(dartMonki, 1585, 30); 
+  //for (Guiders x : guide){
+  //  circle(x.getX(), x.getY(), 10);
+  //}
 }
 
 void mouseClicked(){
-  if(mouseX > 1500){
+  if(mouseX > 1585 && mouseX < 1585+125 && mouseY > 30 && mouseY < 180){
     placingMonkey = new DartMonkey();
   }
 }

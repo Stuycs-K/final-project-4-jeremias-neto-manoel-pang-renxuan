@@ -58,7 +58,8 @@ abstract class Monkey{
   
   protected void drawMonkey(int posX, int posY){
     fill(200, 100, 10);
-    circle(posX, posY, size);
+    //circle(posX, posY, size);
+    image(monkiDart, posX-25, posY-25);
     stroke(0);
     noFill();
     circle(posX, posY, range*2);
