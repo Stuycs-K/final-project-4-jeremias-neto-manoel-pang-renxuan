@@ -12,7 +12,7 @@ added the ability to place DartMonkeys, and the dartMonkeys now shoot at the fir
 
 ### date 5/24/24
 
-monkeys no longer able to be placed on other monkeys or the track. the spacing is kinda scuffed due to how i did it but thats probably fine for demo / MVP. next (tommorow) i will work on the sidebar funtionality (buying dartmonkeys or upgrading existing dartmonkeys) as well as adding dartmonkey upgrades.
+monkeys no longer able to be placed on other monkeys or the track. the spacing is kinda scuffed due to how i did it but thats probably fine for demo / MVP. next (tommorow) i will work on the sidebar funtionality (buying dartmonkeys or upgrading existing dartmonkeys) as well as adding dartmonkey upgrades. fixed patricks monkey rotation code (i have no idea how it works, it just kinda does)
 
 ### date
 
