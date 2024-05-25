@@ -38,3 +38,7 @@ finished basic map drawing draw loop, made the map randomizer based off of maze 
 ### date 5/23/24
 
 finished bloon pathing, got them to move. I wrote a new recursive function to place in guiders in the right order, this was not on the class diagram. I did this because I realized the previous wasn't working. Tomorrow I will not be in class due to choir, but I will update on the homework. I will change the graphics, and look into implementing life system.
+
+### date 5/24/24
+
+updated the graphics a bit, made a somewhat functional side bar, tried making the pictures rotate but it turned out to be a lot more broken than I thought, so might give up that idea. Will work on more things tomorrow. 
