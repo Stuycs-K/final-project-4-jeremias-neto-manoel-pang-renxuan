@@ -63,7 +63,7 @@ void draw(){
   for (Monkey m : monkeyList){
     m.update();
     if (m.getMode()){
-      sidebar.setMode();
+      sidebar.makeUpgrade();
       upgradeMonkey = m;
     }
   }
@@ -95,11 +95,14 @@ void background(){
 void mouseClicked(){
   if(mouseX > 1500){
     for (Monkey monkey : monkeyList){
-      monkey.setModeNH();
+      if(sidebar.isShop()){
+        monkey.setModeNH();
+      }
     }
     sidebar.onClick();
   }
   else{
+    sidebar.makeShop();
     int shortestDist = 1000;
     Monkey closestMonkey = null;
     for (Monkey monkey : monkeyList){

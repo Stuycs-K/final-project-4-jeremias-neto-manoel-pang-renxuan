@@ -3,10 +3,22 @@ public class SideBar{
   
   public SideBar(){
   }
+  public boolean isShop(){
+    return isShop;
+  }
+  public void makeShop(){
+    isShop = true;
+  }
+  
+  public void makeUpgrade(){
+    isShop = false;
+  }
   
   public void onClick(){
-    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
-      placingMonkey = new DartMonkey();
+    if(isShop){
+      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
+        placingMonkey = new DartMonkey();
+      }
     }
   }
   public void update(){
@@ -22,11 +34,7 @@ public class SideBar{
     }
     else{
       upgradeMonkey.displayUpgrades();
-      isShop = true;
     }
-  }
-  public void setMode(){
-    isShop = false;
   }
   
   private void DisplayDartMonkey(){
