@@ -19,6 +19,9 @@ public class SideBar{
       if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
         placingMonkey = new DartMonkey();
       }
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270){
+        placingMonkey = new TackShooter();
+      }
     }
   }
   public void update(){
