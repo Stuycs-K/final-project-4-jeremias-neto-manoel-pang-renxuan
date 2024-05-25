@@ -5,6 +5,7 @@ ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
 ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 Monkey placingMonkey;
+Monkey upgradeMonkey;
 PImage grass;
 PImage road;
 PImage red;
@@ -12,8 +13,13 @@ PImage dartMonki;
 PImage monkiDart;
 int[] start = new int[4];
 int sideBarMode = 1;
+SideBar sidebar = new SideBar();
+PFont font;
 
 void setup(){
+  font = createFont("BTDFONT.ttf", 18);
+  textFont(font);
+  textAlign(CENTER);
   grass = loadImage("grass.jpg");
   road = loadImage("road.jpg");
   red = loadImage("R.png");
@@ -54,17 +60,23 @@ void draw(){
     image(red, b.getX()-50, b.getY()-55);
     b.act();
   }
+  for (Monkey m : monkeyList){
+    m.update();
+    if (m.getMode()){
+      sidebar.setMode();
+      upgradeMonkey = m;
+    }
+  }
+  sidebar.update();
   if (placingMonkey != null){
     boolean canPlace = placingMonkey.placing();
     if (canPlace){
       monkeyList.add(placingMonkey);
       placingMonkey.setX(mouseX);
       placingMonkey.setY(mouseY);
+      placingMonkey.setModeNH();
       placingMonkey = null;
     }
-  }
-  for (Monkey m : monkeyList){
-    m.update();
   }
 }
 
@@ -75,16 +87,31 @@ void background(){
   image(road, x[1]*50, x[0]*50);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
-  dartMonki.resize(0,150);
-  image(dartMonki, 1585, 30); 
   //for (Guiders x : guide){
   //  circle(x.getX(), x.getY(), 10);
   //}
 }
 
 void mouseClicked(){
-  if(mouseX > 1585 && mouseX < 1585+125 && mouseY > 30 && mouseY < 180){
-    placingMonkey = new DartMonkey();
+  if(mouseX > 1500){
+    for (Monkey monkey : monkeyList){
+      monkey.setModeNH();
+    }
+    sidebar.onClick();
+  }
+  else{
+    int shortestDist = 1000;
+    Monkey closestMonkey = null;
+    for (Monkey monkey : monkeyList){
+      if (dist(monkey.getX(), monkey.getY(), mouseX, mouseY) < shortestDist){
+        shortestDist = (int)(dist(monkey.getX(), monkey.getY(), mouseX, mouseY)+1);
+        closestMonkey = monkey;
+      }
+      monkey.setModeNH();
+    }
+    if (closestMonkey != null && shortestDist <= closestMonkey.getSize()){
+      closestMonkey.setModeH();
+    }
   }
 }
 

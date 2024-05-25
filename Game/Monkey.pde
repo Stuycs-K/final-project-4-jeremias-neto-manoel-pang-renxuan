@@ -1,11 +1,18 @@
 abstract class Monkey{
   protected int posx, posy, dartCount;
-  protected int fireRate, damage, speed,projType, size, range;
+  protected int fireRate, damage, speed, projType, size, range;
   ArrayList<Dart> DartList = new ArrayList();
   protected int timeFired = 1000;
   protected int placingTimer = 0;
   protected color c; 
   protected float lastAngle = -PI/2;
+  protected boolean highlight = false;
+  protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
+  protected String[][] upgradeNames = {{"","","",""},{"","","",""}};
+  private int upgrade1Prog = 0;
+  private int upgrade2Prog = 0;
+  protected String name;
+  
   
   public void update(){
     timeFired ++;
@@ -19,8 +26,17 @@ abstract class Monkey{
       dart.update();
     }
   }
-  
+  public void displayUpgrades(){
+    fill(150, 100, 50);
+    rect(1515, 15, 270, 90);
+    rectMode(CENTER);
+    textSize(30);
+    fill(255);
+    text(name, 1515 + 135, 15 + 55);
+    rectMode(CORNER);
+  }
   public boolean placing(){
+    highlight = true;
     placingTimer += 1;
     int shortestDist = 1000;
     drawMonkey(mouseX, mouseY);
@@ -70,10 +86,12 @@ abstract class Monkey{
     translate(-monkiDart.width/2, -monkiDart.height/2);
     image(monkiDart, 0, 0);
     popMatrix();
-    stroke(0);
-    noFill();
-    circle(posX, posY, range*2);
-    noStroke();
+    if (highlight){
+      stroke(1);
+      noFill();
+      circle(posX, posY, range*2);
+      noStroke();
+    }
     fill(255);
   }
   public void setX(int x){
@@ -88,4 +106,23 @@ abstract class Monkey{
   public int getY(){
     return posy;
   }
+  public void swapMode(){
+    highlight = !highlight;
+  }
+  public void setModeH(){
+    highlight = true;
+  }
+  public void setModeNH(){
+    highlight = false;
+  }
+  public boolean getMode(){
+    return highlight;
+  }
+  public int getSize(){
+    return size;
+  }
+  public String getName(){
+    return name;
+  }
+  
 }
