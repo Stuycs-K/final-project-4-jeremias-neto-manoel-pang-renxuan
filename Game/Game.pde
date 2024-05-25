@@ -50,8 +50,8 @@ void draw(){
   background();
   for (Bloons b : bloons){
     //circle(b.getX(), b.getY(), 50);
-    red.resize(0,120);
-    image(red, b.getX()-60, b.getY()-80);
+    red.resize(0,100);
+    image(red, b.getX()-50, b.getY()-55);
     b.act();
   }
   if (placingMonkey != null){

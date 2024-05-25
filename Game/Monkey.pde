@@ -5,14 +5,15 @@ abstract class Monkey{
   protected int timeFired = 1000;
   protected int placingTimer = 0;
   protected color c; 
+  protected float lastAngle = -PI/2;
   
   public void update(){
-    drawMonkey(posx, posy);
     timeFired ++;
     Bloons b = checkTargets();
     if (b != null){
-      shoot(b);
+      lastAngle = shoot(b);
     }
+    drawMonkey(posx, posy);
     for (int i = 0; i < dartCount; i ++){
       Dart dart = (Dart)DartList.get(i);
       dart.update();
@@ -48,18 +49,27 @@ abstract class Monkey{
     return null;
   }
   
-  protected void shoot(Bloons b){
+  protected float shoot(Bloons b){
     if (timeFired >= fireRate){
+      int bloonx = b.getX() - posx;
+      int bloony = b.getY() - posy;
       timeFired = 0;
-      DartList.add(new Dart(b.getX() - posx, b.getY() - posy, posx, posy, speed, damage, projType));
+      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType));
       dartCount ++;
+      return atan2(bloony, bloonx);
     }
+    return lastAngle;
   }
   
   protected void drawMonkey(int posX, int posY){
     fill(200, 100, 10);
     //circle(posX, posY, size);
-    image(monkiDart, posX-25, posY-25);
+    pushMatrix();
+    translate(posX, posY);
+    rotate(lastAngle+PI/2);
+    translate(-monkiDart.width/2, -monkiDart.height/2);
+    image(monkiDart, 0, 0);
+    popMatrix();
     stroke(0);
     noFill();
     circle(posX, posY, range*2);
