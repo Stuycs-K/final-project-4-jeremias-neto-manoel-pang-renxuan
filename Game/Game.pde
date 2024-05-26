@@ -17,7 +17,7 @@ PImage startButton;
 PImage heart;
 //BLOON ASSETS
 PImage red;
-
+PImage blue;
 //MONKEY ASSETS
 PImage dartMonki;
 PImage monkiDart;
@@ -36,6 +36,8 @@ void setup(){
   grass = loadImage("grass.jpg");
   road = loadImage("road.jpg");
   red = loadImage("R.png");
+  blue = loadImage("B.png");
+  blue.resize(0,100);
   dartMonki = loadImage("Dart.png");
   monkiDart = loadImage("monkiDart.png");
   tackShooti = loadImage("tackShooti.png");
@@ -76,9 +78,8 @@ void draw(){
   background();
   if (started){
   for (int i = 0; i < bloons.size(); i ++){
-    //circle(b.getX(), b.getY(), 50);
     red.resize(0,100);
-    image(red, bloons.get(i).getX()-50, bloons.get(i).getY()-65);
+    image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
     if(bloons.get(i).hit()){
       if(bloons.get(i).pop()){
@@ -155,7 +156,7 @@ void mouseClicked(){
 }
 
 void bloons(int x, int y){
-  Bloons red = new Bloons(x, y, 1, 3, guide);
+  Bloons red = new Bloons(x, y, "blue");
   bloons.add(red);
 }
 
