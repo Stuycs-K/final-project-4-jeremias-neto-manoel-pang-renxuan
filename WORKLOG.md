@@ -14,9 +14,9 @@ added the ability to place DartMonkeys, and the dartMonkeys now shoot at the fir
 
 monkeys no longer able to be placed on other monkeys or the track. the spacing is kinda scuffed due to how i did it but thats probably fine for demo / MVP. next (tommorow) i will work on the sidebar funtionality (buying dartmonkeys or upgrading existing dartmonkeys) as well as adding dartmonkey upgrades. fixed patricks monkey rotation code (i have no idea how it works, it just kinda does)
 
-### date
+### date 5/25/24
 
-text here
+sidebar funcionality (slightly), tackshooter addition (no upgrades yet), and minor bugfixes. next is definetly finishing upgrades and getting them to work with towers
 
 
 ### date
@@ -42,3 +42,7 @@ finished bloon pathing, got them to move. I wrote a new recursive function to pl
 ### date 5/24/24
 
 updated the graphics a bit, made a somewhat functional side bar, tried making the pictures rotate but it turned out to be a lot more broken than I thought, so might give up that idea. Will work on more things tomorrow. 
+
+### date 5/25/24
+
+added a start button to the game, giving time to place towers. Also did bloon spawn logic (subject to change) so they keep spawning, and also added life losing logic. Bloons can now be popped. Need work on the piercing mechanic for darts. 

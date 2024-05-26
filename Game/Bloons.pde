@@ -39,4 +39,27 @@ public class Bloons{
   public int getY(){
     return row;
   }
+  
+  public boolean hit(){
+    Dart cur = null;
+    for (Dart d : DartList){
+      cur = d;
+      if (dist(getX(), getY(), d.getX(), d.getY()) < 30){
+        //d.pierced();
+        return true;
+      }
+    }
+    //if (cur != null && cur.getPierce() == 0) DartList.remove(cur);
+    return false;
+  }
+  
+  public boolean pop(){
+    this.hp--;
+    if (hp <= 0) return true;
+    return false;
+  }
+  
+  public int getCounter(){
+    return counter;
+  }
 }

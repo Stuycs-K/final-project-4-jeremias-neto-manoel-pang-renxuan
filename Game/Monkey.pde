@@ -1,7 +1,6 @@
 abstract class Monkey{
   protected int posx, posy, dartCount;
-  protected int fireRate, damage, speed, projType, size, range;
-  ArrayList<Dart> DartList = new ArrayList();
+  protected int fireRate, damage, speed, projType, size, range, pierce;
   protected int timeFired = 1000;
   protected int placingTimer = 0;
   protected color c; 
@@ -76,7 +75,7 @@ abstract class Monkey{
       int bloonx = b.getX() - posx;
       int bloony = b.getY() - posy;
       timeFired = 0;
-      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType));
+      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce));
       dartCount ++;
       return atan2(bloony, bloonx);
     }
@@ -130,5 +129,7 @@ abstract class Monkey{
   public String getName(){
     return name;
   }
-  
+  public ArrayList<Dart> getDartList(){
+    return DartList;
+  }
 }
