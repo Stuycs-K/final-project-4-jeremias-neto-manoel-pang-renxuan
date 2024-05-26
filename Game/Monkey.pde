@@ -1,7 +1,6 @@
 abstract class Monkey{
   protected int posx, posy, dartCount;
-  protected int fireRate, damage, speed, projType, size, range;
-  ArrayList<Dart> DartList = new ArrayList();
+  protected int fireRate, damage, speed, projType, size, range, pierce;
   protected int timeFired = 1000;
   protected int placingTimer = 0;
   protected color c; 
@@ -12,6 +11,7 @@ abstract class Monkey{
   private int upgrade1Prog = 0;
   private int upgrade2Prog = 0;
   protected String name;
+  PImage monkeyImage;
   
   
   public void update(){
@@ -20,11 +20,11 @@ abstract class Monkey{
     if (b != null){
       lastAngle = shoot(b);
     }
-    drawMonkey(posx, posy);
     for (int i = 0; i < dartCount; i ++){
       Dart dart = (Dart)DartList.get(i);
       dart.update();
     }
+    drawMonkey(posx, posy);
   }
   public void displayUpgrades(){
     fill(150, 100, 50);
@@ -37,6 +37,11 @@ abstract class Monkey{
   }
   public boolean placing(){
     highlight = true;
+    rectMode(CENTER);
+    textSize(30);
+    fill(255);
+    text(name, 1515 + 135, 15 + 55);
+    rectMode(CORNER);
     placingTimer += 1;
     int shortestDist = 1000;
     drawMonkey(mouseX, mouseY);
@@ -70,7 +75,7 @@ abstract class Monkey{
       int bloonx = b.getX() - posx;
       int bloony = b.getY() - posy;
       timeFired = 0;
-      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType));
+      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce));
       dartCount ++;
       return atan2(bloony, bloonx);
     }
@@ -83,13 +88,13 @@ abstract class Monkey{
     pushMatrix();
     translate(posX, posY);
     rotate(lastAngle+PI/2);
-    translate(-monkiDart.width/2, -monkiDart.height/2);
-    image(monkiDart, 0, 0);
+    translate(-monkeyImage.width/2, -monkeyImage.height/2);
+    image(monkeyImage, 0, 0);
     popMatrix();
     if (highlight){
       stroke(1);
       noFill();
-      circle(posX, posY, range*2);
+      circle(posX, posY, range*2-10);
       noStroke();
     }
     fill(255);
@@ -124,5 +129,7 @@ abstract class Monkey{
   public String getName(){
     return name;
   }
-  
+  public ArrayList<Dart> getDartList(){
+    return DartList;
+  }
 }

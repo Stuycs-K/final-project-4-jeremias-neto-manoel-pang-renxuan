@@ -4,30 +4,19 @@ ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
 ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
-ArrayList<Dart> DartList = new ArrayList();
-boolean started = false;
-int life = 5;
-int tick = 1;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
-//MAP ASSETS
 PImage grass;
 PImage road;
-PImage startButton;
-PImage heart;
-//BLOON ASSETS
 PImage red;
-
-//MONKEY ASSETS
 PImage dartMonki;
 PImage monkiDart;
-PImage tackShooti;
-
-
+PImage startButton;
 int[] start = new int[4];
 int sideBarMode = 1;
 SideBar sidebar = new SideBar();
 PFont font;
+boolean started = false;
 
 void setup(){
   font = createFont("BTDFONT.ttf", 18);
@@ -38,12 +27,8 @@ void setup(){
   red = loadImage("R.png");
   dartMonki = loadImage("Dart.png");
   monkiDart = loadImage("monkiDart.png");
-  tackShooti = loadImage("tackShooti.png");
   startButton = loadImage("startButton.png");
-  heart = loadImage("heart.png");
-  heart.resize(0,40);
   startButton.resize(0,100);
-  tackShooti.resize(70,0);
   size(1800, 1000);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
@@ -68,29 +53,17 @@ void setup(){
   }
   placeGuiders(start[2], start[3]);
   System.out.println(guide);
+  bloons(start[0], start[1]);
 }
 
 void draw(){
-  if (tick == 0)
-  bloons(start[0], start[1]);
   background();
-  if (started){
-  for (int i = 0; i < bloons.size(); i ++){
+  if(started){
+  for (Bloons b : bloons){
     //circle(b.getX(), b.getY(), 50);
     red.resize(0,100);
-    image(red, bloons.get(i).getX()-50, bloons.get(i).getY()-65);
-    bloons.get(i).act();
-    if(bloons.get(i).hit()){
-      if(bloons.get(i).pop()){
-      bloons.remove(bloons.get(i));
-      i--;
-      }
-    }
-    if (i >= 0 && bloons.get(i).getCounter() == guide.size()){
-      life--;
-      bloons.remove(bloons.get(i));
-      i--;
-    }
+    image(red, b.getX()-50, b.getY()-55);
+    b.act();
   }
   }
   for (Monkey m : monkeyList){
@@ -111,8 +84,6 @@ void draw(){
       placingMonkey = null;
     }
   }
-  tick ++;
-  tick = tick % 200;
 }
 
 void background(){
@@ -122,10 +93,9 @@ void background(){
   image(road, x[1]*50, x[0]*50);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
-  image(heart, 20, 20);
-  textSize(40);
-  fill(255);
-  text(life, 95, 55);
+  //for (Guiders x : guide){
+  //  circle(x.getX(), x.getY(), 10);
+  //}
 }
 
 void mouseClicked(){
