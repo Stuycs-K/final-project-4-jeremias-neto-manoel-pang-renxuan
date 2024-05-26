@@ -12,5 +12,6 @@ public class DartMonkey extends Monkey{
     String[][] UpgradeNames = {{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "Super Monkey Fan Club"},{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut"}};
     upgradeNames = UpgradeNames;
     name = "Dart Monkey";
+    monkeyImage = monkiDart;
   }
 }

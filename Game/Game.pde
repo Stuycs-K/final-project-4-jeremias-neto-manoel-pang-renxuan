@@ -6,11 +6,19 @@ ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 Monkey placingMonkey;
 Monkey upgradeMonkey;
+//MAP ASSETS
 PImage grass;
 PImage road;
+
+//BLOON ASSETS
 PImage red;
+
+//MONKEY ASSETS
 PImage dartMonki;
 PImage monkiDart;
+PImage tackShooti;
+
+
 int[] start = new int[4];
 int sideBarMode = 1;
 SideBar sidebar = new SideBar();
@@ -25,6 +33,8 @@ void setup(){
   red = loadImage("R.png");
   dartMonki = loadImage("Dart.png");
   monkiDart = loadImage("monkiDart.png");
+  tackShooti = loadImage("tackShooti.png");
+  tackShooti.resize(70,0);
   size(1800, 1000);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
