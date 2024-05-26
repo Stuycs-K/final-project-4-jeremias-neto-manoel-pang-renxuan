@@ -1,20 +1,30 @@
 import java.util.*;
 public class Bloons{
-  private ArrayList<Guiders> path = new ArrayList<Guiders>();
   private int row, col, hp, speed;
-  private boolean alive = true;
   private int counter = 0;
+  boolean isCamo;
+  PImage type = null;
+  int IFrame = 0;
   
-  public Bloons(int x, int y, int hp, int speed, ArrayList<Guiders> guide){
-    row = y; col = x; this.hp = hp; this.speed = speed; path = guide;
-    alive = true;
+  public Bloons(int x, int y, String type){
+    if (type.equals("red")){
+      row = y; col = x; this.hp = 1; this.speed = 3; isCamo = false;
+      this.type = red;
+    }
+    else if (type.equals("blue")){
+      row = y; col = x; this.hp = 2; this.speed = 3; isCamo = false;
+      this.type = blue;
+    }
+  }
+  public Bloons(int x, int y, int hp, int speed, boolean camo){
+    row = y; col = x; this.hp = hp; this.speed = speed; isCamo = camo;
   };
   
   public void act(){
     if (counter != guide.size()){
     float distance = dist(getX(), getY(), guide.get(counter).getX(), guide.get(counter).getY());
     //System.out.println(distance);
-    if (alive && distance > 3){
+    if (distance > 3){
       float xComp = (guide.get(counter).getX() - this.getX());
       float yComp = (guide.get(counter).getY() - this.getY());
       PVector move = new PVector(xComp, yComp);
@@ -41,11 +51,13 @@ public class Bloons{
   }
   
   public boolean hit(){
+    if (IFrame > 0) IFrame--;
     Dart cur = null;
     for (Dart d : DartList){
       cur = d;
-      if (dist(getX(), getY(), d.getX(), d.getY()) < 30){
+      if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
         //d.pierced();
+        IFrame = 10;
         return true;
       }
     }
@@ -61,5 +73,10 @@ public class Bloons{
   
   public int getCounter(){
     return counter;
+  }
+  
+  public PImage getType(){
+    if (hp == 2) return blue;
+    else return red;
   }
 }
