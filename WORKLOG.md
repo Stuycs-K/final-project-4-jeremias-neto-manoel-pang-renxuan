@@ -46,3 +46,7 @@ updated the graphics a bit, made a somewhat functional side bar, tried making th
 ### date 5/25/24
 
 added a start button to the game, giving time to place towers. Also did bloon spawn logic (subject to change) so they keep spawning, and also added life losing logic. Bloons can now be popped. Need work on the piercing mechanic for darts. 
+
+### date 5/26/24
+
+added correct life system based on bloon hierachy, added a money system, added bloon types up to pinks, tuned speed of bloons so when they pop from pink to yellow or yellow to green they slow down, added a basic round system, might improve upon it later. Mostly spent time adding all the different bloons. Soon will add sfx to popping
