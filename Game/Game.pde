@@ -8,6 +8,7 @@ ArrayList<Dart> DartList = new ArrayList();
 boolean started = false;
 int life = 5;
 int tick = 1;
+int money = 200;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
 //MAP ASSETS
@@ -15,9 +16,13 @@ PImage grass;
 PImage road;
 PImage startButton;
 PImage heart;
+PImage coins;
 //BLOON ASSETS
 PImage red;
 PImage blue;
+PImage green;
+PImage yellow;
+PImage pink;
 //MONKEY ASSETS
 PImage dartMonki;
 PImage monkiDart;
@@ -33,24 +38,40 @@ void setup(){
   font = createFont("BTDFONT.ttf", 18);
   textFont(font);
   textAlign(CENTER);
+  
+  //map elements
   grass = loadImage("grass.jpg");
   road = loadImage("road.jpg");
-  red = loadImage("R.png");
-  blue = loadImage("B.png");
-  blue.resize(0,100);
-  dartMonki = loadImage("Dart.png");
-  monkiDart = loadImage("monkiDart.png");
-  tackShooti = loadImage("tackShooti.png");
   startButton = loadImage("startButton.png");
   heart = loadImage("heart.png");
   heart.resize(0,40);
+  coins = loadImage("coins.png");
+  coins.resize(0,70);
   startButton.resize(0,100);
+  grass.resize(750,1000);
+  
+  //bloon elements
+  red = loadImage("R.png");
+  blue = loadImage("B.png");
+  blue.resize(0,100);
+  green = loadImage("G.png");
+  green.resize(0, 100);
+  yellow = loadImage("Y.png");
+  yellow.resize(0,80);
+  pink = loadImage("P.png");
+  pink.resize(0,80);
+  
+  //monki elements
+  dartMonki = loadImage("Dart.png");
+  monkiDart = loadImage("monkiDart.png");
+  tackShooti = loadImage("tackShooti.png");
   tackShooti.resize(70,0);
   size(1800, 1000);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
   map = new Map(20,30).getMap();
-  grass.resize(750,1000);
+  
+  //initial setup
   image(grass, 0, 0);
   image(grass, 750, 0);
   road.resize(0,50);
@@ -88,7 +109,7 @@ void draw(){
       }
     }
     if (i >= 0 && bloons.get(i).getCounter() == guide.size()){
-      life--;
+      life-= bloons.get(i).getHP();
       bloons.remove(bloons.get(i));
       i--;
     }
@@ -124,9 +145,11 @@ void background(){
   fill(203, 145, 79);
   rect(1500,0,300,1000);
   image(heart, 20, 20);
+  image(coins, 145, 5);
   textSize(40);
   fill(255);
   text(life, 95, 55);
+  text(money, 250, 55);
 }
 
 void mouseClicked(){
@@ -156,8 +179,8 @@ void mouseClicked(){
 }
 
 void bloons(int x, int y){
-  Bloons red = new Bloons(x, y, "blue");
-  bloons.add(red);
+  Bloons b = new Bloons(x, y, "pink");
+  bloons.add(b);
 }
 
 void placeGuiders(int startx, int starty){
