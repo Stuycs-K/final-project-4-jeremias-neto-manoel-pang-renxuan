@@ -1,4 +1,6 @@
 import java.util.*;
+
+//misc
 char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
@@ -8,15 +10,24 @@ ArrayList<Dart> DartList = new ArrayList();
 boolean started = false;
 int life = 5;
 int tick = 1;
+int money = 200;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
+rounds r = new rounds();
+
 //MAP ASSETS
 PImage grass;
 PImage road;
 PImage startButton;
 PImage heart;
+PImage coins;
+
 //BLOON ASSETS
 PImage red;
+PImage blue;
+PImage green;
+PImage yellow;
+PImage pink;
 
 //MONKEY ASSETS
 PImage dartMonki;
@@ -33,22 +44,40 @@ void setup(){
   font = createFont("BTDFONT.ttf", 18);
   textFont(font);
   textAlign(CENTER);
+  
+  //map elements
   grass = loadImage("grass.jpg");
   road = loadImage("road.jpg");
-  red = loadImage("R.png");
-  dartMonki = loadImage("Dart.png");
-  monkiDart = loadImage("monkiDart.png");
-  tackShooti = loadImage("tackShooti.png");
   startButton = loadImage("startButton.png");
   heart = loadImage("heart.png");
   heart.resize(0,40);
+  coins = loadImage("coins.png");
+  coins.resize(0,70);
   startButton.resize(0,100);
+  grass.resize(750,1000);
+  
+  //bloon elements
+  red = loadImage("R.png");
+  blue = loadImage("B.png");
+  blue.resize(0,100);
+  green = loadImage("G.png");
+  green.resize(0, 100);
+  yellow = loadImage("Y.png");
+  yellow.resize(0,80);
+  pink = loadImage("P.png");
+  pink.resize(0,80);
+  
+  //monki elements
+  dartMonki = loadImage("Dart.png");
+  monkiDart = loadImage("monkiDart.png");
+  tackShooti = loadImage("tackShooti.png");
   tackShooti.resize(70,0);
   size(1800, 1000);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
   map = new Map(20,30).getMap();
-  grass.resize(750,1000);
+  
+  //initial setup
   image(grass, 0, 0);
   image(grass, 750, 0);
   road.resize(0,50);
@@ -67,7 +96,7 @@ void setup(){
     }
   }
   placeGuiders(start[2], start[3]);
-  System.out.println(guide);
+  //System.out.println(guide);
 }
 
 void draw(){
@@ -76,9 +105,8 @@ void draw(){
   background();
   if (started){
   for (int i = 0; i < bloons.size(); i ++){
-    //circle(b.getX(), b.getY(), 50);
     red.resize(0,100);
-    image(red, bloons.get(i).getX()-50, bloons.get(i).getY()-65);
+    image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
     if(bloons.get(i).hit()){
       if(bloons.get(i).pop()){
@@ -87,7 +115,7 @@ void draw(){
       }
     }
     if (i >= 0 && bloons.get(i).getCounter() == guide.size()){
-      life--;
+      life-= bloons.get(i).getHP();
       bloons.remove(bloons.get(i));
       i--;
     }
@@ -123,9 +151,11 @@ void background(){
   fill(203, 145, 79);
   rect(1500,0,300,1000);
   image(heart, 20, 20);
+  image(coins, 145, 5);
   textSize(40);
   fill(255);
   text(life, 95, 55);
+  text(money, 250, 55);
 }
 
 void mouseClicked(){
@@ -155,8 +185,21 @@ void mouseClicked(){
 }
 
 void bloons(int x, int y){
-  Bloons red = new Bloons(x, y, 1, 3, guide);
-  bloons.add(red);
+  if (!r.empty()){
+    String bloon = r.getInfo();
+    if (bloon.equals("done")) {
+      if (bloons.size() != 0){
+        r.foundDone();
+        return;
+      }
+      started = false;
+      System.out.println(started);
+    }
+    else {
+      Bloons b = new Bloons(x, y, bloon);
+      bloons.add(b);
+    }
+  }
 }
 
 void placeGuiders(int startx, int starty){
