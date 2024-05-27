@@ -19,14 +19,14 @@ monkeys no longer able to be placed on other monkeys or the track. the spacing i
 sidebar funcionality (slightly), tackshooter addition (no upgrades yet), and minor bugfixes. next is definetly finishing upgrades and getting them to work with towers
 
 
-### date
+### date 5/26/24
 
-text here
+ripping monkey assets from images of the main path upgrades from btd5 i found on the bloons wiki and making them their own pngs for use in the game- ice monkeys, sniper monkeys. boomerang monkeys
 
 
-### date
+### date 5/27/24
 
-text here
+continued ripping more assets from btd5 so that i have all the files ready to do a revamp on towers and damage
 
 
 ## GROUP MEMBER 2 Renxuan Pang
