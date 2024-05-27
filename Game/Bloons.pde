@@ -15,6 +15,18 @@ public class Bloons{
       row = y; col = x; this.hp = 2; this.speed = 3; isCamo = false;
       this.type = blue;
     }
+    else if (type.equals("green")){
+      row = y; col = x; this.hp = 3; this.speed = 3; isCamo = false;
+      this.type = green;
+    }
+    else if (type.equals("yellow")){
+      row = y; col = x; this.hp = 4; this.speed = 4; isCamo = false;
+      this.type = yellow;
+    }
+    else if (type.equals("pink")){
+      row = y; col = x; this.hp = 5; this.speed = 5; isCamo = false;
+      this.type = pink;
+    }
   }
   public Bloons(int x, int y, int hp, int speed, boolean camo){
     row = y; col = x; this.hp = hp; this.speed = speed; isCamo = camo;
@@ -50,23 +62,26 @@ public class Bloons{
     return row;
   }
   
+  public int getHP(){
+    return hp;
+  }
+  
   public boolean hit(){
     if (IFrame > 0) IFrame--;
-    Dart cur = null;
     for (Dart d : DartList){
-      cur = d;
       if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
         //d.pierced();
         IFrame = 10;
         return true;
       }
     }
-    //if (cur != null && cur.getPierce() == 0) DartList.remove(cur);
     return false;
   }
   
   public boolean pop(){
+    if (hp == 4 || hp == 5) speed --;
     this.hp--;
+    money++;
     if (hp <= 0) return true;
     return false;
   }
@@ -76,6 +91,9 @@ public class Bloons{
   }
   
   public PImage getType(){
+    if (hp == 5) return pink;
+    if (hp == 4) return yellow;
+    if (hp == 3) return green;
     if (hp == 2) return blue;
     else return red;
   }
