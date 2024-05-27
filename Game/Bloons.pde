@@ -68,16 +68,13 @@ public class Bloons{
   
   public boolean hit(){
     if (IFrame > 0) IFrame--;
-    Dart cur = null;
     for (Dart d : DartList){
-      cur = d;
       if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
         //d.pierced();
         IFrame = 10;
         return true;
       }
     }
-    //if (cur != null && cur.getPierce() == 0) DartList.remove(cur);
     return false;
   }
   

@@ -1,4 +1,6 @@
 import java.util.*;
+
+//misc
 char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
@@ -11,18 +13,22 @@ int tick = 1;
 int money = 200;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
+rounds r = new rounds();
+
 //MAP ASSETS
 PImage grass;
 PImage road;
 PImage startButton;
 PImage heart;
 PImage coins;
+
 //BLOON ASSETS
 PImage red;
 PImage blue;
 PImage green;
 PImage yellow;
 PImage pink;
+
 //MONKEY ASSETS
 PImage dartMonki;
 PImage monkiDart;
@@ -90,7 +96,7 @@ void setup(){
     }
   }
   placeGuiders(start[2], start[3]);
-  System.out.println(guide);
+  //System.out.println(guide);
 }
 
 void draw(){
@@ -179,8 +185,21 @@ void mouseClicked(){
 }
 
 void bloons(int x, int y){
-  Bloons b = new Bloons(x, y, "pink");
-  bloons.add(b);
+  if (!r.empty()){
+    String bloon = r.getInfo();
+    if (bloon.equals("done")) {
+      if (bloons.size() != 0){
+        r.foundDone();
+        return;
+      }
+      started = false;
+      System.out.println(started);
+    }
+    else {
+      Bloons b = new Bloons(x, y, bloon);
+      bloons.add(b);
+    }
+  }
 }
 
 void placeGuiders(int startx, int starty){
