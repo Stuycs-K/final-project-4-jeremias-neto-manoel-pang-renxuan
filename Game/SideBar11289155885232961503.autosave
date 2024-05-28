@@ -27,7 +27,7 @@ public class SideBar{
       }
       if(mouseX > 1550 && mouseX < 1690 && mouseY > 800 && mouseY < 900)
         started = true;
-    }
+      }
   }
   public void update(){
     fill(203, 145, 79);
