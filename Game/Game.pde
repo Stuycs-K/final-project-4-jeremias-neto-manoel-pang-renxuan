@@ -48,15 +48,17 @@ void setup(){
   textAlign(CENTER);
   
   //map elements
-  grass = loadImage("grass.jpg");
+  grass = loadImage("grass.jpeg");
   road = loadImage("road.jpg");
   startButton = loadImage("startButton.png");
   heart = loadImage("heart.png");
   heart.resize(0,40);
   coins = loadImage("coins.png");
   coins.resize(0,70);
-  startButton.resize(0,100);
-  grass.resize(750,1000);
+  grass.resize(0,1080);
+  imageMode(CENTER);
+  startButton.resize(0,1600);
+  imageMode(CORNERS);
   
   //bloon elements
   red = loadImage("R.png");
@@ -87,7 +89,6 @@ void setup(){
   map = new Map(20,30).getMap();
   
   image(grass, 0, 0);
-  image(grass, 750, 0);
   road.resize(0,50);
   for (int row = 0; row < map.length; row++){
     for (int col = 0; col < map[0].length; col++){
@@ -156,7 +157,6 @@ void draw(){
 
 void background(){
   image(grass, 0, 0);
-  image(grass, 750, 0);
   for (int[] x : mapInfo) 
   image(road, x[1]*50, x[0]*50);
   fill(203, 145, 79);

@@ -6,6 +6,10 @@ public class rounds{
     "blue",
     "green",
     "green",
+<<<<<<< HEAD
+=======
+    "done",
+>>>>>>> 76eb28e481eeffe25816cc9f1f3530dac8767b8a
     "yellow",
     "yellow",
     "pink",

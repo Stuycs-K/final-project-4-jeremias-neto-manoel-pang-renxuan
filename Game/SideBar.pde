@@ -22,10 +22,14 @@ public class SideBar{
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270){
         placingMonkey = new TackShooter();
       }
+<<<<<<< HEAD
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         placingMonkey = new IceMonkey();
       }
       if(mouseX > 1600 && mouseX < 1690 && mouseY > 800 && mouseY < 900)
+=======
+      if(mouseX > 1550 && mouseX < 1690 && mouseY > 800 && mouseY < 900)
+>>>>>>> 76eb28e481eeffe25816cc9f1f3530dac8767b8a
         started = true;
     }
   }
@@ -39,7 +43,7 @@ public class SideBar{
       DisplayTackShooter();
       DisplayBombShooter();
       DisplayIceMonkey();
-      if (!started) image(startButton, 1600, 800);
+      if (!started) image(startButton, 855, 0);
     }
     else{
       upgradeMonkey.displayUpgrades();

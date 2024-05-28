@@ -15,9 +15,9 @@
     pierce = pierce_;
   }
     public boolean update(){
-      if (position.x > width || position.x < 0 || position.y > height || position.y < 0){
-        return true;
-      }
+      //if (position.x > width || position.x < 0 || position.y > height || position.y < 0){
+      //  return true;
+      //}
       fill(0);
       circle(position.x, position.y, 10);
       position.add(launch);
