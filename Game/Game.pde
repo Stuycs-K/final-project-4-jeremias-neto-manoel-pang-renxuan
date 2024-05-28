@@ -53,8 +53,10 @@ void setup(){
   heart.resize(0,40);
   coins = loadImage("coins.png");
   coins.resize(0,70);
-  startButton.resize(0,100);
   grass.resize(0,1080);
+  imageMode(CENTER);
+  startButton.resize(0,1600);
+  imageMode(CORNERS);
   
   //bloon elements
   red = loadImage("R.png");
