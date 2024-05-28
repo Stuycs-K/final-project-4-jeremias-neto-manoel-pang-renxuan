@@ -20,6 +20,10 @@ abstract class Monkey{
     if (b != null){
       lastAngle = shoot(b);
     }
+    for (int i = 0; i < dartCount; i ++){
+      Dart dart = (Dart)DartList.get(i);
+      dart.update();
+    }
     drawMonkey(posx, posy);
   }
   public void displayUpgrades(){
@@ -124,8 +128,5 @@ abstract class Monkey{
   }
   public String getName(){
     return name;
-  }
-  public ArrayList<Dart> getDartList(){
-    return DartList;
   }
 }

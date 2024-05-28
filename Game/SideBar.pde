@@ -22,6 +22,9 @@ public class SideBar{
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270){
         placingMonkey = new TackShooter();
       }
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
+        placingMonkey = new IceMonkey();
+      }
       if(mouseX > 1600 && mouseX < 1690 && mouseY > 800 && mouseY < 900)
         started = true;
     }
