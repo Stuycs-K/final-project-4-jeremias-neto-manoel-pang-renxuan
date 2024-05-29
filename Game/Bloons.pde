@@ -70,7 +70,8 @@ public class Bloons{
     if (IFrame > 0) IFrame--;
     for (Dart d : DartList){
       if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
-        //d.pierced();
+        POP.play();
+        image(pop, getX()-35, getY()-45);
         IFrame = 10;
         return true;
       }

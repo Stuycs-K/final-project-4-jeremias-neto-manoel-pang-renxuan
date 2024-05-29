@@ -13,7 +13,7 @@ public class TackShooter extends Monkey{
     String[][] UpgradeNames = {{"temp", "temp", "temp", "temp"},{"temp", "temp", "temp", "temp"}};
     upgradeNames = UpgradeNames;
     name = "Tack Shooter";
-    monkeyImage = tackShooti;
+    monkeyImage = shootiTack;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){
