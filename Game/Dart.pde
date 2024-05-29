@@ -4,6 +4,7 @@
   int damage;
   int projType;
   int pierce;
+  int size;
   
   public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_){
     position.set(launchx, launchy);

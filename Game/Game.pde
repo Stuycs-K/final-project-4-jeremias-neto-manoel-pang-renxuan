@@ -172,6 +172,10 @@ void draw(){
   }
   tick ++;
   tick = tick % 200;
+  fill(0);
+  textSize(11);
+  text(frameRate,20,20);
+  textSize(18);
 }
 
 void background(){

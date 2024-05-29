@@ -30,6 +30,13 @@ abstract class Monkey{
     fill(255);
     text(name, 1515 + 135, 15 + 55);
     rectMode(CORNER);
+    fill(133, 228, 255);
+    rect(1515, 130, 270, 350);
+    fill(150, 100, 50);
+    rect(1515, 495, 270, 90);
+    rect(1515, 600, 270, 90);
+    fill(255,0,0);
+    rect(1515, 895, 270, 90);
   }
   public boolean placing(){
     highlight = true;
