@@ -1,4 +1,5 @@
 import java.util.*;
+import processing.sound.*;
 
 //misc
 char[][] map;
@@ -21,6 +22,7 @@ PImage road;
 PImage startButton;
 PImage heart;
 PImage coins;
+PImage pop;
 
 //BLOON ASSETS
 PImage red;
@@ -30,12 +32,19 @@ PImage yellow;
 PImage pink;
 
 //MONKEY Sprites
-PImage dartMonki;
-PImage tackShooti;
-PImage iceMonki;
+PImage monkiDart;
+PImage shootiTack;
+PImage monkiIce;
 
 //SIDEBAR Sprites
-PImage monkiDart;
+PImage dartMonki;
+PImage tackShooti;
+PImage bombShooti;
+PImage iceMonki;
+
+//music
+SoundFile POP;
+SoundFile BGM;
 
 int[] start = new int[4];
 int sideBarMode = 1;
@@ -59,6 +68,8 @@ void setup(){
   imageMode(CENTER);
   startButton.resize(0,1600);
   imageMode(CORNERS);
+  pop = loadImage("mapElements/pop.png");
+  pop.resize(0,60);
   
   //bloon elements
   red = loadImage("bloons/R.png");
@@ -73,20 +84,28 @@ void setup(){
   pink.resize(0,80);
   
   //monki sprite elements
-  dartMonki = loadImage("Dart.png");
-  tackShooti = loadImage("tackShooti.png");
-  tackShooti.resize(70,0);
-  iceMonki = loadImage("IceBase.png");
-  iceMonki.resize(75,0);
+  monkiDart = loadImage("monkiDart.png");
+  shootiTack = loadImage("tackShooti.png");
+  shootiTack.resize(70,0);
+  monkiIce = loadImage("IceBase.png");
+  monkiIce.resize(75,0);
   
   //monki sidebar elements
-  monkiDart = loadImage("monkiDart.png");
+  dartMonki = loadImage("sideBarSprites/dartMonki.png");
+  tackShooti = loadImage("sideBarSprites/tackShooti.png");
+  bombShooti = loadImage("sideBarSprites/bombShooti.png");
+  iceMonki = loadImage("sideBarSprites/iceMonki.png");
   
   //map setup
   size(1800, 1000);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
   map = new Map(20,30).getMap();
+  
+  //sound setup
+  POP = new SoundFile(this, "MUSIC/POP.mp3");
+  BGM = new SoundFile(this, "MUSIC/YEAAA.mp3");
+  BGM.play();
   
   image(grass, 0, 0);
   road.resize(0,50);
@@ -166,7 +185,7 @@ void background(){
   textSize(40);
   fill(255);
   text(life, 95, 55);
-  text(money, 250, 55);
+  text(" $ " + money, 250, 55);
 }
 
 void mouseClicked(){

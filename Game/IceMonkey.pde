@@ -13,7 +13,7 @@ public class IceMonkey extends Monkey{
     String[][] UpgradeNames = {{"", "", "", ""},{"", "", "", ""}};
     upgradeNames = UpgradeNames;
     name = "Ice Monkey";
-    monkeyImage = iceMonki;
+    monkeyImage = monkiIce;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

@@ -25,7 +25,7 @@ public class SideBar{
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         placingMonkey = new IceMonkey();
       }
-      if(mouseX > 1550 && mouseX < 1690 && mouseY > 800 && mouseY < 900)
+      if(mouseX > 1607 && mouseX < 1697 && mouseY > 758 && mouseY < 850)
         started = true;
     }
   }
@@ -55,9 +55,12 @@ public class SideBar{
         rectMode(CORNER);
     }
     fill(203, 145, 79);
-    dartMonki.resize(0,150);
-    image(dartMonki, 1515, 120);
+    fill(133, 228, 255);
+    rect(1515, 120, 125, 150);
+    dartMonki.resize(0,130);
+    image(dartMonki, 1535, 130);
   }
+  
   private void DisplayTackShooter(){
     if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY < 270){
         rectMode(CENTER);
@@ -67,11 +70,12 @@ public class SideBar{
         rectMode(CORNER);
     }
     fill(203, 145, 79);
-    //dartMonki.resize(0,150);
-    //image(dartMonki, 1515, 120); replace these with tack shooter images
     fill(133, 228, 255);
     rect(1665, 120, 125, 150);
+    tackShooti.resize(0,125);
+    image(tackShooti, 1520+150, 130);
   }
+  
   private void DisplayBombShooter(){
     if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150){
         rectMode(CENTER);
@@ -81,11 +85,12 @@ public class SideBar{
         rectMode(CORNER);
     }
     fill(203, 145, 79);
-    //dartMonki.resize(0,150);
-    //image(dartMonki, 1515, 120); replace with bomb shooter image
     fill(133, 228, 255);
     rect(1515, 285, 125, 150);
+    bombShooti.resize(0,100);
+    image(bombShooti, 1520, 310);
   }
+  
   private void DisplayIceMonkey(){
     if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         rectMode(CENTER);
@@ -95,9 +100,9 @@ public class SideBar{
         rectMode(CORNER);
     }
     fill(203, 145, 79);
-    //dartMonki.resize(0,150);
-    //image(dartMonki, 1515, 120); replace with ice monkey
     fill(133, 228, 255);
     rect(1665, 285, 125, 150);
+    iceMonki.resize(0,130);
+    image(iceMonki, 1520+150, 295);
   }
 }
