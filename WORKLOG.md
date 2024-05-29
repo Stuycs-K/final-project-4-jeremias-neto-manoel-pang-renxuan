@@ -50,3 +50,7 @@ added a start button to the game, giving time to place towers. Also did bloon sp
 ### date 5/26/24
 
 added correct life system based on bloon hierachy, added a money system, added bloon types up to pinks, tuned speed of bloons so when they pop from pink to yellow or yellow to green they slow down, added a basic round system, might improve upon it later. Mostly spent time adding all the different bloons. Soon will add sfx to popping
+
+### date 5/28/24
+
+added graphical updates to the side bar, added in the sidebar sprites, added graphical updates to start button, added sfx when bloons pop, most importantly added a BGM and pop sound :)
