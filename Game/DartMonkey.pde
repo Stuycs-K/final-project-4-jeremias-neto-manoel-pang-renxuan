@@ -15,7 +15,7 @@ public class DartMonkey extends Monkey{
     
     //upgrade info
     int[][] UpgradeCosts = {{90, 120, 330, 2000}, {140, 170, 500, 1500}};
-    String[][] UpgradeNames = {{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "Super Monkey Fan Club"},{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut"}};
+    String[][] UpgradeNames = {{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "SM Fan Club"},{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut"}};
     int[][] UpgradePierce = {{0,0,18,72},{1,2,0,0}};
     int[][] UpgradeCamo= {{0,1,1,1}, {0,0,0,0}};
     int[][] UpgradeDamage= {{0,0,2,5},{0,0,0,0}};

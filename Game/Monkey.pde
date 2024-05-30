@@ -38,6 +38,8 @@ abstract class Monkey{
   }
   
   public void displayUpgrades(){
+    
+    //menu stuff
     fill(150, 100, 50);
     rect(1515, 15, 270, 90);
     rectMode(CENTER);
@@ -52,6 +54,11 @@ abstract class Monkey{
     rect(1515, 600, 270, 90);
     fill(255,0,0);
     rect(1515, 895, 270, 90);
+    fill(255);
+    text(upgradeNames[0][upgrade1Prog], 1650, 540);
+    fill(255,255,0);
+    text(""+upgradeCosts[0][upgrade1Prog], 1650, 570);
+    
   }
   public boolean placing(){
     highlight = true;
