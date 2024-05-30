@@ -1,5 +1,6 @@
 public class rounds{
   private String[] info = new String[]{
+    "max 20",
     "red",
     "red",
     "blue",
@@ -7,6 +8,7 @@ public class rounds{
     "green",
     "green",
     "done",
+    "max 200",
     "yellow",
     "yellow",
     "pink",
