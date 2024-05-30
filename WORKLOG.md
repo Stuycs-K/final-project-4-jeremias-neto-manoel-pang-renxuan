@@ -58,3 +58,7 @@ added graphical updates to the side bar, added in the sidebar sprites, added gra
 ### date 5/29/24
 
 added a page flip system for sidebar, added a few more rows to the sidebar, fixed bug with bloon spawning, tmrw will likely work on round mechanics.
+
+### date 5/30/24
+
+added rounds up to round 10, got zebra bloons working, got a model for adding bloons of higher hierachy. Tomorrow likely will add up to round 20-ish
