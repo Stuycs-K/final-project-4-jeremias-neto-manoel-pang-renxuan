@@ -54,3 +54,7 @@ added correct life system based on bloon hierachy, added a money system, added b
 ### date 5/28/24
 
 added graphical updates to the side bar, added in the sidebar sprites, added graphical updates to start button, added sfx when bloons pop, most importantly added a BGM and pop sound :)
+
+### date 5/29/24
+
+added a page flip system for sidebar, added a few more rows to the sidebar, fixed bug with bloon spawning, tmrw will likely work on round mechanics.
