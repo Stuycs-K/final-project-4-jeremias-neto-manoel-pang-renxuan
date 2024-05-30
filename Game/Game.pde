@@ -11,6 +11,7 @@ ArrayList<Dart> DartList = new ArrayList();
 boolean started = false;
 int life = 5;
 int tick = 1;
+int tickMax = 200;
 int money = 200;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
@@ -177,7 +178,7 @@ void draw(){
      Dart dart = (Dart)DartList.get(i);
      dart.update();
   }
-  tick = tick % 200;
+  tick = tick % tickMax;
 }
 
 void background(){
@@ -231,6 +232,9 @@ void bloons(int x, int y){
       }
       started = false;
       System.out.println(started);
+    }
+    else if (bloon.startsWith("max")){
+      tickMax = Integer.parseInt(bloon.substring(4, bloon.length()));
     }
     else {
       Bloons b = new Bloons(x, y, bloon);
