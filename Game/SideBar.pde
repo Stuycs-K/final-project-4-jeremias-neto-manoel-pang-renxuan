@@ -42,15 +42,6 @@ public class SideBar{
     }
     
     if (isShop == 2){
-      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
-        placingMonkey = new DartMonkey();
-      }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270){
-        placingMonkey = new TackShooter();
-      }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
-        placingMonkey = new IceMonkey();
-      }
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
         started = true;
       if (mouseX > 1700 - 180 && mouseX < 1700 + 75 - 180 && mouseY > 780 && mouseY < 875)

@@ -134,7 +134,7 @@ void setup(){
 }
 
 void draw(){
-  if (tick == 0)
+  if (tick == 0 && started)
   bloons(start[0], start[1]);
   background();
   if (started){
@@ -226,6 +226,7 @@ void bloons(int x, int y){
     if (bloon.equals("done")) {
       if (bloons.size() != 0){
         r.foundDone();
+        tick = 1;
         return;
       }
       started = false;
