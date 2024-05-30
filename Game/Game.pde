@@ -23,6 +23,8 @@ PImage startButton;
 PImage heart;
 PImage coins;
 PImage pop;
+PImage left;
+PImage right;
 
 //BLOON ASSETS
 PImage red;
@@ -70,6 +72,10 @@ void setup(){
   imageMode(CORNERS);
   pop = loadImage("mapElements/pop.png");
   pop.resize(0,60);
+  left = loadImage("mapElements/leftArrow.png");
+  left.resize(0,1000);
+  right = loadImage("mapElements/rightArrow.png");
+  right.resize(0,1000);
   
   //bloon elements
   red = loadImage("bloons/R.png");
@@ -105,7 +111,7 @@ void setup(){
   //sound setup
   POP = new SoundFile(this, "MUSIC/POP.mp3");
   BGM = new SoundFile(this, "MUSIC/YEAAA.mp3");
-  BGM.play();
+  BGM.loop();
   
   image(grass, 0, 0);
   road.resize(0,50);
@@ -132,6 +138,7 @@ void draw(){
   bloons(start[0], start[1]);
   background();
   if (started){
+  tick ++;
   for (int i = 0; i < bloons.size(); i ++){
     image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
@@ -170,7 +177,6 @@ void draw(){
      Dart dart = (Dart)DartList.get(i);
      dart.update();
   }
-  tick ++;
   tick = tick % 200;
 }
 

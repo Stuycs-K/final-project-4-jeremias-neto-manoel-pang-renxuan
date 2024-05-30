@@ -15,6 +15,15 @@ public class SideBar{
     isShop = 0;
   }
   
+  public void nextPG(){
+    isShop ++;
+    System.out.println(isShop);
+  }
+  
+  public void prevPG(){
+    isShop--;
+  }
+  
   public void onClick(){
     if(isShop == 1){
       if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
@@ -28,6 +37,8 @@ public class SideBar{
       }
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
         started = true;
+      if (mouseX > 1700 && mouseX < 1700 + 75 && mouseY > 780 && mouseY < 875)
+        nextPG();
     }
     
     if (isShop == 2){
@@ -40,11 +51,16 @@ public class SideBar{
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         placingMonkey = new IceMonkey();
       }
+      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
+        started = true;
+      if (mouseX > 1700 - 180 && mouseX < 1700 + 75 - 180 && mouseY > 780 && mouseY < 875)
+        prevPG();
     }
   }
   public void update(){
     fill(203, 145, 79);
     rect(1500,0,300,1000);
+    //image(left, 1560, 830);
     if (isShop == 1){
       fill(150, 100, 50);
       rect(1515, 15, 270, 90);
@@ -56,19 +72,27 @@ public class SideBar{
       DisplayTowerSix();
       DisplayTowerSeven();
       DisplayTowerEight();
+      imageMode(CENTER);
+      image(right, 1740, 830);
+      imageMode(CORNERS);
       if (!started) image(startButton, 855, 100);
     }
-    //if (isShop == 1){
-    //  fill(150, 100, 50);
-    //  rect(1515, 15, 270, 90);
-    //  DisplayDartMonkey();
-    //  DisplayTackShooter();
-    //  DisplayBombShooter();
-    //  DisplayIceMonkey();
-    //  DisplayTowerFive();
-    //  DisplayTowerSix();
-    //  if (!started) image(startButton, 855, 0);
-    //}
+    else if (isShop == 2){
+      fill(150, 100, 50);
+      rect(1515, 15, 270, 90);
+      DisplayTowerNine();
+      DisplayTowerTen();
+      DisplayTowerEleven();
+      DisplayTowerTwelve();
+      DisplayTowerThirteen();
+      DisplayTowerFourteen();
+      DisplayTowerFifteen();
+      DisplayTowerSixteen();
+      imageMode(CENTER);
+      image(left, 1560, 830);
+      imageMode(CORNERS);
+      if (!started) image(startButton, 855, 100);
+    }
     else{
       upgradeMonkey.displayUpgrades();
     }
@@ -186,8 +210,10 @@ public class SideBar{
     rect(1665, 615, 125, 150);
   }
   
+  // PG2
+  
   private void DisplayTowerNine(){
-    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150){
+    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
         rectMode(CENTER);
         textSize(30);
         fill(255);
@@ -196,11 +222,11 @@ public class SideBar{
     }
     fill(203, 145, 79);
     fill(133, 228, 255);
-    rect(1515, 285, 125, 150);
+    rect(1515, 120, 125, 150);
   }
   
   private void DisplayTowerTen(){
-    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
+    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY < 270){
         rectMode(CENTER);
         textSize(30);
         fill(255);
@@ -209,11 +235,11 @@ public class SideBar{
     }
     fill(203, 145, 79);
     fill(133, 228, 255);
-    rect(1665, 285, 125, 150);
+    rect(1665, 120, 125, 150);
   }
   
   private void DisplayTowerEleven(){
-    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 450 && mouseY < 450+150){
+    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150){
         rectMode(CENTER);
         textSize(30);
         fill(255);
@@ -222,11 +248,11 @@ public class SideBar{
     }
     fill(203, 145, 79);
     fill(133, 228, 255);
-    rect(1515, 450, 125, 150);
+    rect(1515, 285, 125, 150);
   }
   
   private void DisplayTowerTwelve(){
-    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 450 && mouseY < 450+150){
+    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         rectMode(CENTER);
         textSize(30);
         fill(255);
@@ -235,6 +261,58 @@ public class SideBar{
     }
     fill(203, 145, 79);
     fill(133, 228, 255);
+    rect(1665, 285, 125, 150);
+  }
+  
+  private void DisplayTowerThirteen(){
+    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 450 && mouseY < 450+150){
+        rectMode(CENTER);
+        textSize(30);
+        fill(255);
+        text("Tower Thirteen", 1515 + 135, 15 + 55);
+        rectMode(CORNER);
+    }
+    fill(203, 145, 79);
+    fill(133, 228, 255);
+    rect(1515, 450, 125, 150);
+  }
+  
+  private void DisplayTowerFourteen(){
+    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 450 && mouseY < 450+150){
+        rectMode(CENTER);
+        textSize(30);
+        fill(255);
+        text("Tower Fourteen", 1515 + 135, 15 + 55);
+        rectMode(CORNER);
+    }
+    fill(203, 145, 79);
+    fill(133, 228, 255);
     rect(1665, 450, 125, 150);
+  }
+   
+  private void DisplayTowerFifteen(){
+    if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 615 && mouseY < 615+150){
+        rectMode(CENTER);
+        textSize(30);
+        fill(255);
+        text("Tower Fifteen", 1515 + 135, 15 + 55);
+        rectMode(CORNER);
+    }
+    fill(203, 145, 79);
+    fill(133, 228, 255);
+    rect(1515, 450+165, 125, 150);
+  }
+  
+  private void DisplayTowerSixteen(){
+    if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 615 && mouseY < 615+150){
+        rectMode(CENTER);
+        textSize(30);
+        fill(255);
+        text("Tower Sixteen", 1515 + 135, 15 + 55);
+        rectMode(CORNER);
+    }
+    fill(203, 145, 79);
+    fill(133, 228, 255);
+    rect(1665, 615, 125, 150);
   }
 }
