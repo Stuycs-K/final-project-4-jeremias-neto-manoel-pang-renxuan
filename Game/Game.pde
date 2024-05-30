@@ -178,15 +178,11 @@ void draw(){
      Dart dart = (Dart)DartList.get(i);
      dart.update();
   }
-<<<<<<< HEAD
-  tick = tick % 200;
   fill(0);
   textSize(11);
   text(frameRate,20,20);
   textSize(18);
-=======
   tick = tick % tickMax;
->>>>>>> e0551f7c6b53d5e7f6b10dacfaec646aabdc5fe7
 }
 
 void background(){
