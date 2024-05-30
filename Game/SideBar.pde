@@ -17,7 +17,6 @@ public class SideBar{
   
   public void nextPG(){
     isShop ++;
-    System.out.println(isShop);
   }
   
   public void prevPG(){

@@ -48,14 +48,12 @@ public class Bloons{
   public void act(){
     if (counter != guide.size()){
     float distance = dist(getX(), getY(), guide.get(counter).getX(), guide.get(counter).getY());
-    //System.out.println(distance);
     if (distance > 3){
       float xComp = (guide.get(counter).getX() - this.getX());
       float yComp = (guide.get(counter).getY() - this.getY());
       PVector move = new PVector(xComp, yComp);
       move.normalize();
       move.mult(speed);
-      //System.out.println(move);
       col = (int) move.x + col;
       row = (int) move.y + row;
     }

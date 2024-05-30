@@ -140,7 +140,6 @@ void setup(){
     }
   }
   placeGuiders(start[2], start[3]);
-  //System.out.println(guide);
 }
 
 void draw(){
@@ -244,7 +243,6 @@ void bloons(int x, int y){
         return;
       }
       started = false;
-      System.out.println(started);
     }
     else if (bloon.startsWith("max")){
       tickMax = Integer.parseInt(bloon.substring(4, bloon.length()));
