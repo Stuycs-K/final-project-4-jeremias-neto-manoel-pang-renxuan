@@ -16,7 +16,9 @@ public class rounds{
     //"done",
     //"red",
     //"red"
-    "black"
+    //"black",
+    //"white",
+    "zebra"
   };
   private int counter = 0;
 
