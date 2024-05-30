@@ -5,6 +5,7 @@ public class Bloons{
   boolean isCamo;
   PImage type = null;
   int IFrame = 0;
+  Dart D;
   
   public Bloons(int x, int y, String type){
     if (type.equals("red")){
@@ -29,7 +30,15 @@ public class Bloons{
     }
     else if (type.equals("black")){
       row = y; col = x; this.hp = 6; this.speed = 3; isCamo = false;
-      this.type = green;
+      this.type = black;
+    }
+    else if (type.equals("white")){
+      row = y; col = x; this.hp = 6; this.speed = 3; isCamo = false;
+      this.type = white;
+    }
+    else if (type.equals("zebra")){
+      row = y; col = x; this.hp = 7; this.speed = 3; isCamo = false;
+      this.type = zebra;
     }
   }
   public Bloons(int x, int y, int hp, int speed, boolean camo){
@@ -39,14 +48,12 @@ public class Bloons{
   public void act(){
     if (counter != guide.size()){
     float distance = dist(getX(), getY(), guide.get(counter).getX(), guide.get(counter).getY());
-    //System.out.println(distance);
     if (distance > 3){
       float xComp = (guide.get(counter).getX() - this.getX());
       float yComp = (guide.get(counter).getY() - this.getY());
       PVector move = new PVector(xComp, yComp);
       move.normalize();
       move.mult(speed);
-      //System.out.println(move);
       col = (int) move.x + col;
       row = (int) move.y + row;
     }
@@ -77,6 +84,7 @@ public class Bloons{
         POP.play();
         image(pop, getX()-35, getY()-45);
         IFrame = 10;
+        D = d;
         return true;
       }
     }
@@ -84,14 +92,27 @@ public class Bloons{
   }
   
   public boolean pop(){
-    if (hp == 6){
-      Bloons extra = new Bloons(getX(), getY(), "pink");
+    if (type == zebra){
+      Bloons extra = new Bloons(getX(), getY(), "white");
+      Bloons extra2 = new Bloons(getX()-3, getY()-3, "black");
       extra.setCounter(this.getCounter());
+      extra.setIFrame(7);
+      extra2.setCounter(this.getCounter());
+      extra2.setIFrame(7);
+      bloons.add(extra);
+      bloons.add(extra2);
+      return true;
+    }
+    if (hp == 6){
+      if (D.getDamage() >= 6) return true;
+      Bloons extra = new Bloons(getX()-3, getY()-3, "pink");
+      extra.setCounter(this.getCounter());
+      extra.setIFrame(7);
       bloons.add(extra);
       speed++;
     }
     if (hp == 4 || hp == 5) speed --;
-    this.hp--;
+    this.hp -= D.getDamage();
     money++;
     if (hp <= 0) return true;
     return false;
@@ -102,7 +123,9 @@ public class Bloons{
   }
   
   public PImage getType(){
-    if (hp == 6) return green;
+    if (hp == 7) return zebra;
+    if (hp == 6 && type == black) return black;
+    else if (hp == 6) return white;
     if (hp == 5) return pink;
     if (hp == 4) return yellow;
     if (hp == 3) return green;

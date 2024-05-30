@@ -42,4 +42,8 @@
   public int getPierce(){
     return pierce;
   }
+  
+  public int getDamage(){
+    return damage;
+  }
 }

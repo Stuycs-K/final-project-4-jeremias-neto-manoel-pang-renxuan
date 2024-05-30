@@ -33,6 +33,9 @@ PImage blue;
 PImage green;
 PImage yellow;
 PImage pink;
+PImage black;
+PImage white;
+PImage zebra;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -89,6 +92,12 @@ void setup(){
   yellow.resize(0,80);
   pink = loadImage("bloons/P.png");
   pink.resize(0,80);
+  black = loadImage("bloons/bb.png");
+  black.resize(0,95);
+  white = loadImage("bloons/wb.png");
+  white.resize(0,95);
+  zebra = loadImage("bloons/zb.png");
+  zebra.resize(0,90);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");
@@ -131,7 +140,6 @@ void setup(){
     }
   }
   placeGuiders(start[2], start[3]);
-  //System.out.println(guide);
 }
 
 void draw(){
@@ -235,7 +243,6 @@ void bloons(int x, int y){
         return;
       }
       started = false;
-      System.out.println(started);
     }
     else if (bloon.startsWith("max")){
       tickMax = Integer.parseInt(bloon.substring(4, bloon.length()));
