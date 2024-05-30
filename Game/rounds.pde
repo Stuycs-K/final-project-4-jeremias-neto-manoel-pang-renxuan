@@ -1,21 +1,22 @@
 public class rounds{
   private String[] info = new String[]{
     "max 20",
-    "red",
-    "red",
-    "blue",
-    "blue",
-    "green",
-    "green",
-    "done",
-    "max 200",
-    "yellow",
-    "yellow",
-    "pink",
-    "pink",
-    "done",
-    "red",
-    "red"
+    //"red",
+    //"red",
+    //"blue",
+    //"blue",
+    //"green",
+    //"green",
+    //"done",
+    //"max 200",
+    //"yellow",
+    //"yellow",
+    //"pink",
+    //"pink",
+    //"done",
+    //"red",
+    //"red"
+    "black"
   };
   private int counter = 0;
 

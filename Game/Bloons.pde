@@ -27,6 +27,10 @@ public class Bloons{
       row = y; col = x; this.hp = 5; this.speed = 5; isCamo = false;
       this.type = pink;
     }
+    else if (type.equals("black")){
+      row = y; col = x; this.hp = 6; this.speed = 3; isCamo = false;
+      this.type = green;
+    }
   }
   public Bloons(int x, int y, int hp, int speed, boolean camo){
     row = y; col = x; this.hp = hp; this.speed = speed; isCamo = camo;
@@ -80,6 +84,12 @@ public class Bloons{
   }
   
   public boolean pop(){
+    if (hp == 6){
+      Bloons extra = new Bloons(getX(), getY(), "pink");
+      extra.setCounter(this.getCounter());
+      bloons.add(extra);
+      speed++;
+    }
     if (hp == 4 || hp == 5) speed --;
     this.hp--;
     money++;
@@ -92,10 +102,19 @@ public class Bloons{
   }
   
   public PImage getType(){
+    if (hp == 6) return green;
     if (hp == 5) return pink;
     if (hp == 4) return yellow;
     if (hp == 3) return green;
     if (hp == 2) return blue;
     else return red;
+  }
+  
+  public void setIFrame(int n){
+    IFrame = n;
+  }
+  
+  public void setCounter(int n){
+    counter = n;
   }
 }
