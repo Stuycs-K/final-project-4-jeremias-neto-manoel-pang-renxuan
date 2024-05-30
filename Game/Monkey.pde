@@ -1,4 +1,6 @@
 abstract class Monkey{
+  
+  //monkey info (location, damage, color, angle, highlight)
   protected int posx, posy, dartCount;
   protected int fireRate, damage, speed, projType, size, range, pierce;
   protected int timeFired = 1000;
@@ -6,10 +8,22 @@ abstract class Monkey{
   protected color c; 
   protected float lastAngle = -PI/2;
   protected boolean highlight = false;
+  
+  //upgrade information
   protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
   protected String[][] upgradeNames = {{"","","",""},{"","","",""}};
+  int[][] upgradePierce = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeCamo = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeDamage = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeProjectile = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeAttacksSpd = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeRange = {{0,0,0,0},{0,0,0,0}};
+  
+  //upgrade progression
   private int upgrade1Prog = 0;
   private int upgrade2Prog = 0;
+  
+  //monkey information
   protected String name;
   PImage monkeyImage;
   
@@ -22,6 +36,7 @@ abstract class Monkey{
     }
     drawMonkey(posx, posy);
   }
+  
   public void displayUpgrades(){
     fill(150, 100, 50);
     rect(1515, 15, 270, 90);
