@@ -47,7 +47,17 @@ PImage iceMonki;
 
 //music
 SoundFile POP;
-SoundFile BGM;
+SoundFile BGM2s;
+SoundFile BGM1;
+SoundFile BGM2;
+SoundFile BGM3;
+SoundFile BGM4;
+SoundFile BGM5;
+SoundFile BGM6;
+SoundFile BGM7;
+SoundFile BGM8;
+int frameCounter = 0;
+int currSongCounter = 0;
 
 int[] start = new int[4];
 int sideBarMode = 1;
@@ -111,8 +121,15 @@ void setup(){
   
   //sound setup
   POP = new SoundFile(this, "MUSIC/POP.mp3");
-  BGM = new SoundFile(this, "MUSIC/YEAAA.mp3");
-  BGM.loop();
+  BGM2s = new SoundFile(this, "MUSIC/YEAAA.mp3");
+  BGM1 = new SoundFile(this, "/MUSIC/BTDBGM1.mp3");
+  BGM2 = new SoundFile(this, "/MUSIC/BTDBGM2.mp3");
+  BGM3 = new SoundFile(this, "/MUSIC/BTDBGM3.mp3");
+  BGM4 = new SoundFile(this, "/MUSIC/BTDBGM4.mp3");
+  BGM5 = new SoundFile(this, "/MUSIC/BTDBGM5.mp3");
+  BGM6 = new SoundFile(this, "/MUSIC/BTDBGM6.mp3");
+  BGM7 = new SoundFile(this, "/MUSIC/BTDBGM7.mp3");
+  BGM8 = new SoundFile(this, "/MUSIC/BTDBGM8.mp3");
   
   image(grass, 0, 0);
   road.resize(0,50);
@@ -135,6 +152,48 @@ void setup(){
 }
 
 void draw(){
+  if(frameCounter >= currSongCounter){
+    int songSel = (int)(Math.random()*8);
+    if (songSel == 0){
+      BGM1.play();
+      currSongCounter = BGM1.frames() + 20;
+    }
+    if (songSel == 1){
+      int easteregg = (int)(Math.random()*10);
+      BGM2.play();
+      currSongCounter = BGM2.frames() + 20;
+      if(easteregg == 1){
+        BGM2s.play();
+        currSongCounter = BGM2s.frames() + 20;
+      }
+    }
+    if (songSel == 2){
+      BGM3.play();
+      currSongCounter = BGM3.frames() + 20;
+    }
+    if (songSel == 3){
+      BGM4.play();
+      currSongCounter = BGM4.frames() + 20;
+    }
+    if (songSel == 4){
+      BGM5.play();
+      currSongCounter = BGM5.frames() + 20;
+    }
+    if (songSel == 5){
+      BGM6.play();
+      currSongCounter = BGM6.frames() + 20;
+    }
+    if (songSel == 6){
+      BGM7.play();
+      currSongCounter = BGM7.frames() + 20;
+    }
+    if (songSel == 7){
+      BGM8.play();
+      currSongCounter = BGM8.frames() + 20;
+    }
+    frameCounter = 0; 
+  }
+  frameCounter ++;
   if (tick == 0 && started)
   bloons(start[0], start[1]);
   background();
