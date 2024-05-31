@@ -12,7 +12,7 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 200;
+int money = 650;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
 rounds r = new rounds();
@@ -129,14 +129,14 @@ void setup(){
   //sound setup
   POP = new SoundFile(this, "MUSIC/POP.mp3");
   BGM2s = new SoundFile(this, "MUSIC/YEAAA.mp3");
-  BGM1 = new SoundFile(this, "/MUSIC/BTDBGM1.mp3");
-  BGM2 = new SoundFile(this, "/MUSIC/BTDBGM2.mp3");
-  BGM3 = new SoundFile(this, "/MUSIC/BTDBGM3.mp3");
-  BGM4 = new SoundFile(this, "/MUSIC/BTDBGM4.mp3");
-  BGM5 = new SoundFile(this, "/MUSIC/BTDBGM5.mp3");
-  BGM6 = new SoundFile(this, "/MUSIC/BTDBGM6.mp3");
-  BGM7 = new SoundFile(this, "/MUSIC/BTDBGM7.mp3");
-  BGM8 = new SoundFile(this, "/MUSIC/BTDBGM8.mp3");
+  BGM1 = new SoundFile(this, "MUSIC/BTDBGM1.mp3");
+  BGM2 = new SoundFile(this, "MUSIC/BTDBGM2.mp3");
+  BGM3 = new SoundFile(this, "MUSIC/BTDBGM3.mp3");
+  BGM4 = new SoundFile(this, "MUSIC/BTDBGM4.mp3");
+  BGM5 = new SoundFile(this, "MUSIC/BTDBGM5.mp3");
+  BGM6 = new SoundFile(this, "MUSIC/BTDBGM6.mp3");
+  BGM7 = new SoundFile(this, "MUSIC/BTDBGM7.mp3");
+  BGM8 = new SoundFile(this, "MUSIC/BTDBGM8.mp3");
   
   image(grass, 0, 0);
   road.resize(0,50);
@@ -158,6 +158,8 @@ void setup(){
 }
 
 void draw(){
+  
+  //song selection
   if(!(BGM1.isPlaying() || BGM2.isPlaying() ||BGM2s.isPlaying() ||BGM3.isPlaying() ||BGM4.isPlaying() ||BGM5.isPlaying() ||BGM6.isPlaying() ||BGM7.isPlaying() ||BGM8.isPlaying())){
     int songSel = (int)(Math.random()*8);
     if (songSel == 0){
@@ -191,7 +193,12 @@ void draw(){
   }
   if (tick == 0 && started)
   bloons(start[0], start[1]);
+  
+  
   background();
+  
+  
+  //bloon spawing
   if (started){
   tick ++;
   for (int i = 0; i < bloons.size(); i ++){
@@ -210,6 +217,8 @@ void draw(){
     }
   }
   }
+  
+  //monkey spawning
   for (Monkey m : monkeyList){
     m.update();
     if (m.getMode()){
@@ -232,9 +241,9 @@ void draw(){
      Dart dart = (Dart)DartList.get(i);
      dart.update();
   }
-  fill(0);
-  textSize(11);
-  text(frameRate,20,20);
+  fill(255);
+  textSize(18);
+  text(frameRate,30,20);
   textSize(18);
   tick = tick % tickMax;
 }

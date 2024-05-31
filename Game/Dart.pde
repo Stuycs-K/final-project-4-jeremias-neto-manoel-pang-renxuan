@@ -6,7 +6,7 @@
   int pierce;
   int size;
   
-  //1 is dart, 2 is spiked ball, 3, is juggball, 4 is triple darts, 5 is boomerang, 6 is glaive, 
+  // 
   
   public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_){
     position.set(launchx, launchy);

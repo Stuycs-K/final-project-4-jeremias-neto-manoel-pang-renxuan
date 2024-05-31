@@ -7,6 +7,7 @@ public class IceMonkey extends Monkey{
     size = 40;
     range = 150;
     pierce = 1;
+    canCamo = false;
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{0, 0, 0, 0}, {0, 0, 0, 0}};
     upgradeCosts = UpgradeCosts;
