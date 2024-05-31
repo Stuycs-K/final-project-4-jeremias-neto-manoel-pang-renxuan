@@ -8,7 +8,7 @@ public class rounds{
     "green",
     "green",
     "done",
-    "max 50",
+    "max 200",
     "yellow",
     "yellow",
     "pink",

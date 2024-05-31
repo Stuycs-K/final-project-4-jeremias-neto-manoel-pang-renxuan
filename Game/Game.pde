@@ -56,8 +56,6 @@ SoundFile BGM5;
 SoundFile BGM6;
 SoundFile BGM7;
 SoundFile BGM8;
-int frameCounter = 0;
-int currSongCounter = 0;
 
 int[] start = new int[4];
 int sideBarMode = 1;
@@ -152,48 +150,37 @@ void setup(){
 }
 
 void draw(){
-  if(frameCounter >= currSongCounter){
+  if(!(BGM1.isPlaying() || BGM2.isPlaying() ||BGM2s.isPlaying() ||BGM3.isPlaying() ||BGM4.isPlaying() ||BGM5.isPlaying() ||BGM6.isPlaying() ||BGM7.isPlaying() ||BGM8.isPlaying())){
     int songSel = (int)(Math.random()*8);
     if (songSel == 0){
       BGM1.play();
-      currSongCounter = BGM1.frames() + 20;
     }
     if (songSel == 1){
       int easteregg = (int)(Math.random()*10);
       BGM2.play();
-      currSongCounter = BGM2.frames() + 20;
       if(easteregg == 1){
         BGM2s.play();
-        currSongCounter = BGM2s.frames() + 20;
       }
     }
     if (songSel == 2){
       BGM3.play();
-      currSongCounter = BGM3.frames() + 20;
     }
     if (songSel == 3){
       BGM4.play();
-      currSongCounter = BGM4.frames() + 20;
     }
     if (songSel == 4){
       BGM5.play();
-      currSongCounter = BGM5.frames() + 20;
     }
     if (songSel == 5){
       BGM6.play();
-      currSongCounter = BGM6.frames() + 20;
     }
     if (songSel == 6){
       BGM7.play();
-      currSongCounter = BGM7.frames() + 20;
     }
     if (songSel == 7){
       BGM8.play();
-      currSongCounter = BGM8.frames() + 20;
     }
-    frameCounter = 0; 
   }
-  frameCounter ++;
   if (tick == 0 && started)
   bloons(start[0], start[1]);
   background();
