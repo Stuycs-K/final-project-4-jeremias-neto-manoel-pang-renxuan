@@ -8,6 +8,7 @@ abstract class Monkey{
   protected color c; 
   protected float lastAngle = -PI/2;
   protected boolean highlight = false;
+  private boolean upgradeMode = false;
   
   //upgrade information
   protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
@@ -20,7 +21,7 @@ abstract class Monkey{
   int[][] upgradeRange = {{0,0,0,0},{0,0,0,0}};
   
   //upgrade progression
-  private int upgrade1Prog = 0;
+  private int upgrade1Prog = 2;
   private int upgrade2Prog = 0;
   
   //monkey information
@@ -38,6 +39,8 @@ abstract class Monkey{
   }
   
   public void displayUpgrades(){
+    
+    //menu stuff
     fill(150, 100, 50);
     rect(1515, 15, 270, 90);
     rectMode(CENTER);
@@ -49,9 +52,65 @@ abstract class Monkey{
     rect(1515, 130, 270, 350);
     fill(150, 100, 50);
     rect(1515, 495, 270, 90);
-    rect(1515, 600, 270, 90);
+    rect(1515, 650, 270, 90);
     fill(255,0,0);
     rect(1515, 895, 270, 90);
+    fill(255);
+    //text for upgrade
+    
+    text(upgradeNames[0][upgrade1Prog], 1650, 540);
+    fill(255,255,0);
+    text(""+upgradeCosts[0][upgrade1Prog], 1650, 570);
+    fill(255);
+    text(upgradeNames[1][upgrade2Prog], 1650, 540+150);
+    fill(255,255,0);
+    text(""+upgradeCosts[1][upgrade2Prog], 1650, 570+150);
+    //upgrade progression circles
+    
+    ellipseMode(CENTER);
+    fill(0);
+    if(upgrade1Prog >=2){
+      fill(255);
+    }
+    circle(1625, 540+60, 10);
+    fill(0);
+    if(upgrade1Prog >=3){
+      fill(255);
+    }
+    circle(1675, 540+60, 10);
+    fill(0);
+    if(upgrade1Prog >=1){
+      fill(255);
+    }
+    circle(1575, 540+60, 10);
+    fill(0);
+    if(upgrade1Prog >=4){
+      fill(255);
+    }
+    circle(1725, 540+60, 10);
+    
+    //second//////////////////////////////////////////////
+    
+    fill(0);
+    if(upgrade2Prog >=2){
+      fill(255);
+    }
+    circle(1625, 570+40+150, 10);
+    fill(0);
+    if(upgrade2Prog >=3){
+      fill(255);
+    }
+    circle(1675, 570+40+150, 10);
+    fill(0);
+    if(upgrade2Prog >=1){
+      fill(255);
+    }
+    circle(1575, 570+40+150, 10);
+    fill(0);
+    if(upgrade2Prog >=4){
+      fill(255);
+    }
+    circle(1725, 570+40+150, 10);
   }
   public boolean placing(){
     highlight = true;
@@ -149,5 +208,11 @@ abstract class Monkey{
   }
   public ArrayList<Dart> getDartList(){
     return DartList;
+  }
+  public int getProg1(){
+    return upgrade1Prog;
+  }
+  public int getProg2(){
+    return upgrade2Prog;
   }
 }
