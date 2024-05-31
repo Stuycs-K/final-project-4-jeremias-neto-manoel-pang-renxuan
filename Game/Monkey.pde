@@ -21,7 +21,7 @@ abstract class Monkey{
   int[][] upgradeRange = {{0,0,0,0},{0,0,0,0}};
   
   //upgrade progression
-  private int upgrade1Prog = 2;
+  private int upgrade1Prog = 0;
   private int upgrade2Prog = 0;
   
   //monkey information
@@ -59,11 +59,8 @@ abstract class Monkey{
     //text for upgrade
     
     text(upgradeNames[0][upgrade1Prog], 1650, 540);
-    fill(255,255,0);
     text(""+upgradeCosts[0][upgrade1Prog], 1650, 570);
-    fill(255);
     text(upgradeNames[1][upgrade2Prog], 1650, 540+150);
-    fill(255,255,0);
     text(""+upgradeCosts[1][upgrade2Prog], 1650, 570+150);
     //upgrade progression circles
     
@@ -134,7 +131,6 @@ abstract class Monkey{
         }
       }
     }
-    text(shortestDist, 20,20);
     return ((shortestDist > size/1.6 + 25 && mousePressed));
   }
   
@@ -214,5 +210,14 @@ abstract class Monkey{
   }
   public int getProg2(){
     return upgrade2Prog;
+  }
+  public void upgrade2(){
+    upgradeMode = false;
+  }
+  public void upgrade1(){
+    upgradeMode = true;
+  }
+  public boolean getUpgradeMode(){
+    return upgradeMode;
   }
 }

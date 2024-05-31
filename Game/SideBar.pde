@@ -40,11 +40,15 @@ public class SideBar{
         nextPG();
     }
     
-    if (isShop == 2){
+    else if (isShop == 2){
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
         started = true;
       if (mouseX > 1700 - 180 && mouseX < 1700 + 75 - 180 && mouseY > 780 && mouseY < 875)
         prevPG();
+    }
+    else{
+      if(upgradeMonkey.getMode() == true){
+        if (
     }
   }
   public void update(){
