@@ -96,11 +96,21 @@ public class SideBar{
         text("Dart Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
-    fill(133, 228, 255);
-    rect(1515, 120, 125, 150);
     dartMonki.resize(0,130);
+    if (money < 200){
+      dartMonki.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      fill(133, 228, 255);
+    }
+    rect(1515, 120, 125, 150);
     image(dartMonki, 1535, 130);
+    fill(255);
+    rect(1550, 238, 60, 30);
+    fill(0);
+    textSize(25);
+    text("$" + 200, 1580, 265);
   }
   
   private void DisplayTackShooter(){

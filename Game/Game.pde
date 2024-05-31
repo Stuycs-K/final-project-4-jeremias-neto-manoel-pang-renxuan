@@ -12,7 +12,8 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 200;
+int money = 650;
+int rounds = 1;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
 rounds r = new rounds();
@@ -129,14 +130,14 @@ void setup(){
   //sound setup
   POP = new SoundFile(this, "MUSIC/POP.mp3");
   BGM2s = new SoundFile(this, "MUSIC/YEAAA.mp3");
-  BGM1 = new SoundFile(this, "/MUSIC/BTDBGM1.mp3");
-  BGM2 = new SoundFile(this, "/MUSIC/BTDBGM2.mp3");
-  BGM3 = new SoundFile(this, "/MUSIC/BTDBGM3.mp3");
-  BGM4 = new SoundFile(this, "/MUSIC/BTDBGM4.mp3");
-  BGM5 = new SoundFile(this, "/MUSIC/BTDBGM5.mp3");
-  BGM6 = new SoundFile(this, "/MUSIC/BTDBGM6.mp3");
-  BGM7 = new SoundFile(this, "/MUSIC/BTDBGM7.mp3");
-  BGM8 = new SoundFile(this, "/MUSIC/BTDBGM8.mp3");
+  BGM1 = new SoundFile(this, "MUSIC/BTDBGM1.mp3");
+  BGM2 = new SoundFile(this, "MUSIC/BTDBGM2.mp3");
+  BGM3 = new SoundFile(this, "MUSIC/BTDBGM3.mp3");
+  BGM4 = new SoundFile(this, "MUSIC/BTDBGM4.mp3");
+  BGM5 = new SoundFile(this, "MUSIC/BTDBGM5.mp3");
+  BGM6 = new SoundFile(this, "MUSIC/BTDBGM6.mp3");
+  BGM7 = new SoundFile(this, "MUSIC/BTDBGM7.mp3");
+  BGM8 = new SoundFile(this, "MUSIC/BTDBGM8.mp3");
   
   image(grass, 0, 0);
   road.resize(0,50);
@@ -251,6 +252,7 @@ void background(){
   fill(255);
   text(life, 95, 55);
   text(" $ " + money, 250, 55);
+  text("Round " + rounds, 1350, 55);
 }
 
 void mouseClicked(){
