@@ -47,8 +47,12 @@ public class SideBar{
         prevPG();
     }
     else{
-      if(upgradeMonkey.getMode() == true){
-        if (
+      if (mouseX > 1515 && mouseX < 1515 + 270 && mouseY > 495 && mouseY < 495 + 90 && upgradeMonkey.canUpgrade1()){
+        upgradeMonkey.upgrade1();
+      }
+      if (mouseX > 1515 && mouseX < 1515 + 270 && mouseY > 650 && mouseY < 650 + 90 && upgradeMonkey.canUpgrade2()){
+        upgradeMonkey.upgrade2();
+      }
     }
   }
   public void update(){

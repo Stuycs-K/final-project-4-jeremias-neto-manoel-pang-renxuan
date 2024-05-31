@@ -9,6 +9,7 @@ public class DartMonkey extends Monkey{
     size = 40;
     range = 150;
     pierce = 1;
+    canCamo = false;
     
     //color (not used anymore)
     c = color(163, 71, 0);
@@ -22,6 +23,7 @@ public class DartMonkey extends Monkey{
     int[][] UpgradeProjectile= {{1,1,2,3},{1,1,1,1}};
     int[][] UpgradeAttacksSpd = {{0,0,-3, -2},{0,0,0,10}};
     int[][] UpgradeRange ={{25,25, 0, 25},{0,0,0,0}};
+    int[][] UpgradeProjSpeed = {{0,0,-2,-1},{0,0,0,0}};
     upgradeCosts = UpgradeCosts;
     upgradeNames = UpgradeNames;
     upgradePierce = UpgradePierce;
@@ -30,6 +32,7 @@ public class DartMonkey extends Monkey{
     upgradeProjectile = UpgradeProjectile;
     upgradeAttacksSpd = UpgradeAttacksSpd;
     upgradeRange = UpgradeRange;
+    upgradeProjSpeed = UpgradeProjSpeed;
     
     //monkey name
     name = "Dart Monkey";

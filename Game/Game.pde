@@ -12,7 +12,7 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 200;
+int money = 650;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
 rounds r = new rounds();
@@ -196,6 +196,7 @@ void draw(){
   
   
   background();
+  
   
   //bloon spawing
   if (started){
