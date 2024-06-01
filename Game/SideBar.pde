@@ -25,17 +25,22 @@ public class SideBar{
   
   public void onClick(){
     if(isShop == 1){
-      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270){
+      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270 && money >= 200){
         placingMonkey = new DartMonkey();
+        money -= 200;
       }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270){
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270 && money >= 260){
         placingMonkey = new TackShooter();
+        money -= 260;
       }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150 && money >= 500){
         placingMonkey = new IceMonkey();
+        money -= 500;
       }
-      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
+      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){
         started = true;
+        rounds++;
+      }
       if (mouseX > 1700 && mouseX < 1700 + 75 && mouseY > 780 && mouseY < 875)
         nextPG();
     }
@@ -43,6 +48,8 @@ public class SideBar{
     else if (isShop == 2){
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
         started = true;
+        rounds++;
+      }
       if (mouseX > 1700 - 180 && mouseX < 1700 + 75 - 180 && mouseY > 780 && mouseY < 875)
         prevPG();
     }
@@ -104,11 +111,21 @@ public class SideBar{
         text("Dart Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
-    fill(133, 228, 255);
+    dartMonki.resize(0,120);
+    PImage temp = dartMonki.copy();
+    if (money < 200){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = dartMonki;
+      fill(133, 228, 255);
+    }
     rect(1515, 120, 125, 150);
-    dartMonki.resize(0,130);
-    image(dartMonki, 1535, 130);
+    image(temp, 1540, 125);
+    fill(255);
+    textSize(25);
+    text("$" + 200, 1580-3, 265);
   }
   
   private void DisplayTackShooter(){
@@ -119,11 +136,21 @@ public class SideBar{
         text("Tack Shooter", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
-    fill(133, 228, 255);
+    tackShooti.resize(0,110);
+    PImage temp = tackShooti.copy();
+    if (money < 260){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = tackShooti;
+      fill(133, 228, 255);
+    }
     rect(1665, 120, 125, 150);
-    tackShooti.resize(0,125);
-    image(tackShooti, 1520+150, 130);
+    image(temp, 1520+155, 135);
+    fill(255);
+    textSize(25);
+    text("$" + 260, 1580+150-3, 265);
   }
   
   private void DisplayBombShooter(){
@@ -134,11 +161,21 @@ public class SideBar{
         text("Bomb Shooter", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
-    fill(133, 228, 255);
+    bombShooti.resize(0,90);
+    PImage temp = bombShooti.copy();
+    if (money < 525){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = bombShooti;
+      fill(133, 228, 255);
+    }
     rect(1515, 285, 125, 150);
-    bombShooti.resize(0,100);
-    image(bombShooti, 1520, 310);
+    image(temp, 1525, 320);
+    fill(255);
+    textSize(25);
+    text("$" + 525, 1580-3, 265+165);
   }
   
   private void DisplayIceMonkey(){
@@ -149,11 +186,21 @@ public class SideBar{
         text("Ice Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
-    fill(133, 228, 255);
-    rect(1665, 285, 125, 150);
-    iceMonki.resize(0,130);
-    image(iceMonki, 1520+150, 295);
+    iceMonki.resize(0,110);
+    PImage temp = iceMonki.copy();
+    if (money < 500){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = iceMonki;
+      fill(133, 228, 255);
+    }
+    rect(1515+150, 285, 125, 150);
+    image(temp, 1525+155, 300);
+    fill(255);
+    textSize(25);
+    text("$" + 500, 1580-3+150, 265+165);
   }
   
   private void DisplayTowerFive(){
@@ -164,7 +211,6 @@ public class SideBar{
         text("Tower Five", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 450, 125, 150);
   }
@@ -177,7 +223,6 @@ public class SideBar{
         text("Tower Six", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 450, 125, 150);
   }
@@ -190,7 +235,6 @@ public class SideBar{
         text("Tower Seven", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 450+165, 125, 150);
   }
@@ -203,7 +247,6 @@ public class SideBar{
         text("Tower Eight", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 615, 125, 150);
   }
@@ -218,7 +261,6 @@ public class SideBar{
         text("Tower Nine", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 120, 125, 150);
   }
@@ -231,7 +273,6 @@ public class SideBar{
         text("Tower Ten", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 120, 125, 150);
   }
@@ -244,7 +285,6 @@ public class SideBar{
         text("Tower Eleven", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 285, 125, 150);
   }
@@ -257,7 +297,6 @@ public class SideBar{
         text("Tower Twelve", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 285, 125, 150);
   }
@@ -270,7 +309,6 @@ public class SideBar{
         text("Tower Thirteen", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 450, 125, 150);
   }
@@ -283,7 +321,6 @@ public class SideBar{
         text("Tower Fourteen", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 450, 125, 150);
   }
@@ -296,7 +333,6 @@ public class SideBar{
         text("Tower Fifteen", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1515, 450+165, 125, 150);
   }
@@ -309,7 +345,6 @@ public class SideBar{
         text("Tower Sixteen", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(203, 145, 79);
     fill(133, 228, 255);
     rect(1665, 615, 125, 150);
   }

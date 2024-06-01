@@ -40,6 +40,7 @@ public class rounds{
     "max 10",
     "blue", "blue", "blue", "blue", "blue","blue", "blue", "blue", "blue", "blue","blue", "blue", "blue", "blue", "blue","blue", "blue", "blue", "blue", "blue", 
     "blue", "blue", "done"
+
   };
   private int counter = 0;
 

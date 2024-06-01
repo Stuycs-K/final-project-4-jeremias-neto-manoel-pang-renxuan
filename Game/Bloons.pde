@@ -106,6 +106,7 @@ public class Bloons{
     if (hp == 6){
       if (D.getDamage() >= 6) return true;
       Bloons extra = new Bloons(getX()-3, getY()-3, "pink");
+      extra.takeDMG(D.getDamage()-1);
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
       bloons.add(extra);
@@ -120,6 +121,10 @@ public class Bloons{
   
   public int getCounter(){
     return counter;
+  }
+  
+  public void takeDMG(int n){
+    this.hp-=n;
   }
   
   public PImage getType(){
