@@ -13,7 +13,7 @@ int life = 5;
 int tick = 1;
 int tickMax = 200;
 int money = 650;
-int rounds = 1;
+int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
 rounds r = new rounds();
@@ -252,7 +252,7 @@ void background(){
   fill(255);
   text(life, 95, 55);
   text(" $ " + money, 250, 55);
-  text("Round " + rounds, 1350, 55);
+  if (rounds >= 1) text("Round " + rounds, 1350, 55);
 }
 
 void mouseClicked(){
