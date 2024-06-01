@@ -62,3 +62,7 @@ added a page flip system for sidebar, added a few more rows to the sidebar, fixe
 ### date 5/30/24
 
 added rounds up to round 10, got zebra bloons working, got a model for adding bloons of higher hierachy. Tomorrow likely will add up to round 20-ish
+
+### date 5/31/24
+
+added money interactions for the placable monkeys in the side bar, added a round counter, added a grayscale system for when a monkey is unpurchaseable. will work on future rounds over weekend likely. 
