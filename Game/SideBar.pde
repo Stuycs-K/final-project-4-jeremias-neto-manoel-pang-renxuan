@@ -46,7 +46,7 @@ public class SideBar{
     }
     
     else if (isShop == 2){
-      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950)
+      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){
         started = true;
         rounds++;
       }

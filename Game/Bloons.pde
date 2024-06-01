@@ -82,6 +82,7 @@ public class Bloons{
     for (Dart d : DartList){
       if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
         POP.play();
+        d.pierced();
         image(pop, getX()-35, getY()-45);
         IFrame = 10;
         D = d;

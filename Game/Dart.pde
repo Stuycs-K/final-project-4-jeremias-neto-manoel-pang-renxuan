@@ -5,10 +5,10 @@
   int projType;
   int pierce;
   int size;
-  
+  int lifetime;
   // 
   
-  public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_){
+  public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_){
     position.set(launchx, launchy);
     launch.set(posx, posy);
     launch.normalize();
@@ -16,11 +16,14 @@
     damage = damage_;
     projType = projType_;
     pierce = pierce_;
+    lifetime = lifetime_;
+    size = projSize_;
   }
     public boolean update(){
-      //if (position.x > width || position.x < 0 || position.y > height || position.y < 0){
-      //  return true;
-      //}
+      lifetime --;
+      if (position.x > width || position.x < 0 || position.y > height || position.y < 0|| pierce <= 0 || lifetime <= 0){
+        return true;
+      }
       fill(0);
       circle(position.x, position.y, 10);
       position.add(launch);
@@ -45,5 +48,8 @@
   
   public int getDamage(){
     return damage;
+  }
+  public int getSize(){
+    return size;
   }
 }

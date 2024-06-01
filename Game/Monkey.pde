@@ -10,10 +10,12 @@ abstract class Monkey{
   protected boolean highlight = false;
   private boolean upgradeMode = false;
   protected boolean canCamo;
+  protected int lifetime;
+  protected int projSize;
   
   //upgrade information
   protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
-  protected String[][] upgradeNames = {{"","","",""},{"","","",""}};
+  protected String[][] upgradeNames = {{"","","","",""},{"","","","",""}};
   int[][] upgradePierce = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeCamo = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeDamage = {{0,0,0,0},{0,0,0,0}};
@@ -21,6 +23,7 @@ abstract class Monkey{
   int[][] upgradeAttacksSpd = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeRange = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeProjSpeed = {{0,0,0,0},{0,0,0,0}};
+  int[][] upgradeProjSize = {{0,0,0,0},{0,0,0,0}};
   
   //upgrade stuff
   
@@ -32,6 +35,7 @@ abstract class Monkey{
     projType = upgradeProjectile[0][upgrade1Prog];
     range += upgradeRange[0][upgrade1Prog];
     pierce += upgradePierce[0][upgrade1Prog];
+    projSize += upgradeProjSize[0][upgrade1Prog];
     money -=upgradeCosts[0][upgrade1Prog];
     upgrade1Prog ++;
   }
@@ -44,20 +48,21 @@ abstract class Monkey{
     projType = upgradeProjectile[1][upgrade2Prog];
     range += upgradeRange[1][upgrade2Prog];
     pierce += upgradePierce[1][upgrade2Prog];
+    projSize += upgradeProjSize[1][upgrade2Prog];
     money -=upgradeCosts[1][upgrade2Prog];
     upgrade2Prog ++;
   }
 
   
   public boolean canUpgrade1(){
-    if (upgrade2Prog >= 3)return false;
+    if (upgrade2Prog >= 3&&upgrade2Prog == 2)return false;
     if (upgrade1Prog == 4)return false;
     if (upgradeCosts[0][upgrade1Prog] > money)return false;
     return true;
   }
 
   public boolean canUpgrade2(){
-    if (upgrade1Prog >= 3)return false;
+    if (upgrade1Prog >= 3&&upgrade1Prog == 2)return false;
     if (upgrade2Prog == 4)return false;
     if (upgradeCosts[1][upgrade2Prog] > money)return false;
     return true;
@@ -102,9 +107,13 @@ abstract class Monkey{
     //text for upgrade
     
     text(upgradeNames[0][upgrade1Prog], 1650, 540);
-    text(""+upgradeCosts[0][upgrade1Prog], 1650, 570);
+    if(upgrade1Prog != 4){
+      text(""+upgradeCosts[0][upgrade1Prog], 1650, 570);
+    }
     text(upgradeNames[1][upgrade2Prog], 1650, 540+150);
-    text(""+upgradeCosts[1][upgrade2Prog], 1650, 570+150);
+    if(upgrade2Prog != 4){
+      text(""+upgradeCosts[1][upgrade2Prog], 1650, 570+150);
+    }
     //upgrade progression circles
     
     ellipseMode(CENTER);
@@ -191,7 +200,7 @@ abstract class Monkey{
       int bloonx = b.getX() - posx;
       int bloony = b.getY() - posy;
       timeFired = 0;
-      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce));
+      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
       dartCount ++;
       return atan2(bloony, bloonx);
     }

@@ -11,10 +11,11 @@ public class TackShooter extends Monkey{
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{0, 0, 0, 0}, {0, 0, 0, 0}};
     upgradeCosts = UpgradeCosts;
-    String[][] UpgradeNames = {{"temp", "temp", "temp", "temp"},{"temp", "temp", "temp", "temp"}};
+    String[][] UpgradeNames = {{"temp", "temp", "temp", "temp", "Max Upgrades"},{"temp", "temp", "temp", "temp", "Max Upgrades"}};
     upgradeNames = UpgradeNames;
     name = "Tack Shooter";
     monkeyImage = shootiTack;
+    lifetime = 19;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

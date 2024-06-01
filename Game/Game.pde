@@ -12,7 +12,7 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 650;
+int money = 3000;
 int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
@@ -198,6 +198,15 @@ void draw(){
   
   background();
   
+  //dart updating
+  for (int i = 0; i < DartList.size(); i ++){
+     Dart dart = (Dart)DartList.get(i);
+     if(dart.update()){
+       DartList.remove(dart);
+       i--;
+     }
+  }
+  
   
   //bloon spawing
   if (started){
@@ -227,6 +236,8 @@ void draw(){
       upgradeMonkey = m;
     }
   }
+  
+  //sidebar updates
   sidebar.update();
   if (placingMonkey != null){
     boolean canPlace = placingMonkey.placing();
@@ -238,10 +249,8 @@ void draw(){
       placingMonkey = null;
     }
   }
-  for (int i = 0; i < DartList.size(); i ++){
-     Dart dart = (Dart)DartList.get(i);
-     dart.update();
-  }
+  
+  //fps counter
   fill(255);
   textSize(18);
   text(frameRate,30,20);

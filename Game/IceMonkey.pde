@@ -11,10 +11,11 @@ public class IceMonkey extends Monkey{
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{0, 0, 0, 0}, {0, 0, 0, 0}};
     upgradeCosts = UpgradeCosts;
-    String[][] UpgradeNames = {{"", "", "", ""},{"", "", "", ""}};
+    String[][] UpgradeNames = {{"", "", "", "", "Max Upgrades"},{"", "", "", "", "Max Upgrades"}};
     upgradeNames = UpgradeNames;
     name = "Ice Monkey";
     monkeyImage = monkiIce;
+    lifetime = 1;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){
