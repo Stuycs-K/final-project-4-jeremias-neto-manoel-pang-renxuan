@@ -28,6 +28,26 @@ ripping monkey assets from images of the main path upgrades from btd5 i found on
 
 continued ripping more assets from btd5 so that i have all the files ready to do a revamp on towers and damage
 
+### date 5/28/24
+
+small bugfixes on sidebar and monkey operation
+
+### date 5/29/24
+
+preparing for upgrade menu by adding upgrades to the dart monkey for testing, as well as some upgrade menu visual additions
+
+### date 5/30/24
+
+costs for each upgrade are now displayed, other small upgrade changes. the 8 main btd6 songs have been added, with a song randomizer
+
+### date 5/31/24
+
+upgrade menu added (testing tommorow) as wells as bgm bugfixes
+
+### date 6/1/24
+
+testing found some issues with upgrades, fixed those, continuing to add to my growing collection of sprites for later tower additions.
+
 
 ## GROUP MEMBER 2 Renxuan Pang
 
