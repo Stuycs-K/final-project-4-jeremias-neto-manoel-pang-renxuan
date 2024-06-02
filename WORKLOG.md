@@ -66,3 +66,7 @@ added rounds up to round 10, got zebra bloons working, got a model for adding bl
 ### date 5/31/24
 
 added money interactions for the placable monkeys in the side bar, added a round counter, added a grayscale system for when a monkey is unpurchaseable. will work on future rounds over weekend likely. 
+
+### date 6/1/24
+
+graphics update for road and hearts, added rounds up to round 20 and playtested, need fixes on dart lifetime for dart monkey, and need to fix a few things with upgrading correctly. 
