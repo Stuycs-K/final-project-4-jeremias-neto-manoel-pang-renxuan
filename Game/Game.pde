@@ -310,6 +310,7 @@ void bloons(int x, int y){
         tick = 1;
         return;
       }
+      money += rounds + 100;
       started = false;
     }
     else if (bloon.startsWith("max")){
