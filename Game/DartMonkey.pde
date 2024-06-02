@@ -10,7 +10,7 @@ public class DartMonkey extends Monkey{
     range = 150;
     pierce = 2;
     canCamo = false;
-    lifetime = 1000;
+    lifetime = 25;
     projSize = 5;
     
     //color (not used anymore)
