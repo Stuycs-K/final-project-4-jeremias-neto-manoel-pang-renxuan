@@ -12,7 +12,7 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 3000;
+int money = 650;
 int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
@@ -73,10 +73,10 @@ void setup(){
   
   //map elements
   grass = loadImage("mapElements/grass.jpeg");
-  road = loadImage("mapElements/road.jpg");
+  road = loadImage("mapElements/road.jpeg");
   startButton = loadImage("mapElements/startButton.png");
   heart = loadImage("mapElements/heart.png");
-  heart.resize(0,40);
+  heart.resize(0,300);
   coins = loadImage("mapElements/coins.png");
   coins.resize(0,70);
   grass.resize(0,1080);
@@ -264,12 +264,14 @@ void background(){
   image(road, x[1]*50, x[0]*50);
   fill(203, 145, 79);
   rect(1500,0,300,1000);
-  image(heart, 20, 20);
-  image(coins, 145, 5);
+  imageMode(CENTER);
+  image(heart, 85, 38);
+  imageMode(CORNERS);
+  image(coins, 130, 5);
   textSize(40);
   fill(255);
   text(life, 95, 55);
-  text(" $ " + money, 250, 55);
+  text("$" + money, 250, 55);
   if (rounds >= 1) text("Round " + rounds, 1350, 55);
 }
 

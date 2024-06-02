@@ -8,6 +8,9 @@ public class TackShooter extends Monkey{
     range = 80;
     pierce = 1;
     canCamo = false;
+    lifetime = 10;
+    projSize = 5;
+    
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{0, 0, 0, 0}, {0, 0, 0, 0}};
     upgradeCosts = UpgradeCosts;
@@ -15,19 +18,18 @@ public class TackShooter extends Monkey{
     upgradeNames = UpgradeNames;
     name = "Tack Shooter";
     monkeyImage = shootiTack;
-    lifetime = 19;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){
       timeFired = 0;
-      DartList.add(new Dart(1, 0, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(1, 1, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(0, 1, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(-1, 1, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(-1, 0, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(-1, -1, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(0, -1, posx, posy, speed, damage, projType, pierce));
-      DartList.add(new Dart(1, -1, posx, posy, speed, damage, projType, pierce));
+      DartList.add(new Dart(1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(0, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(-1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(-1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(-1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(0, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
+      DartList.add(new Dart(1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
       dartCount += 8;
       return -PI/2;
     }
