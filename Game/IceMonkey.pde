@@ -8,6 +8,8 @@ public class IceMonkey extends Monkey{
     range = 150;
     pierce = 1;
     canCamo = false;
+    lifetime = 500;
+    projSize = 5;
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{0, 0, 0, 0}, {0, 0, 0, 0}};
     upgradeCosts = UpgradeCosts;
@@ -22,7 +24,7 @@ public class IceMonkey extends Monkey{
       int bloonx = b.getX() - posx;
       int bloony = b.getY() - posy;
       timeFired = 0;
-      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce));
+      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce,lifetime, projSize));
       dartCount ++;
       return atan2(bloony, bloonx)- PI;
     }
