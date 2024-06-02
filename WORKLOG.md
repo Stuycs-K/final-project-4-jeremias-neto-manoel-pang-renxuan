@@ -90,3 +90,7 @@ added money interactions for the placable monkeys in the side bar, added a round
 ### date 6/1/24
 
 graphics update for road and hearts, added rounds up to round 20 and playtested, need fixes on dart lifetime for dart monkey, and need to fix a few things with upgrading correctly. 
+
+### date 6/2/24
+
+mainly stuff changed to demo for ease of demonstration, also fixed some things with dart lifetime.
