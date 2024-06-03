@@ -93,29 +93,34 @@ public class Bloons{
   }
   
   public boolean pop(){
+    int dmg = D.getDamage();
+    if (dmg >= getHP()) {money += getHP(); return true;}
     if (type == zebra){
       Bloons extra = new Bloons(getX(), getY(), "white");
       Bloons extra2 = new Bloons(getX()-3, getY()-3, "black");
+      extra.takeDMG(dmg-1);
+      extra2.takeDMG(dmg-1);
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
       extra2.setCounter(this.getCounter());
       extra2.setIFrame(7);
+      extra.setSpeed();
+      extra2.setSpeed();
       bloons.add(extra);
       bloons.add(extra2);
       return true;
     }
     if (hp == 6){
-      if (D.getDamage() >= 6) return true;
       Bloons extra = new Bloons(getX()-3, getY()-3, "pink");
-      extra.takeDMG(D.getDamage()-1);
+      extra.takeDMG(dmg-1);
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
+      extra.setSpeed();
       bloons.add(extra);
-      speed++;
     }
-    if (hp == 4 || hp == 5) speed --;
-    this.hp -= D.getDamage();
-    money++;
+    this.hp -= dmg;
+    this.setSpeed();
+    money += dmg;
     if (hp <= 0) return true;
     return false;
   }
@@ -137,6 +142,16 @@ public class Bloons{
     if (hp == 3) return green;
     if (hp == 2) return blue;
     else return red;
+  }
+  
+  public void setSpeed(){
+    if (this.getHP() == 5) speed = 5;
+    else if (this.getHP() == 4) speed = 4;
+    else speed = 3;
+  }
+  
+  public void setSpeed(int n){
+    speed = n;
   }
   
   public void setIFrame(int n){
