@@ -98,7 +98,39 @@ public class rounds{
     "yellow", "yellow","yellow", "yellow",  "yellow", "yellow","yellow", "yellow","yellow", "yellow", "yellow","yellow", "yellow","yellow",
     "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink","pink", "pink", "pink", "pink", "pink", "done",
     
-    "black", "black", "black", "black", "black", "black", "done"
+    "black", "black", "black", "black", "black", "black", "done",
+    
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "max 25",
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "done",
+    
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "done",
+    
+    "black", "black", "black", "black", "black", "black", "black", 
+    "white", "white", "white", "white", "white", "white", "white", "done",
+    
+    "max 100",
+    "green", "max 20",
+    "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", 
+    "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "done",
+    
+    "max 30",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    // these are purples temp.
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "done",
+    
+    // round 26
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "zebra", "zebra", "zebra", "zebra", "done"
   };
   private int counter = 0;
 
