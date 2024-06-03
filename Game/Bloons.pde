@@ -111,7 +111,8 @@ public class Bloons{
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
       bloons.add(extra);
-      speed++;
+      if (hp == 5) speed = 4;
+      if (hp == 4) speed = 3;
     }
     if (hp == 4 || hp == 5) speed --;
     this.hp -= D.getDamage();
