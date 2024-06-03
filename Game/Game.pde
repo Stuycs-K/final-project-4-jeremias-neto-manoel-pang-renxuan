@@ -12,7 +12,7 @@ boolean started = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 2000;
+int money = 2500;
 int rounds = 14;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
