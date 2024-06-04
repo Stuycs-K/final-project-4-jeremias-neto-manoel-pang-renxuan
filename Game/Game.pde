@@ -37,6 +37,7 @@ PImage pink;
 PImage black;
 PImage white;
 PImage zebra;
+PImage rainbow;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -107,6 +108,8 @@ void setup(){
   white.resize(0,95);
   zebra = loadImage("bloons/zb.png");
   zebra.resize(0,90);
+  rainbow = loadImage("bloons/rb.png");
+  rainbow.resize(0,80);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");
@@ -208,7 +211,7 @@ void draw(){
   }
   
   
-  //bloon spawing
+  //bloon spawning
   if (started){
   tick ++;
   for (int i = 0; i < bloons.size(); i ++){
