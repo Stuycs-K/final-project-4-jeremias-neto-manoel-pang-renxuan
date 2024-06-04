@@ -132,13 +132,19 @@ public class rounds{
     "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
     "pink", "pink", "pink", "zebra", "zebra", "zebra", "zebra", "done"
   };
+  
+  private String[] debug = new String[] {
+    "max 1",
+    "rainbow","done"
+  };
+  
   private int counter = 0;
 
   public rounds(){
   }
   
   public String getInfo(){
-    String text = info[counter];
+    String text = debug[counter];
     counter ++;
     return text;
   }

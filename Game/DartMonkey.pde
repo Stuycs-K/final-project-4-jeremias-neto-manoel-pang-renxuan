@@ -3,7 +3,7 @@ public class DartMonkey extends Monkey{
     
     //monkey stats
     fireRate = 50;
-    damage = 5;
+    damage = 1;
     speed = 15;
     projType = 1;
     size = 40;

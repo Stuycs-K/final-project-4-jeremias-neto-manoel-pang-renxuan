@@ -40,6 +40,10 @@ public class Bloons{
       row = y; col = x; this.hp = 7; this.speed = 3; isCamo = false;
       this.type = zebra;
     }
+    else if (type.equals("rainbow")){
+      row = y; col = x; this.hp = 8; this.speed = 3; isCamo = false;
+      this.type = rainbow;
+    }
   }
   public Bloons(int x, int y, int hp, int speed, boolean camo){
     row = y; col = x; this.hp = hp; this.speed = speed; isCamo = camo;
@@ -94,29 +98,56 @@ public class Bloons{
   
   public boolean pop(){
     int dmg = D.getDamage();
+    return pop(dmg);
+  }
+  
+  public boolean pop(int dmg){
     if (dmg >= getHP()) {money += getHP(); return true;}
-    if (type == zebra){
-      Bloons extra = new Bloons(getX(), getY(), "white");
-      Bloons extra2 = new Bloons(getX()-3, getY()-3, "black");
-      extra.takeDMG(dmg-1);
-      extra2.takeDMG(dmg-1);
+    if (hp == 8){
+      Bloons extra = new Bloons(getX()-5, getY()-5, "zebra");
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
+      extra.setSpeed();
+      extra.pop(dmg-1);
+      if (dmg > 1){
+      Bloons extra2 = new Bloons(getX(), getY(), "zebra");
       extra2.setCounter(this.getCounter());
+      extra2.setIFrame(7);
+      extra2.setSpeed();
+      extra2.pop(dmg-1);
+      }
+      return true;
+    }
+    if (hp == 7){
+      Bloons extra = new Bloons(getX()-5, getY()-5, "black");
+      extra.setCounter(this.getCounter());
+      extra.setIFrame(7);
+      extra.setSpeed();
+      extra.pop(dmg-1);
+      if (dmg > 1){
+      Bloons extra2 = new Bloons(getX()-5, getY()-5, "black");
+      extra2.setCounter(this.getCounter());
+      extra2.setIFrame(7);
+      extra2.setSpeed();
+      extra2.pop(dmg-1);
+      }
+      return true;
+    }
+    if (hp == 6){
+      Bloons extra = new Bloons(getX(), getY(), "pink");
+      Bloons extra2 = new Bloons(getX()-5, getY()-5, "pink");
+      extra.takeDMG(dmg-1);
+      extra2.takeDMG(dmg-1);
+      if (extra2.getHP() == 6) extra2.setType(black);
+      extra.setCounter(this.getCounter());
+      extra2.setCounter(this.getCounter());
+      extra.setIFrame(7);
       extra2.setIFrame(7);
       extra.setSpeed();
       extra2.setSpeed();
       bloons.add(extra);
       bloons.add(extra2);
       return true;
-    }
-    if (hp == 6){
-      Bloons extra = new Bloons(getX()-3, getY()-3, "pink");
-      extra.takeDMG(dmg-1);
-      extra.setCounter(this.getCounter());
-      extra.setIFrame(7);
-      extra.setSpeed();
-      bloons.add(extra);
     }
     this.hp -= dmg;
     this.setSpeed();
@@ -134,6 +165,7 @@ public class Bloons{
   }
   
   public PImage getType(){
+    if (hp == 8) return rainbow;
     if (hp == 7) return zebra;
     if (hp == 6 && type == black) return black;
     else if (hp == 6) return white;
@@ -160,5 +192,8 @@ public class Bloons{
   
   public void setCounter(int n){
     counter = n;
+  }
+  public void setType(PImage n){
+    type = n;
   }
 }
