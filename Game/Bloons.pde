@@ -84,7 +84,7 @@ public class Bloons{
   public boolean hit(){
     if (IFrame > 0) IFrame--;
     for (Dart d : DartList){
-      if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0){
+      if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0 && d.getPierce() > 0){
         POP.play();
         d.pierced();
         image(pop, getX()-35, getY()-45);
@@ -125,7 +125,7 @@ public class Bloons{
       extra.setSpeed();
       extra.pop(dmg-1);
       if (dmg > 1){
-      Bloons extra2 = new Bloons(getX()-5, getY()-5, "black");
+      Bloons extra2 = new Bloons(getX(), getY(), "black");
       extra2.setCounter(this.getCounter());
       extra2.setIFrame(7);
       extra2.setSpeed();
