@@ -1,93 +1,4 @@
-import java.util.*;
-
-//misc
-char[][] map;
-ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
-ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
-ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
-ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
-ArrayList<Dart> DartList = new ArrayList();
-boolean started = false;
-int life = 5;
-int tick = 1;
-int money = 200;
-Monkey placingMonkey;
-Monkey upgradeMonkey;
-rounds r = new rounds();
-
-//MAP ASSETS
-PImage grass;
-PImage road;
-PImage startButton;
-PImage heart;
-PImage coins;
-
-//BLOON ASSETS
-PImage red;
-PImage blue;
-PImage green;
-PImage yellow;
-PImage pink;
-
-//MONKEY Sprites
-PImage dartMonki;
-PImage tackShooti;
-PImage iceMonki;
-
-//SIDEBAR Sprites
-PImage monkiDart;
-
-int[] start = new int[4];
-int sideBarMode = 1;
-SideBar sidebar = new SideBar();
-PFont font;
-
-void setup(){
-  font = createFont("BTDFONT.ttf", 18);
-  textFont(font);
-  textAlign(CENTER);
-  
-  //map elements
-  grass = loadImage("mapElements/grass.jpeg");
-  road = loadImage("mapElements/road.jpg");
-  startButton = loadImage("mapElements/startButton.png");
-  heart = loadImage("mapElements/heart.png");
-  heart.resize(0,40);
-  coins = loadImage("mapElements/coins.png");
-  coins.resize(0,70);
-  grass.resize(0,1080);
-  imageMode(CENTER);
-  startButton.resize(0,1600);
-  imageMode(CORNERS);
-  
-  //bloon elements
-  red = loadImage("bloons/R.png");
-  red.resize(0,100);
-  blue = loadImage("bloons/B.png");
-  blue.resize(0,100);
-  green = loadImage("bloons/G.png");
-  green.resize(0, 100);
-  yellow = loadImage("bloons/Y.png");
-  yellow.resize(0,80);
-  pink = loadImage("bloons/P.png");
-  pink.resize(0,80);
-  
-  //monki sprite elements
-  dartMonki = loadImage("Dart.png");
-  tackShooti = loadImage("tackShooti.png");
-  tackShooti.resize(70,0);
-  iceMonki = loadImage("IceBase.png");
-  iceMonki.resize(75,0);
-  
-  //monki sidebar elements
-  monkiDart = loadImage("monkiDart.png");
-  
-  //map setup
-  size(1800, 1000);
-  fill(203, 145, 79);
-  rect(1500,0,300,1000);
-  map = new Map(20,30).getMap();
-  
+public void backgroundAndMap(){
   image(grass, 0, 0);
   road.resize(0,50);
   for (int row = 0; row < map.length; row++){
@@ -105,14 +16,68 @@ void setup(){
     }
   }
   placeGuiders(start[2], start[3]);
-  //System.out.println(guide);
 }
 
-void draw(){
-  if (tick == 0)
-  bloons(start[0], start[1]);
-  background();
-  if (started){
+public void songSelection(){
+  if(!(BGM1.isPlaying() || BGM2.isPlaying() ||BGM2s.isPlaying() ||BGM3.isPlaying() ||BGM4.isPlaying() ||BGM5.isPlaying() ||BGM6.isPlaying() ||BGM7.isPlaying() ||BGM8.isPlaying())){
+    int songSel = (int)(Math.random()*8);
+    if (songSel == 0){
+      BGM1.play();
+    }
+    if (songSel == 1){
+      int easteregg = (int)(Math.random()*10);
+      BGM2.play();
+      cur = BGM2;
+      if(easteregg == 1){
+        BGM2s.play();
+        cur = BGM2s;
+      }
+    }
+    if (songSel == 2){
+      BGM3.play();
+      cur = BGM3;
+    }
+    if (songSel == 3){
+      BGM4.play();
+      cur = BGM4;
+    }
+    if (songSel == 4){
+      BGM5.play();
+      cur = BGM5;
+    }
+    if (songSel == 5){
+      BGM6.play();
+      cur = BGM6;
+    }
+    if (songSel == 6){
+      BGM7.play();
+      cur = BGM7;
+    }
+    if (songSel == 7){
+      BGM8.play();
+      cur = BGM8;
+    }
+  }
+}
+
+public void background(){
+  image(grass, 0, 0);
+  for (int[] x : mapInfo) 
+  image(road, x[1]*50, x[0]*50);
+  fill(203, 145, 79);
+  rect(1500,0,300,1000);
+  imageMode(CENTER);
+  image(heart, 85, 38);
+  imageMode(CORNERS);
+  image(coins, 130, 5);
+  textSize(40);
+  fill(255);
+  text(life, 95, 55);
+  text("$" + money, 250, 55);
+  if (rounds >= 1) text("Round " + rounds, 1350, 55);
+}
+
+public void bloonInteraction(){
   for (int i = 0; i < bloons.size(); i ++){
     image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
@@ -124,11 +89,14 @@ void draw(){
     }
     if (i >= 0 && bloons.get(i).getCounter() == guide.size()){
       life-= bloons.get(i).getHP();
+      if (life <= 0) {gameOver = true; break;};
       bloons.remove(bloons.get(i));
       i--;
     }
   }
-  }
+}
+
+public void monkeySpawning(){
   for (Monkey m : monkeyList){
     m.update();
     if (m.getMode()){
@@ -136,6 +104,9 @@ void draw(){
       upgradeMonkey = m;
     }
   }
+}
+
+public void sidebarUpdate(){
   sidebar.update();
   if (placingMonkey != null){
     boolean canPlace = placingMonkey.placing();
@@ -147,29 +118,27 @@ void draw(){
       placingMonkey = null;
     }
   }
+}
+
+public void showFPS(){
+  fill(255);
+  textSize(18);
+  text(frameRate,30,20);
+  textSize(18);
+  tick = tick % tickMax;
+}
+
+public void dartUpdate(){
   for (int i = 0; i < DartList.size(); i ++){
      Dart dart = (Dart)DartList.get(i);
-     dart.update();
+     if(dart.update()){
+       DartList.remove(dart);
+       i--;
+     }
   }
-  tick ++;
-  tick = tick % 200;
 }
 
-void background(){
-  image(grass, 0, 0);
-  for (int[] x : mapInfo) 
-  image(road, x[1]*50, x[0]*50);
-  fill(203, 145, 79);
-  rect(1500,0,300,1000);
-  image(heart, 20, 20);
-  image(coins, 145, 5);
-  textSize(40);
-  fill(255);
-  text(life, 95, 55);
-  text(money, 250, 55);
-}
-
-void mouseClicked(){
+public void sidebarOnClick(){
   if(mouseX > 1500){
     for (Monkey monkey : monkeyList){
       if(sidebar.isShop()){
@@ -195,16 +164,20 @@ void mouseClicked(){
   }
 }
 
-void bloons(int x, int y){
+public void bloons(int x, int y){
   if (!r.empty()){
     String bloon = r.getInfo();
     if (bloon.equals("done")) {
       if (bloons.size() != 0){
         r.foundDone();
+        tick = 1;
         return;
       }
+      money += rounds + 100;
       started = false;
-      System.out.println(started);
+    }
+    else if (bloon.startsWith("max")){
+      tickMax = Integer.parseInt(bloon.substring(4, bloon.length()));
     }
     else {
       Bloons b = new Bloons(x, y, bloon);
@@ -213,7 +186,7 @@ void bloons(int x, int y){
   }
 }
 
-void placeGuiders(int startx, int starty){
+public void placeGuiders(int startx, int starty){
   if (startx < 0 || starty < 0 || startx >= map[0].length || starty >= map.length) return;
   char check = map[starty][startx];
   if (check != 'E' && check != '@' && check != 'B' && check != 'F'){
