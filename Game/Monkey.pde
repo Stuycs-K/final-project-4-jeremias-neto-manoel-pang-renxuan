@@ -55,14 +55,14 @@ abstract class Monkey{
 
   
   public boolean canUpgrade1(){
-    if (upgrade2Prog >= 3&&upgrade2Prog == 2)return false;
+    if (upgrade2Prog >= 3&&upgrade2Prog >= 2)return false;
     if (upgrade1Prog == 4)return false;
     if (upgradeCosts[0][upgrade1Prog] > money)return false;
     return true;
   }
 
   public boolean canUpgrade2(){
-    if (upgrade1Prog >= 3&&upgrade1Prog == 2)return false;
+    if (upgrade1Prog >= 3&&upgrade1Prog >= 2)return false;
     if (upgrade2Prog == 4)return false;
     if (upgradeCosts[1][upgrade2Prog] > money)return false;
     return true;
