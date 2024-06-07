@@ -44,10 +44,11 @@ public class Bloons{
       row = y; col = x; this.hp = 8; this.speed = 3; isCamo = false;
       this.type = rainbow;
     }
+    else if (type.equals("ceram")){
+      row = y; col = x; this.hp = 8+10; this.speed = 3; isCamo = false;
+      this.type = Ceram1;
+    }
   }
-  public Bloons(int x, int y, int hp, int speed, boolean camo){
-    row = y; col = x; this.hp = hp; this.speed = speed; isCamo = camo;
-  };
   
   public void act(){
     if (counter != guide.size()){
@@ -103,6 +104,15 @@ public class Bloons{
   
   public boolean pop(int dmg){
     if (dmg >= getHP()) {money += getHP(); return true;}
+    if (hp >= 10 && hp <= 18){
+      if (hp == 8){
+        Bloons extra = new Bloons(getX(), getY(), "rainbow");
+        extra.setCounter(this.getCounter());
+        extra.setIFrame(7);
+        extra.setSpeed();
+        extra.pop(dmg-1);
+      }
+    }
     if (hp == 8){
       Bloons extra = new Bloons(getX()-5, getY()-5, "zebra");
       extra.setCounter(this.getCounter());
@@ -168,6 +178,11 @@ public class Bloons{
   }
   
   public PImage getType(){
+    if (hp == 18 || hp == 17) return Ceram1;
+    if (hp == 16 || hp == 15) return Ceram2;
+    if (hp == 14 || hp == 13) return Ceram3;
+    if (hp == 12 || hp == 11) return Ceram4;
+    if (hp == 10 || hp == 9) return Ceram5;
     if (hp == 8) return rainbow;
     if (hp == 7) return zebra;
     if (hp == 6 && type == black) return black;

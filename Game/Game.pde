@@ -41,6 +41,11 @@ PImage black;
 PImage white;
 PImage zebra;
 PImage rainbow;
+PImage Ceram1;
+PImage Ceram2;
+PImage Ceram3;
+PImage Ceram4;
+PImage Ceram5;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -115,6 +120,16 @@ void setup(){
   zebra.resize(0,90);
   rainbow = loadImage("bloons/rb.png");
   rainbow.resize(0,80);
+  Ceram1 = loadImage("bloons/Ceram1.png");
+  Ceram2 = loadImage("bloons/Ceram2.png");
+  Ceram3 = loadImage("bloons/Ceram3.png");
+  Ceram4 = loadImage("bloons/Ceram4.png");
+  Ceram5 = loadImage("bloons/Ceram5.png");
+  Ceram1.resize(0,65);
+  Ceram2.resize(0,65);
+  Ceram3.resize(0,65);
+  Ceram4.resize(0,65);
+  Ceram5.resize(0,65);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");

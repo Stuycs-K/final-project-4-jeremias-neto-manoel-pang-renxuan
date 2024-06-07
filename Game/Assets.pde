@@ -74,12 +74,19 @@ public void background(){
   fill(255);
   text(life, 95, 55);
   text("$" + money, 250, 55);
-  if (rounds >= 1) text("Round " + rounds, 1350, 55);
+  if (rounds >= 1) text("Round " + rounds + "/40", 1350, 55);
 }
 
 public void bloonInteraction(){
   for (int i = 0; i < bloons.size(); i ++){
-    image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
+    if (bloons.get(i).getType() == Ceram1 || 
+        bloons.get(i).getType() == Ceram2 || 
+        bloons.get(i).getType() == Ceram3 || 
+        bloons.get(i).getType() == Ceram4 || 
+        bloons.get(i).getType() == Ceram5){
+          image(bloons.get(i).getType(), bloons.get(i).getX()-25, bloons.get(i).getY()-55);
+        }
+    else image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
     if(bloons.get(i).hit()){
       if(bloons.get(i).pop()){
