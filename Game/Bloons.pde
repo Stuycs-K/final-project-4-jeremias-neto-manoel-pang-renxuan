@@ -116,6 +116,7 @@ public class Bloons{
       extra2.setSpeed();
       extra2.pop(dmg-1);
       }
+      money += dmg;
       return true;
     }
     if (hp == 7){
@@ -131,6 +132,7 @@ public class Bloons{
       extra2.setSpeed();
       extra2.pop(dmg-1);
       }
+      money += dmg;
       return true;
     }
     if (hp == 6){
@@ -147,6 +149,7 @@ public class Bloons{
       extra2.setSpeed();
       bloons.add(extra);
       bloons.add(extra2);
+      money += dmg;
       return true;
     }
     this.hp -= dmg;
