@@ -130,12 +130,126 @@ public class rounds{
     // round 26
     "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
     "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
-    "pink", "pink", "pink", "zebra", "zebra", "zebra", "zebra", "done"
+    "pink", "pink", "pink", "zebra", "zebra", "zebra", "zebra", "done",
+    
+    "max 10",
+    "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", 
+    "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", 
+    "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", 
+    "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", 
+    "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", "red", 
+    "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", 
+    "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", 
+    "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", 
+    "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", 
+    "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", 
+    "green", "green","green", "green","green", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "done",
+    
+    // these are replacements for leads
+    "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "done",
+    
+    "max 25",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "done",
+    
+    "max 20", //replacement for leads again
+    "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "done", 
+    
+    "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", 
+    "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "max 50", "zebra", "zebra", "zebra", "done",
+    
+    "max 40",
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", "done",
+    
+    "max 5",
+    "red", "red", "red", "red", "red", "red", "red","red", "red", "red", "red", "red", "red", "red", "red", "red", "red","red", "red", "red", 
+    "red", "red", "red", "red", "red", "red", "red","red", "red", "red", "red", "red", "red", "red", "red", "red", "red","red", "red", "red", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "done",
+    
+    "max 15",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra",
+    "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "zebra", "done",
+    
+    "max 20",
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "black", "black", "black", "black", "black", 
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "done",
+    
+    "max 10",
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", 
+    "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", 
+    "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green",
+    "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green", "green", "green","green", "green","green",
+    "done",
+    
+    "max 30",
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
+    "black", "black", "black", "black", "black", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", 
+    //leads
+    "lead", "lead", "lead", "lead", "lead", 
+    "lead", "lead", "lead", "lead", "lead", 
+    "lead", "lead", "lead", "lead", "lead",  "done", 
+    
+    "max 20",
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "ceram", "ceram", "done", 
+    
+    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
+    "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
+    "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", 
+    "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", 
+    "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", 
+    "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "rainbow", "done",
+    
+    "max 10",
+    //MOABS
+    "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "done"
   };
   
   private String[] debug = new String[] {
     "max 1",
-    "rainbow","done"
+    "lead","done"
   };
   
   private int counter = 0;
