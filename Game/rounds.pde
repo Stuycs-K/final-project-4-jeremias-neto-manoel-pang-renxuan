@@ -149,8 +149,7 @@ public class rounds{
     "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "done",
     
     // these are replacements for leads
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "done",
+    "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "done",
     
     "max 25",
     "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", 
@@ -163,8 +162,7 @@ public class rounds{
     "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "yellow", "done",
     
     "max 20", //replacement for leads again
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "done", 
+    "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "lead", "done", 
     
     "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", "black", "white", 
     "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "max 50", "zebra", "zebra", "zebra", "done",
@@ -223,18 +221,18 @@ public class rounds{
     "white", "white", "white", "white", "white", "white", "white", "white", "white", "white", 
     "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", "zebra", 
     //leads
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 
-    "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", "done", 
+    "lead", "lead", "lead", "lead", "lead", 
+    "lead", "lead", "lead", "lead", "lead", 
+    "lead", "lead", "lead", "lead", "lead",  "done", 
     
     "max 20",
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
-    "pink", "pink", "pink", "white", "zebra", "black", "black", "pink", "pink", "pink", "white", "zebra", "black", "black", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
+    "pink", "pink", "pink", "white", "zebra", "lead", "pink", "pink", "pink", "white", "zebra", "lead", 
     "ceram", "ceram", "done", 
     
     "black", "black", "black", "black", "black", "black", "black", "black", "black", "black", 

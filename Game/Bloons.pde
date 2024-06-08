@@ -51,6 +51,10 @@ public class Bloons{
       row = y; col = x; this.hp = 7; this.speed = 3;
       this.type = lead;
     }
+    else{
+      row = y; col = x; this.hp = 3; this.speed = 3;
+      this.type = green;
+    } 
   }
   
   public void act(){
