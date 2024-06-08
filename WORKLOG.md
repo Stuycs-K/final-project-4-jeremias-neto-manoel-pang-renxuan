@@ -98,3 +98,7 @@ added up to round 26, did a few bug fixes, will add new bloon types very very so
 ### date 6/4/24
 
 added rainbow bloons, now the layer skipping is functioning properly! if you do extra damage (dmg more than 1) the resultant layers is now calculated properly. Meaning that if you do 2 damage to a zebra, 4 pinks would spawn, instead of just 2 pinks like before. Also revamped pop(), now it uses a more recursive process to calculate for bloon spawn, which makes future layers easier and helped with fixing the layering system. 
+
+### date 6/5/24
+
+mainly small bug fixes, also added a lose screen (and organized Game tab horray!). 
