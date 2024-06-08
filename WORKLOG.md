@@ -102,3 +102,7 @@ added rainbow bloons, now the layer skipping is functioning properly! if you do 
 ### date 6/5/24
 
 mainly small bug fixes, also added a lose screen (and organized Game tab horray!). 
+
+### date 6/7/24
+
+added in ceramic bloons, lead bloons, completed rounds up to 40, added in bloon and dart dmg types, fixed small bugs, ready to speedrun adding towers. 
