@@ -79,7 +79,8 @@ public void background(){
 
 public void bloonInteraction(){
   for (int i = 0; i < bloons.size(); i ++){
-    if (bloons.get(i).getType() == Ceram1 || 
+    if (bloons.get(i).getType() == lead ||
+        bloons.get(i).getType() == Ceram1 || 
         bloons.get(i).getType() == Ceram2 || 
         bloons.get(i).getType() == Ceram3 || 
         bloons.get(i).getType() == Ceram4 || 

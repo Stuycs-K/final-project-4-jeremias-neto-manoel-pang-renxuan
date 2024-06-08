@@ -46,6 +46,7 @@ PImage Ceram2;
 PImage Ceram3;
 PImage Ceram4;
 PImage Ceram5;
+PImage lead;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -130,6 +131,8 @@ void setup(){
   Ceram3.resize(0,65);
   Ceram4.resize(0,65);
   Ceram5.resize(0,65);
+  lead = loadImage("bloons/LEAD.png");
+  lead.resize(0,65);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");

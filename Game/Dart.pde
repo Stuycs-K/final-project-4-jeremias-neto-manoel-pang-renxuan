@@ -6,7 +6,7 @@
   int pierce;
   int size;
   int lifetime;
-  // 
+  // 1 = sharp, 2 = all, 3 = bomb
   
   public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_){
     position.set(launchx, launchy);
@@ -51,5 +51,8 @@
   }
   public int getSize(){
     return size;
+  }
+  public int getProjType(){
+    return projType;
   }
 }

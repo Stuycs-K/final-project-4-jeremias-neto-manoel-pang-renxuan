@@ -251,7 +251,7 @@ public class rounds{
   
   private String[] debug = new String[] {
     "max 1",
-    "ceram","done"
+    "lead","done"
   };
   
   private int counter = 0;
@@ -260,7 +260,7 @@ public class rounds{
   }
   
   public String getInfo(){
-    String text = debug[counter];
+    String text = info[counter];
     counter ++;
     return text;
   }

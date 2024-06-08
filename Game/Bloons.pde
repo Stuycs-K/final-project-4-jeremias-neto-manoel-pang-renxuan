@@ -2,51 +2,54 @@ import java.util.*;
 public class Bloons{
   private int row, col, hp, speed;
   private int counter = 0;
-  boolean isCamo;
   PImage type = null;
   int IFrame = 0;
   Dart D;
   
   public Bloons(int x, int y, String type){
     if (type.equals("red")){
-      row = y; col = x; this.hp = 1; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 1; this.speed = 3;
       this.type = red;
     }
     else if (type.equals("blue")){
-      row = y; col = x; this.hp = 2; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 2; this.speed = 3;
       this.type = blue;
     }
     else if (type.equals("green")){
-      row = y; col = x; this.hp = 3; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 3; this.speed = 3;
       this.type = green;
     }
     else if (type.equals("yellow")){
-      row = y; col = x; this.hp = 4; this.speed = 4; isCamo = false;
+      row = y; col = x; this.hp = 4; this.speed = 4;
       this.type = yellow;
     }
     else if (type.equals("pink")){
-      row = y; col = x; this.hp = 5; this.speed = 5; isCamo = false;
+      row = y; col = x; this.hp = 5; this.speed = 5;
       this.type = pink;
     }
     else if (type.equals("black")){
-      row = y; col = x; this.hp = 6; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 6; this.speed = 3;
       this.type = black;
     }
     else if (type.equals("white")){
-      row = y; col = x; this.hp = 6; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 6; this.speed = 3;
       this.type = white;
     }
     else if (type.equals("zebra")){
-      row = y; col = x; this.hp = 7; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 7; this.speed = 3;
       this.type = zebra;
     }
     else if (type.equals("rainbow")){
-      row = y; col = x; this.hp = 8; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 8; this.speed = 3;
       this.type = rainbow;
     }
     else if (type.equals("ceram")){
-      row = y; col = x; this.hp = 8+10; this.speed = 3; isCamo = false;
+      row = y; col = x; this.hp = 8+10; this.speed = 3;
       this.type = Ceram1;
+    }
+    else if (type.equals("lead")){
+      row = y; col = x; this.hp = 7; this.speed = 3;
+      this.type = lead;
     }
   }
   
@@ -86,8 +89,11 @@ public class Bloons{
     if (IFrame > 0) IFrame--;
     for (Dart d : DartList){
       if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0 && d.getPierce() > 0){
-        POP.play();
         d.pierced();
+        if (getType() == black && d.getProjType() == 3) return false;
+        if (getType() == zebra && d.getProjType() == 3) return false;
+        if (getType() == lead && d.getProjType() == 1) return false;
+        POP.play();
         image(pop, getX()-35, getY()-45);
         IFrame = 10;
         D = d;
@@ -130,7 +136,7 @@ public class Bloons{
       return true;
     }
     if (hp == 7){
-      Bloons extra = new Bloons(getX()-5, getY()-5, "black");
+      Bloons extra = new Bloons(getX()-5, getY()-5, "white");
       extra.setCounter(this.getCounter());
       extra.setIFrame(7);
       extra.setSpeed();
@@ -184,6 +190,7 @@ public class Bloons{
     if (hp == 12 || hp == 11) return Ceram4;
     if (hp == 10 || hp == 9) return Ceram5;
     if (hp == 8) return rainbow;
+    if (hp == 7 && type == lead) return lead;
     if (hp == 7) return zebra;
     if (hp == 6 && type == black) return black;
     else if (hp == 6) return white;
