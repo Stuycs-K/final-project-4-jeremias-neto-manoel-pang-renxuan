@@ -30,6 +30,7 @@ PImage coins;
 PImage pop;
 PImage left;
 PImage right;
+PImage defeat;
 
 //BLOON ASSETS
 PImage red;
@@ -101,6 +102,8 @@ void setup(){
   left.resize(0,1000);
   right = loadImage("mapElements/rightArrow.png");
   right.resize(0,1000);
+  defeat = loadImage("mapElements/defeat.png");
+  defeat.resize(0,1500);
   
   //bloon elements
   red = loadImage("bloons/R.png");
@@ -198,7 +201,9 @@ void draw(){
     }
   }
   else {
-    rect(0, 0, 1800, 1000);
+    fill(133, 228, 255);
+    rect(0,0,1800,1000);
+    image(defeat, -70, -200);
     if (!paused) {cur.pause(); paused = true;};
     if (!playing) {fail.play(); playing = true;};
   }
