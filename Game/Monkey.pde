@@ -32,7 +32,11 @@ abstract class Monkey{
   }
   
   public void sell(){
-    
+    monkeyList.remove(this);
+    money += sellCost * .5;
+    highlight = false;
+    upgradeMonkey = null;
+    placingMonkey = null;
   }
     
   public void upgrade1(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
@@ -45,8 +49,8 @@ abstract class Monkey{
     pierce += upgradePierce[0][upgrade1Prog];
     projSize += upgradeProjSize[0][upgrade1Prog];
     money -=upgradeCosts[0][upgrade1Prog];
-    upgrade1Prog ++;
     sellCost += upgradeCosts[0][upgrade1Prog];
+    upgrade1Prog ++;
   }
   
   public void upgrade2(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
@@ -59,21 +63,21 @@ abstract class Monkey{
     pierce += upgradePierce[1][upgrade2Prog];
     projSize += upgradeProjSize[1][upgrade2Prog];
     money -=upgradeCosts[1][upgrade2Prog];
-    upgrade2Prog ++;
     sellCost += upgradeCosts[1][upgrade2Prog];
+    upgrade2Prog ++;
   }
 
   
   public boolean canUpgrade1(){
-    if (upgrade2Prog >= 3&&upgrade2Prog >= 2)return false;
-    if (upgrade1Prog == 4)return false;
+    if (upgrade2Prog >= 3&&upgrade1Prog >= 2)return false;
+    if (upgrade1Prog >= 4)return false;
     if (upgradeCosts[0][upgrade1Prog] > money)return false;
     return true;
   }
 
   public boolean canUpgrade2(){
-    if (upgrade1Prog >= 3&&upgrade1Prog >= 2)return false;
-    if (upgrade2Prog == 4)return false;
+    if (upgrade1Prog >= 3&&upgrade2Prog >= 2)return false;
+    if (upgrade2Prog >= 4)return false;
     if (upgradeCosts[1][upgrade2Prog] > money)return false;
     return true;
   }
@@ -115,6 +119,9 @@ abstract class Monkey{
     fill(255,0,0);
     rect(1515, 895, 270, 90);
     fill(255);
+    rectMode(CENTER);
+    text("Sell: $ " + ((int)(sellCost * .5)), 1515 + 135, 895 + 55);
+    rectMode(CORNER);
     PImage display = sidebarImage.copy();
     display.resize(0,230);
     image(display, 1550, 170);

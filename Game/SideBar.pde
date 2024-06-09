@@ -104,7 +104,12 @@ public class SideBar{
       if (!started) image(startButton, 855, 100);
     }
     else{
-      upgradeMonkey.displayUpgrades();
+      if(upgradeMonkey == null){
+        isShop = 1;
+      }
+      else{
+        upgradeMonkey.displayUpgrades();
+      }
     }
   }
   
