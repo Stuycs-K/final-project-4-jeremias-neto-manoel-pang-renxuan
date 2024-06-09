@@ -185,14 +185,14 @@ public class SideBar{
         text("Ice Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    iceMonki.resize(0,110);
-    PImage temp = iceMonki.copy();
+    dartMonki.resize(0,110);
+    PImage temp = dartMonki.copy();
     if (money < 500){
       temp.filter(GRAY);
       fill(175,175,175);
     }
     else{
-      temp = iceMonki;
+      temp = dartMonki;
       fill(133, 228, 255);
     }
     rect(1515+150, 285, 125, 150);
