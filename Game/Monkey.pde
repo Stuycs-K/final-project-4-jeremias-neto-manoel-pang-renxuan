@@ -12,6 +12,7 @@ abstract class Monkey{
   protected boolean canCamo;
   protected int lifetime;
   protected int projSize;
+  protected int sellCost;
   
   //upgrade information
   protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
@@ -26,7 +27,14 @@ abstract class Monkey{
   int[][] upgradeProjSize = {{0,0,0,0},{0,0,0,0}};
   
   //upgrade stuff
+  public void cashmonkey(int cost){
+    sellCost = cost;
+  }
   
+  public void sell(){
+    
+  }
+    
   public void upgrade1(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
     fireRate -= upgradeAttacksSpd[0][upgrade1Prog];
     canCamo = (upgradeCamo[0][upgrade1Prog] == 1);
@@ -38,6 +46,7 @@ abstract class Monkey{
     projSize += upgradeProjSize[0][upgrade1Prog];
     money -=upgradeCosts[0][upgrade1Prog];
     upgrade1Prog ++;
+    sellCost += upgradeCosts[0][upgrade1Prog];
   }
   
   public void upgrade2(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
@@ -51,6 +60,7 @@ abstract class Monkey{
     projSize += upgradeProjSize[1][upgrade2Prog];
     money -=upgradeCosts[1][upgrade2Prog];
     upgrade2Prog ++;
+    sellCost += upgradeCosts[1][upgrade2Prog];
   }
 
   
