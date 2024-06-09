@@ -75,6 +75,7 @@ abstract class Monkey{
   //monkey information
   protected String name;
   PImage monkeyImage;
+  PImage sidebarImage;
   
   
   public void update(){
@@ -104,6 +105,9 @@ abstract class Monkey{
     fill(255,0,0);
     rect(1515, 895, 270, 90);
     fill(255);
+    PImage display = sidebarImage.copy();
+    display.resize(0,230);
+    image(display, 1550, 170);
     //text for upgrade
     
     text(upgradeNames[0][upgrade1Prog], 1650, 540);

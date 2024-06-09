@@ -1,6 +1,7 @@
 import java.util.*;
 public class Bloons{
-  private int row, col, hp, speed;
+  private int row, col, hp;
+  float speed;
   private int counter = 0;
   PImage type = null;
   int IFrame = 0;
@@ -50,6 +51,10 @@ public class Bloons{
     else if (type.equals("lead")){
       row = y; col = x; this.hp = 7; this.speed = 3;
       this.type = lead;
+    }
+    else if (type.equals("Massive Ordinary Air Blimp")){
+      row = y; col = x; this.hp = 272; this.speed = 2;
+      this.type = MOAB;
     }
     else{
       row = y; col = x; this.hp = 3; this.speed = 3;
@@ -114,6 +119,29 @@ public class Bloons{
   
   public boolean pop(int dmg){
     if (dmg >= getHP()) {money += getHP(); return true;}
+    if (hp > 18 && hp <= 72){
+      Bloons extra = new Bloons(getX(), getY(), "ceram");
+      Bloons extra2 = new Bloons(getX()-3, getY()-3, "ceram");
+      Bloons extra3 = new Bloons(getX()-5, getY()-5, "ceram");
+      Bloons extra4 = new Bloons(getX()-7, getY()-7, "ceram");
+        extra.setCounter(this.getCounter());
+        extra.setIFrame(7);
+        extra.setSpeed();
+        extra2.setCounter(this.getCounter());
+        extra2.setIFrame(7);
+        extra2.setSpeed();
+        extra3.setCounter(this.getCounter());
+        extra3.setIFrame(7);
+        extra3.setSpeed();
+        extra4.setCounter(this.getCounter());
+        extra4.setIFrame(7);
+        extra4.setSpeed();
+     bloons.add(extra);
+     bloons.add(extra2);
+     bloons.add(extra3);
+     bloons.add(extra4);
+     return true;
+    }
     if (hp >= 10 && hp <= 18){
       if (hp == 8){
         Bloons extra = new Bloons(getX(), getY(), "rainbow");
@@ -188,6 +216,7 @@ public class Bloons{
   }
   
   public PImage getType(){
+    if (type == MOAB) return MOAB;
     if (hp == 18 || hp == 17) return Ceram1;
     if (hp == 16 || hp == 15) return Ceram2;
     if (hp == 14 || hp == 13) return Ceram3;
@@ -208,6 +237,7 @@ public class Bloons{
   public void setSpeed(){
     if (this.getHP() == 5) speed = 5;
     else if (this.getHP() == 4) speed = 4;
+    else if (this.getHP() > 18) speed = 2;
     else speed = 3;
   }
   

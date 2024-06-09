@@ -244,12 +244,12 @@ public class rounds{
     
     "max 10",
     //MOABS
-    "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "ceram", "done"
+    "Massive Ordinary Air Blimp", "done"
   };
   
   private String[] debug = new String[] {
     "max 1",
-    "lead","done"
+    "Massive Ordinary Air Blimp","done"
   };
   
   private int counter = 0;

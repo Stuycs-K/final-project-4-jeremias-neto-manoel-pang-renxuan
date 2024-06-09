@@ -34,7 +34,6 @@ public class SideBar{
         money -= 260;
       }
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150 && money >= 500){
-        placingMonkey = new IceMonkey();
         money -= 500;
       }
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){

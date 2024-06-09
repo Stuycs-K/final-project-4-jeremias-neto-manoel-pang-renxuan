@@ -10,6 +10,7 @@ ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 ArrayList<Dart> DartList = new ArrayList();
 boolean started = false;
 boolean gameOver = false;
+boolean win = false;
 boolean paused = false;
 boolean playing = false;
 int life = 5;
@@ -30,6 +31,7 @@ PImage coins;
 PImage pop;
 PImage left;
 PImage right;
+PImage defeat;
 
 //BLOON ASSETS
 PImage red;
@@ -47,6 +49,7 @@ PImage Ceram3;
 PImage Ceram4;
 PImage Ceram5;
 PImage lead;
+PImage MOAB;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -101,6 +104,8 @@ void setup(){
   left.resize(0,1000);
   right = loadImage("mapElements/rightArrow.png");
   right.resize(0,1000);
+  defeat = loadImage("mapElements/defeat.png");
+  defeat.resize(0,1500);
   
   //bloon elements
   red = loadImage("bloons/R.png");
@@ -133,6 +138,8 @@ void setup(){
   Ceram5.resize(0,65);
   lead = loadImage("bloons/LEAD.png");
   lead.resize(0,65);
+  MOAB = loadImage("bloons/MOAB.png");
+  MOAB.resize(0,65);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");
@@ -171,7 +178,7 @@ void setup(){
 }
 
 void draw(){
-  if (!gameOver){
+  if (!gameOver && !win){
     //song selection
     songSelection();
     if (tick == 0 && started)
@@ -196,11 +203,21 @@ void draw(){
       //fps counter
       showFPS();
     }
+    if (rounds == 40 && bloons.size() == 0) win = true;
   }
-  else {
-    rect(0, 0, 1800, 1000);
+  else if (gameOver) {
+    fill(133, 228, 255);
+    rect(0,0,1800,1000);
+    image(defeat, -70, -200);
     if (!paused) {cur.pause(); paused = true;};
     if (!playing) {fail.play(); playing = true;};
+  }
+  else{
+    fill(133, 228, 255);
+    rect(0,0,1800,1000);
+    fill(255,234,63);
+    textSize(100);
+    text("Winner Winner Banana Dinner", 900, 500);
   }
 }
 
