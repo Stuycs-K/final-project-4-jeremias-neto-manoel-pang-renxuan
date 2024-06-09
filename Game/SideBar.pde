@@ -77,7 +77,7 @@ public class SideBar{
       DisplayDartMonkey();
       DisplayTackShooter();
       DisplayBombShooter();
-      DisplayIceMonkey();
+      DisplayTowerFour();
       DisplayTowerFive();
       DisplayTowerSix();
       DisplayTowerSeven();
@@ -188,29 +188,29 @@ public class SideBar{
     text("$" + 525, 1580-3, 265+165);
   }
   
-  private void DisplayIceMonkey(){
+  private void DisplayTowerFour(){
     if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150){
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Ice Monkey", 1515 + 135, 15 + 55);
+        text("Boomerang Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    dartMonki.resize(0,110);
-    PImage temp = dartMonki.copy();
-    if (money < 500){
+    boomerMonki.resize(0,90);
+    PImage temp = boomerMonki.copy();
+    if (money < 315){
       temp.filter(GRAY);
       fill(175,175,175);
     }
     else{
-      temp = dartMonki;
+      temp = boomerMonki;
       fill(133, 228, 255);
     }
-    rect(1515+150, 285, 125, 150);
-    image(temp, 1525+155, 300);
+    rect(1665, 285, 125, 150);
+    image(temp, 1675, 300);
     fill(255);
     textSize(25);
-    text("$" + 500, 1580-3+150, 265+165);
+    text("$" + 315, 1580-3+150, 265+165);
   }
   
   private void DisplayTowerFive(){

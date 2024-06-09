@@ -113,7 +113,11 @@ PImage VillageP24;
 PImage dartMonki;
 PImage tackShooti;
 PImage bombShooti;
-PImage iceMonki;
+PImage boomerMonki;
+PImage dartiGunni;
+PImage snipiMonki;
+PImage superMonki;
+PImage village;
 
 //music
 SoundFile POP;
@@ -256,6 +260,11 @@ VillageP24 = loadImage("MonkeySprites/VillageP2-3.png");
   dartMonki = loadImage("sideBarSprites/dartMonki.png");
   tackShooti = loadImage("sideBarSprites/tackShooti.png");
   bombShooti = loadImage("sideBarSprites/bombShooti.png");
+  boomerMonki = loadImage("sideBarSprites/boomerMonki.png");
+  dartiGunni = loadImage("sideBarSprites/dartiGunni.png");
+  snipiMonki = loadImage("sideBarSprites/snipiMonki.png");
+  superMonki = loadImage("sideBarSprites/superMonki.png");
+  village = loadImage("sideBarSprites/village.png");
   
   //map setup
   size(1800, 1000);

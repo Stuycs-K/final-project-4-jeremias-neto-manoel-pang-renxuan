@@ -258,7 +258,7 @@ public class rounds{
   }
   
   public String getInfo(){
-    String text = info[counter];
+    String text = debug[counter];
     counter ++;
     return text;
   }
