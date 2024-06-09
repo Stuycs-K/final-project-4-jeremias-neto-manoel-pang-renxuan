@@ -139,7 +139,7 @@ void setup(){
   lead = loadImage("bloons/LEAD.png");
   lead.resize(0,65);
   MOAB = loadImage("bloons/MOAB.png");
-  MOAB.resize(0,65);
+  MOAB.resize(0,180);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");
