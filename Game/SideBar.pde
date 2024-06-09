@@ -27,13 +27,16 @@ public class SideBar{
     if(isShop == 1){
       if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 120 && mouseY < 270 && money >= 200){
         placingMonkey = new DartMonkey();
+        placingMonkey.cashmonkey(200);
         money -= 200;
       }
       if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270 && money >= 260){
         placingMonkey = new TackShooter();
+        placingMonkey.cashmonkey(260);
         money -= 260;
       }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150 && money >= 500){
+      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150 && money >= 525){
+        placingMonkey.cashmonkey(525);
         money -= 500;
       }
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){
@@ -58,6 +61,9 @@ public class SideBar{
       }
       if (mouseX > 1515 && mouseX < 1515 + 270 && mouseY > 650 && mouseY < 650 + 90 && upgradeMonkey.canUpgrade2()){
         upgradeMonkey.upgrade2();
+      }
+      if (mouseX > 1515 && mouseX < 1515 + 270 && mouseY > 895 && mouseY < 895 + 90){
+        upgradeMonkey.sell();
       }
     }
   }
@@ -185,14 +191,14 @@ public class SideBar{
         text("Ice Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    iceMonki.resize(0,110);
-    PImage temp = iceMonki.copy();
+    dartMonki.resize(0,110);
+    PImage temp = dartMonki.copy();
     if (money < 500){
       temp.filter(GRAY);
       fill(175,175,175);
     }
     else{
-      temp = iceMonki;
+      temp = dartMonki;
       fill(133, 228, 255);
     }
     rect(1515+150, 285, 125, 150);

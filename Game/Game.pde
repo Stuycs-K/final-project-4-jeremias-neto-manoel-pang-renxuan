@@ -52,9 +52,62 @@ PImage lead;
 PImage MOAB;
 
 //MONKEY Sprites
-PImage monkiDart;
-PImage shootiTack;
-PImage monkiIce;
+PImage DartBase;
+PImage BoomerangBase;
+PImage BombBase;
+PImage SniperBase;
+PImage TackBase;
+PImage SuperBase;
+PImage VillageBase;
+PImage GunnerBase;
+
+PImage DartP11;
+PImage BoomerangP11;
+PImage BombP11;
+PImage SniperP11;
+PImage TackP11;
+PImage SuperP11;
+PImage VillageP11;
+
+PImage DartP12;
+PImage BoomerangP12;
+PImage BombP12;
+PImage SniperP12;
+PImage TackP12;
+PImage SuperP12;
+PImage VillageP12;
+
+PImage DartP13;
+PImage BoomerangP13;
+PImage BombP13;
+PImage SniperP13;
+PImage TackP13;
+PImage SuperP13;
+PImage VillageP13;
+
+PImage DartP14;
+PImage BoomerangP14;
+PImage BombP14;
+PImage SniperP14;
+PImage TackP14;
+PImage SuperP14;
+PImage VillageP14;
+
+PImage DartP23;
+PImage BoomerangP23;
+PImage BombP23;
+PImage SniperP23;
+PImage TackP23;
+PImage SuperP23;
+PImage VillageP23;
+
+PImage DartP24;
+PImage BoomerangP24;
+PImage BombP24;
+PImage SniperP24;
+PImage TackP24;
+PImage SuperP24;
+PImage VillageP24;
 
 //SIDEBAR Sprites
 PImage dartMonki;
@@ -142,17 +195,67 @@ void setup(){
   MOAB.resize(0,180);
   
   //monki sprite elements
-  monkiDart = loadImage("monkiDart.png");
-  shootiTack = loadImage("tackShooti.png");
-  shootiTack.resize(70,0);
-  monkiIce = loadImage("IceBase.png");
-  monkiIce.resize(75,0);
-  
+DartBase = loadImage("MonkeySprites/DartBase.png");
+BoomerangBase = loadImage("MonkeySprites/BoomerangBase.png");
+BombBase = loadImage("MonkeySprites/BombBase.png");
+SniperBase = loadImage("MonkeySprites/SniperBase.png");
+TackBase = loadImage("MonkeySprites/TackBase.png");
+SuperBase = loadImage("MonkeySprites/SuperBase.png");
+VillageBase = loadImage("MonkeySprites/VillageBase.png");
+GunnerBase = loadImage("MonkeySprites/GunnerBase.png");
+
+DartP11 = loadImage("MonkeySprites/DartP1-1.png");
+BoomerangP11 = loadImage("MonkeySprites/BoomerangP1-1.png");
+BombP11 = loadImage("MonkeySprites/BombP1-1.png");
+SniperP11 = loadImage("MonkeySprites/SniperP1-1.png");
+TackP11 = loadImage("MonkeySprites/TackP1-1.png");
+SuperP11 = loadImage("MonkeySprites/SuperP1-1.png");
+VillageP11 = loadImage("MonkeySprites/VillageP1-1.png");
+
+DartP12 = loadImage("MonkeySprites/DartP1-2.png");
+BoomerangP12 = loadImage("MonkeySprites/BoomerangP1-2.png");
+BombP12 = loadImage("MonkeySprites/BombP1-2.png");
+SniperP12 = loadImage("MonkeySprites/SniperP1-2.png");
+TackP12 = loadImage("MonkeySprites/TackP1-2.png");
+SuperP12 = loadImage("MonkeySprites/SuperP1-2.png");
+VillageP12 = loadImage("MonkeySprites/VillageP1-2.png");
+
+DartP13 = loadImage("MonkeySprites/DartP1-3.png");
+BoomerangP13 = loadImage("MonkeySprites/BoomerangP1-3.png");
+BombP13 = loadImage("MonkeySprites/BombP1-3.png");
+SniperP13 = loadImage("MonkeySprites/SniperP1-3.png");
+TackP13 = loadImage("MonkeySprites/TackP1-3.png");
+SuperP13 = loadImage("MonkeySprites/SuperP1-3.png");
+VillageP13 = loadImage("MonkeySprites/VillageP1-3.png");
+
+DartP14 = loadImage("MonkeySprites/DartP1-4.png");
+BoomerangP14 = loadImage("MonkeySprites/BoomerangP1-3.png");
+BombP14 = loadImage("MonkeySprites/BombP1-4.png");
+SniperP14 = loadImage("MonkeySprites/SniperP1-4.png");
+TackP14 = loadImage("MonkeySprites/TackP1-4.png");
+SuperP14 = loadImage("MonkeySprites/SuperP1-3.png");
+VillageP14 = loadImage("MonkeySprites/VillageP1-4.png");
+
+DartP23 = loadImage("MonkeySprites/DartP2-3.png");
+BoomerangP23 = loadImage("MonkeySprites/BoomerangP2-3.png");
+BombP23 = loadImage("MonkeySprites/BombP2-3.png");
+SniperP23 = loadImage("MonkeySprites/SniperP2-3.png");
+TackP23 = loadImage("MonkeySprites/TackP2-3.png");
+SuperP23 = loadImage("MonkeySprites/SuperP2-3.png");
+VillageP23 = loadImage("MonkeySprites/VillageP2-3.png");
+
+DartP24 = loadImage("MonkeySprites/DartP2-4.png");
+BoomerangP24 = loadImage("MonkeySprites/BoomerangP2-4.png");
+BombP24 = loadImage("MonkeySprites/BombP2-4.png");
+SniperP24 = loadImage("MonkeySprites/SniperP2-4.png");
+TackP24 = loadImage("MonkeySprites/TackP2-4.png");
+SuperP24 = loadImage("MonkeySprites/SuperP2-4.png");
+VillageP24 = loadImage("MonkeySprites/VillageP2-3.png");
+
   //monki sidebar elements
   dartMonki = loadImage("sideBarSprites/dartMonki.png");
   tackShooti = loadImage("sideBarSprites/tackShooti.png");
   bombShooti = loadImage("sideBarSprites/bombShooti.png");
-  iceMonki = loadImage("sideBarSprites/iceMonki.png");
   
   //map setup
   size(1800, 1000);

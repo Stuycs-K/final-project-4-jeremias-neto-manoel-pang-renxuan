@@ -40,7 +40,7 @@ public class DartMonkey extends Monkey{
     
     //monkey name
     name = "Dart Monkey";
-    monkeyImage = monkiDart;
+    monkeyImage = DartBase;
     sidebarImage = dartMonki;
   }
 }
