@@ -49,6 +49,7 @@ PImage Ceram3;
 PImage Ceram4;
 PImage Ceram5;
 PImage lead;
+PImage MOAB;
 
 //MONKEY Sprites
 PImage monkiDart;
@@ -137,6 +138,8 @@ void setup(){
   Ceram5.resize(0,65);
   lead = loadImage("bloons/LEAD.png");
   lead.resize(0,65);
+  MOAB = loadImage("bloons/MOAB.png");
+  MOAB.resize(0,65);
   
   //monki sprite elements
   monkiDart = loadImage("monkiDart.png");
@@ -200,7 +203,7 @@ void draw(){
       //fps counter
       showFPS();
     }
-    if (rounds == 5 && bloons.size() == 0) win = true;
+    if (rounds == 40 && bloons.size() == 0) win = true;
   }
   else if (gameOver) {
     fill(133, 228, 255);

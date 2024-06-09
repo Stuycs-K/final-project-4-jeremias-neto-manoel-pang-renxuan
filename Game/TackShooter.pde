@@ -18,6 +18,7 @@ public class TackShooter extends Monkey{
     upgradeNames = UpgradeNames;
     name = "Tack Shooter";
     monkeyImage = shootiTack;
+    sidebarImage = tackShooti;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){
