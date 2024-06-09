@@ -106,3 +106,7 @@ mainly small bug fixes, also added a lose screen (and organized Game tab horray!
 ### date 6/7/24
 
 added in ceramic bloons, lead bloons, completed rounds up to 40, added in bloon and dart dmg types, fixed small bugs, ready to speedrun adding towers. 
+
+### date 6/8/24
+
+added in MOAB(?) (actually a gold bloon, but functions like moab), added in win/lose screen, added in sprites that you see on upgrade menu. 
