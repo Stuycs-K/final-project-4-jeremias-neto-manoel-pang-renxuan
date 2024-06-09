@@ -37,6 +37,13 @@ public class DartlingGunner extends Monkey{
     name = "Tack Shooter";
     monkeyImage = TackBase;
     sidebarImage = tackShooti;
+    Base = GunnerBase;
+    P11 = GunnerBase;
+    P12 = GunnerBase;
+    P13 = GunnerBase;
+    P14 = GunnerBase;
+    P23 = GunnerBase;
+    P24 = GunnerBase;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

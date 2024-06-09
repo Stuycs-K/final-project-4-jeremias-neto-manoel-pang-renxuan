@@ -22,7 +22,7 @@ public class TackShooter extends Monkey{
     int[][] UpgradeRange ={{0,0,0,0},{25,25, 0, 25}};
     int[][] UpgradeProjSpeed = {{0,0,-2,-1},{0,0,1,1}};
     int[][] UpgradeProjSize = {{0,0,0,0},{0,0,2,2}};
-    upgradeCosts = UpgradeCosts;
+    //upgradeCosts = UpgradeCosts;
     upgradeNames = UpgradeNames;
     upgradePierce = UpgradePierce;
     upgradeCamo = UpgradeCamo;
@@ -35,8 +35,15 @@ public class TackShooter extends Monkey{
     
     //
     name = "Tack Shooter";
-    monkeyImage = SuperBase;
+    monkeyImage = TackBase;
     sidebarImage = tackShooti;
+    Base= TackBase;
+    P11= TackP11;
+    P12= TackP12;
+    P13= TackP13;
+    P14= TackP14;
+    P23= TackP23;
+    P24= TackP24;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

@@ -37,6 +37,13 @@ public class Village extends Monkey{
     name = "Tack Shooter";
     monkeyImage = VillageBase;
     sidebarImage = tackShooti;
+    Base = VillageBase;
+    P11= VillageP11;
+    P12= VillageP12;
+    P13= VillageP13;
+    P14= VillageP14;
+    P23= VillageP23;
+    P24= VillageP24;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

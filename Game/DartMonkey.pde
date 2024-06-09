@@ -38,9 +38,18 @@ public class DartMonkey extends Monkey{
     upgradeProjSpeed = UpgradeProjSpeed;
     upgradeProjSize = UpgradeProjSize;
     
+    
     //monkey name
     name = "Dart Monkey";
     monkeyImage = DartBase;
     sidebarImage = dartMonki;
+    
+  Base = DartBase;
+  P11 = DartP11;
+  P12 = DartP12;
+  P13 = DartP13;
+  P14 = DartP14;
+  P23 = DartP23;
+  P24 = DartP24;
   }
 }

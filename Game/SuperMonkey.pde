@@ -37,6 +37,13 @@ public class SuperMonkey extends Monkey{
     name = "Tack Shooter";
     monkeyImage = TackBase;
     sidebarImage = tackShooti;
+    Base = SuperBase;
+    P11= SuperP11;
+    P12= SuperP12;
+    P13= SuperP13;
+    P14= SuperP14;
+    P23= SuperP23;
+    P24= SuperP24;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

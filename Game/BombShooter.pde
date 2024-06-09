@@ -37,6 +37,13 @@ public class BombShooter extends Monkey{
     name = "Tack Shooter";
     monkeyImage = TackBase;
     sidebarImage = tackShooti;
+    Base= BombBase;
+    P11= BombP11;
+    P12= BombP12;
+    P13= BombP13;
+    P14= BombP14;
+    P23= BombP23;
+    P24= BombP24;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

@@ -37,6 +37,13 @@ public class BoomerangMonkey extends Monkey{
     name = "Tack Shooter";
     monkeyImage = TackBase;
     sidebarImage = tackShooti;
+    Base = BoomerangBase;
+    P11 = BoomerangP11;
+    P12= BoomerangP12;
+    P13= BoomerangP13;
+    P14= BoomerangP14;
+    P23= BoomerangP23;
+    P24= BoomerangP24;
   }
   float shoot(Bloons b){
     if (timeFired >= fireRate){

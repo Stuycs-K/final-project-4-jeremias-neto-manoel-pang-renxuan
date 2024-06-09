@@ -91,8 +91,34 @@ abstract class Monkey{
   PImage monkeyImage;
   PImage sidebarImage;
   
+  PImage Base;
+  PImage P11;
+  PImage P12;
+  PImage P13;
+  PImage P14;
+  PImage P23;
+  PImage P24;
+  
   
   public void update(){
+    if(upgrade1Prog ==1|| upgrade2Prog == 1){
+      monkeyImage = P11;
+    }
+    if(upgrade1Prog ==2|| upgrade2Prog == 2){
+      monkeyImage = P12;
+    }
+    if(upgrade1Prog ==3){
+      monkeyImage = P13;
+    }
+    if(upgrade2Prog ==3){
+      monkeyImage = P23;
+    }
+    if(upgrade1Prog ==4){
+      monkeyImage = P14;
+    }
+    if(upgrade2Prog ==4){
+      monkeyImage = P24;
+    }
     timeFired ++;
     Bloons b = checkTargets();
     if (b != null){
