@@ -6,6 +6,7 @@ public class Bloons{
   PImage type = null;
   int IFrame = 0;
   Dart D;
+  float lastAngle = 0;
   
   public Bloons(int x, int y, String type){
     if (type.equals("red")){
@@ -73,6 +74,16 @@ public class Bloons{
       move.mult(speed);
       col = (int) move.x + col;
       row = (int) move.y + row;
+      if (type == MOAB){
+        float temp = atan2(guide.get(counter).getY() - this.getY(), guide.get(counter).getX() - this.getX());
+        if (Math.abs(temp - lastAngle) > PI/3) lastAngle = temp;
+        pushMatrix();
+        translate(getX(),getY());
+        rotate(lastAngle+PI/2+PI/60);
+        translate(-MOAB.width/2, -MOAB.height/2);
+        image(MOAB, 0, 0);
+        popMatrix();
+      }
     }
     else if (distance < speed*2){
       counter ++;
