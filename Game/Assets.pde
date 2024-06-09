@@ -79,7 +79,7 @@ public void background(){
 
 public void bloonInteraction(){
   for (int i = 0; i < bloons.size(); i ++){
-    if (bloons.get(i).getType() == MOAB ||
+    if (//bloons.get(i).getType() == MOAB ||
         bloons.get(i).getType() == lead ||
         bloons.get(i).getType() == Ceram1 || 
         bloons.get(i).getType() == Ceram2 || 
@@ -88,7 +88,7 @@ public void bloonInteraction(){
         bloons.get(i).getType() == Ceram5){
           image(bloons.get(i).getType(), bloons.get(i).getX()-25, bloons.get(i).getY()-55);
         }
-    else image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
+    else if (bloons.get(i).getType() != MOAB) image(bloons.get(i).getType(), bloons.get(i).getX()-50, bloons.get(i).getY()-65);
     bloons.get(i).act();
     if(bloons.get(i).hit()){
       if(bloons.get(i).pop()){
