@@ -36,7 +36,7 @@ public class DartlingGunner extends Monkey{
     //
     name = "Tack Shooter";
     monkeyImage = TackBase;
-    sidebarImage = tackShooti;
+    sidebarImage = dartiGunni;
     Base = GunnerBase;
     P11 = GunnerBase;
     P12 = GunnerBase;

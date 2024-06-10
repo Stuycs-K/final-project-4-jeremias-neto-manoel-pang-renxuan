@@ -36,7 +36,7 @@ public class BoomerangMonkey extends Monkey{
     //
     name = "Tack Shooter";
     monkeyImage = TackBase;
-    sidebarImage = tackShooti;
+    sidebarImage = boomerMonki;
     Base = BoomerangBase;
     P11 = BoomerangP11;
     P12= BoomerangP12;
