@@ -2,12 +2,12 @@ public class BombShooter extends Monkey{
   public BombShooter(){
     fireRate = 65;
     damage = 1;
-    speed = 15;
+    speed = 10;
     projType = 3;
     size = 40;
-    range = 80;
+    range = 150;
     pierce = 1;
-    lifetime = 25;
+    lifetime = 35;
     projSize = 10;
     villaged1 = false;
     villaged2 = false;

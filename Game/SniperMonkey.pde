@@ -48,7 +48,6 @@ public class SniperMonkey extends Monkey{
   }
   float shoot(int x, int y){
     if (timeFired >= fireRate){
-      
       for (Bloons b : bloons){
         if (dist(b.getX(), b.getY(), posx, posy) <= range && !(snipertargeting.contains(b))){
           x=b.getX();
