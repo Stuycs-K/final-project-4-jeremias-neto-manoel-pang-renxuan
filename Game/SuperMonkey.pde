@@ -35,7 +35,7 @@ public class SuperMonkey extends Monkey{
     
     //
     name = "Tack Shooter";
-    monkeyImage = TackBase;
+    monkeyImage = SuperBase;
     sidebarImage = superMonki;
     Base = SuperBase;
     P11= SuperP11;

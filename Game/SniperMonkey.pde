@@ -35,7 +35,7 @@ public class SniperMonkey extends Monkey{
     
     //
     name = "Tack Shooter";
-    monkeyImage = TackBase;
+    monkeyImage = SniperBase;
     sidebarImage = snipiMonki;
     Base = SniperBase;
     P11 = SniperP11;

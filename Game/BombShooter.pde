@@ -35,7 +35,7 @@ public class BombShooter extends Monkey{
     
     //
     name = "Tack Shooter";
-    monkeyImage = TackBase;
+    monkeyImage = BombBase;
     sidebarImage = bombShooti;
     Base= BombBase;
     P11= BombP11;

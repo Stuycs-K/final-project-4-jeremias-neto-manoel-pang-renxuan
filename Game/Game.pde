@@ -200,14 +200,23 @@ void setup(){
   MOAB.resize(0,180);
   
   //monki sprite elements
+  //.resize(0,80);
 DartBase = loadImage("MonkeySprites/DartBase.png");
+DartBase.resize(0,80);
 BoomerangBase = loadImage("MonkeySprites/BoomerangBase.png");
+BoomerangBase.resize(0,80);
 BombBase = loadImage("MonkeySprites/BombBase.png");
+BombBase.resize(0,80);
 SniperBase = loadImage("MonkeySprites/SniperBase.png");
+SniperBase.resize(0,80);
 TackBase = loadImage("MonkeySprites/TackBase.png");
+TackBase.resize(0,80);
 SuperBase = loadImage("MonkeySprites/SuperBase.png");
+SuperBase.resize(0,80);
 VillageBase = loadImage("MonkeySprites/VillageBase.png");
+VillageBase.resize(0,80);
 GunnerBase = loadImage("MonkeySprites/GunnerBase.png");
+GunnerBase.resize(0,80);
 
 DartP11 = loadImage("MonkeySprites/DartP1-1.png");
 BoomerangP11 = loadImage("MonkeySprites/BoomerangP1-1.png");
