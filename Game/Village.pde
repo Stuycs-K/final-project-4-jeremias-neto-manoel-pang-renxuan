@@ -36,7 +36,7 @@ public class Village extends Monkey{
     //
     name = "Tack Shooter";
     monkeyImage = VillageBase;
-    sidebarImage = tackShooti;
+    sidebarImage = village;
     Base = VillageBase;
     P11= VillageP11;
     P12= VillageP12;
