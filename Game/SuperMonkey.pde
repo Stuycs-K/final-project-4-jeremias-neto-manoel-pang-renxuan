@@ -30,6 +30,7 @@ public class SuperMonkey extends Monkey{
     upgradeProjSpeed = UpgradeProjSpeed;
     upgradeProjSize = UpgradeProjSize;
     
+
     name = "Super Monkey";
     monkeyImage = SuperBase;
     sidebarImage = superMonki;

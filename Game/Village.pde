@@ -31,7 +31,7 @@ public class Village extends Monkey{
     upgradeProjSize = UpgradeProjSize;
     
     //
-    name = "Tack Shooter";
+    name = "Monkey Village";
     monkeyImage = VillageBase;
     sidebarImage = village;
     Base = VillageBase;
