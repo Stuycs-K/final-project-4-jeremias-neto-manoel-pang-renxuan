@@ -9,6 +9,15 @@ public class Village extends Monkey{
     pierce = 0;
     lifetime = 10;
     projSize = 5;
+    villaged1 = true;
+    villaged2 = true;
+    villaged3 = true;
+    villaged4 = true;
+    villaged5 = true;
+    villaged6 = true;
+    villaged7 = false;
+    villaged8 = true;
+    villaged9 = true;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{500, 1500, 10000, 12000},{900, 2000, 4300, 24000}};
@@ -95,6 +104,42 @@ public class Village extends Monkey{
           if (buffed > 0) m.fireRate = buffed;
           else m.fireRate = 1;
           m.villaged5 = true;
+        }
+      }
+    }
+    
+    
+    if (damage == 1){
+      for (Monkey m : monkeyList){
+        if (dist(m.getX(), m.getY(), getX(), getY()) < range && !m.villaged6){
+          m.dmgBuff(1);
+          m.villaged6 = true;
+        }
+      }
+    }
+   if (damage == 2){
+        if (!villaged7){
+          this.rangeBuff(1.2);
+          this.villaged7 = true;
+        }
+    }
+    if (damage == 3){
+      for (Monkey m : monkeyList){
+        if (dist(m.getX(), m.getY(), getX(), getY()) < range && !m.villaged8){
+          m.projType = 2;
+          m.villaged8 = true;
+        }
+      }
+    }
+    if (damage == 4){
+      for (Monkey m : monkeyList){
+        if (dist(m.getX(), m.getY(), getX(), getY()) < range && !m.villaged9){
+          m.dmgBuff(1);
+          m.pierceBuff(1);
+          int buffed = m.atkSpdBuff(3);
+          if (buffed > 0) m.fireRate = buffed;
+          else m.fireRate = 1;
+          m.villaged9 = true;
         }
       }
     }
