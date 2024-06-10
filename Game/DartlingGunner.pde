@@ -31,7 +31,7 @@ public class DartlingGunner extends Monkey{
     upgradeProjSize = UpgradeProjSize;
     
     //
-    name = "Tack Shooter";
+    name = "Dartling Gunner";
     monkeyImage = GunnerBase;
     sidebarImage = dartiGunni;
     Base = GunnerBase;
