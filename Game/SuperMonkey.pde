@@ -9,6 +9,15 @@ public class SuperMonkey extends Monkey{
     pierce = 1;
     lifetime = 40;
     projSize = 5;
+    villaged1 = false;
+    villaged2 = false;
+    villaged3 = false;
+    villaged4 = false;
+    villaged5 = false;
+    villaged6 = false;
+    villaged7 = false;
+    villaged8 = false;
+    villaged9 = false;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{3500, 3500, 11000, 20000},{1000, 1500, 11000, 13000}};

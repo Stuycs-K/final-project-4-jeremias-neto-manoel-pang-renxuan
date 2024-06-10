@@ -26,11 +26,13 @@ public void songSelection(){
     }
     if (songSel == 1){
       int easteregg = (int)(Math.random()*10);
-      BGM2.play();
-      cur = BGM2;
       if(easteregg == 1){
         BGM2s.play();
         cur = BGM2s;
+      }
+      else{
+        BGM2.play();
+        cur = BGM2;
       }
     }
     if (songSel == 2){
