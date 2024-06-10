@@ -31,7 +31,7 @@ public class BoomerangMonkey extends Monkey{
     upgradeProjSize = UpgradeProjSize;
     
     //
-    name = "Boomerang Monkey";
+    name = "Boomer Monkey";
     monkeyImage = BoomerangBase;
     sidebarImage = boomerMonki;
     Base = BoomerangBase;

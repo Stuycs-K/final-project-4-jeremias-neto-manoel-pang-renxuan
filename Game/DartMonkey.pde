@@ -50,6 +50,21 @@ public class DartMonkey extends Monkey{
   P24 = DartP24;
   }
   float shoot(int x, int y){
-    return 1.0;
+    if (timeFired >= fireRate){
+      timeFired =0;
+      PVector shot = new PVector(x-posx, y-posy);
+      shot.normalize();
+      float angle = atan2(shot.y, shot.x);
+      DartList.add(new Dart(cos(angle), sin(angle), posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
+      dartCount ++;
+      if (upgrade2Prog >= 3){
+        DartList.add(new Dart(cos(angle + PI/6), sin(angle +PI/6), posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
+        dartCount ++;
+        DartList.add(new Dart(cos(angle - PI/6), sin(angle - PI/6), posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
+        dartCount ++;
+      }
+      return angle;
+    }
+    return lastAngle;
   }
 }
