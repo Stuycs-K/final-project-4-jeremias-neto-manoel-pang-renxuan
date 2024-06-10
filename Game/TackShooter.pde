@@ -52,7 +52,7 @@ public class TackShooter extends Monkey{
         }
       }
       else if(upgrade1Prog >=4){
-        DartList.add(new Dart(posx, posy, posx, posy, 0, damage, projType, pierce, 7, range, 255,150,0,70));
+        DartList.add(new Dart((float)posx, (float)posy, (int)posx, (int)posy, 0, damage, projType, pierce, 7, range, 255,150,0,70));
         dartCount ++;
       }
       else{

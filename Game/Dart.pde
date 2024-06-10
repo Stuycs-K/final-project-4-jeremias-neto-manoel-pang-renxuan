@@ -100,6 +100,7 @@
         position.add(launch);
       }
       fill(255);
+      return false;
   }
   public float getX(){
     return position.x;
