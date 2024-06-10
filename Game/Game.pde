@@ -5,6 +5,8 @@ import processing.sound.*;
 char[][] map;
 ArrayList<int[]> mapInfo = new ArrayList<int[]>(15);
 ArrayList<Bloons> bloons = new ArrayList<Bloons>(15);
+ArrayList<Bloons> snipertargeting = new ArrayList<Bloons>(15);
+ArrayList<Bloons> bombList = new ArrayList<Bloons>(15);
 ArrayList<Guiders> guide = new ArrayList<Guiders>(15);
 ArrayList<Monkey> monkeyList = new ArrayList<Monkey>(15);
 ArrayList<Dart> DartList = new ArrayList();
@@ -16,7 +18,7 @@ boolean playing = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 650;
+int money = 100000;
 int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
@@ -315,6 +317,8 @@ void draw(){
       //fps counter
       showFPS();
     }
+    //resetting sniper targeting so they dont all attack the same bloon and acomplish nothing (like i do sometimes) ~manoel
+    snipertargeting = new ArrayList<Bloons>(15);
     if (rounds == 40 && bloons.size() == 0) win = true;
   }
   else if (gameOver) {

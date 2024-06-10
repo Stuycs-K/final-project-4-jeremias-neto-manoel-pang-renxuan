@@ -7,7 +7,6 @@ public class BombShooter extends Monkey{
     size = 40;
     range = 80;
     pierce = 1;
-    canCamo = false;
     lifetime = 10;
     projSize = 5;
     
@@ -15,7 +14,6 @@ public class BombShooter extends Monkey{
     int[][] UpgradeCosts = {{140, 170, 500, 1500},{90, 120, 330, 2000}};
     String[][] UpgradeNames = {{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut", "Max Upgrades"},{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "SM Fan Club","Max Upgrades"}};
     int[][] UpgradePierce = {{1,2,18,72},{0,0,0,0}};
-    int[][] UpgradeCamo= {{0,0,0,0}, {0,1,1,1}};
     int[][] UpgradeDamage= {{0,0,2,5},{0,0,0,0}};
     int[][] UpgradeProjectile= {{1,1,2,3},{1,1,1,1}};
     int[][] UpgradeAttacksSpd = {{0,0,-3,-5},{0,0,0,100}};
@@ -25,7 +23,6 @@ public class BombShooter extends Monkey{
     upgradeCosts = UpgradeCosts;
     upgradeNames = UpgradeNames;
     upgradePierce = UpgradePierce;
-    upgradeCamo = UpgradeCamo;
     upgradeDamage = UpgradeDamage;
     upgradeProjectile = UpgradeProjectile;
     upgradeAttacksSpd = UpgradeAttacksSpd;
@@ -34,8 +31,8 @@ public class BombShooter extends Monkey{
     upgradeProjSize = UpgradeProjSize;
     
     //
-    name = "Tack Shooter";
-    monkeyImage = TackBase;
+    name = "Bomb Shooter";
+    monkeyImage = BombBase;
     sidebarImage = tackShooti;
     Base= BombBase;
     P11= BombP11;
@@ -45,18 +42,9 @@ public class BombShooter extends Monkey{
     P23= BombP23;
     P24= BombP24;
   }
-  float shoot(Bloons b){
+  float shoot(int x, int y){
     if (timeFired >= fireRate){
       timeFired = 0;
-      DartList.add(new Dart(1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(0, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(0, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      dartCount += 8;
       return -PI/2;
     }
     return -PI/2;

@@ -1,41 +1,32 @@
 public class SniperMonkey extends Monkey{
   public SniperMonkey(){
-    fireRate = 55;
-    damage = 1;
+    fireRate =180;
+    damage = 2;
     speed = 15;
     projType = 1;
     size = 40;
-    range = 80;
+    range = 10000;
     pierce = 1;
-    canCamo = false;
     lifetime = 10;
     projSize = 5;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{140, 170, 500, 1500},{90, 120, 330, 2000}};
-    String[][] UpgradeNames = {{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut", "Max Upgrades"},{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "SM Fan Club","Max Upgrades"}};
-    int[][] UpgradePierce = {{1,2,18,72},{0,0,0,0}};
-    int[][] UpgradeCamo= {{0,0,0,0}, {0,1,1,1}};
-    int[][] UpgradeDamage= {{0,0,2,5},{0,0,0,0}};
-    int[][] UpgradeProjectile= {{1,1,2,3},{1,1,1,1}};
-    int[][] UpgradeAttacksSpd = {{0,0,-3,-5},{0,0,0,100}};
-    int[][] UpgradeRange ={{0,0,0,0},{25,25, 0, 25}};
-    int[][] UpgradeProjSpeed = {{0,0,-2,-1},{0,0,1,1}};
-    int[][] UpgradeProjSize = {{0,0,0,0},{0,0,2,2}};
+    String[][] UpgradeNames = {{"FMJ", "Five point Oh", "Deadly Precision", "Juggernaut", "Cripple MOAB"},{"Faster Firing", "Night Vision Goggles", "Semi-Auto Rifle", "Supply Drop","Max Upgrades"}};
+    int[][] UpgradePierce = {{0,0,0,0},{0,0,0,0}};
+    int[][] UpgradeDamage= {{2,3,11,42},{0,1,0,1}};
+    int[][] UpgradeProjectile= {{2,2,2,2},{1,1,1,1}};
+    int[][] UpgradeAttacksSpd = {{0,0,0,0},{30,10,100,0}};
     upgradeCosts = UpgradeCosts;
     upgradeNames = UpgradeNames;
     upgradePierce = UpgradePierce;
-    upgradeCamo = UpgradeCamo;
     upgradeDamage = UpgradeDamage;
     upgradeProjectile = UpgradeProjectile;
     upgradeAttacksSpd = UpgradeAttacksSpd;
-    upgradeRange = UpgradeRange;
-    upgradeProjSpeed = UpgradeProjSpeed;
-    upgradeProjSize = UpgradeProjSize;
     
     //
-    name = "Tack Shooter";
-    monkeyImage = TackBase;
+    name = "Sniper Monkey";
+    monkeyImage = SniperBase;
     sidebarImage = tackShooti;
     Base = SniperBase;
     P11 = SniperP11;
@@ -45,20 +36,29 @@ public class SniperMonkey extends Monkey{
     P23 = SniperP23;
     P24 = SniperP24;
   }
-  float shoot(Bloons b){
+  float shoot(int x, int y){
     if (timeFired >= fireRate){
+      
+      for (Bloons b : bloons){
+        if (dist(b.getX(), b.getY(), posx, posy) <= range && !(snipertargeting.contains(b))){
+          x=b.getX();
+          y=b.getY();
+          snipertargeting.add(b);
+          break;
+        }
+      }
       timeFired = 0;
-      DartList.add(new Dart(1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(0, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, 1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, 0, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(-1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(0, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      DartList.add(new Dart(1, -1, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      dartCount += 8;
-      return -PI/2;
+      PVector shot = new PVector(x-posx, y-posy);
+      shot.normalize();
+      float angle = atan2(shot.y, shot.x);
+      Dart dart = new Dart(x,y, x, y, 0, damage, projType, 1, 2, projSize,0,0,0);
+      DartList.add(dart);
+      dartCount ++;
+      if(upgrade2Prog == 4){
+       money += 2; 
+      }
+      return angle;
     }
-    return -PI/2;
+    return lastAngle;
   }
 }

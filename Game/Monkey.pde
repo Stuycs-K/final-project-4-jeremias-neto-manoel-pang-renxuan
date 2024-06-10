@@ -9,7 +9,6 @@ abstract class Monkey{
   protected float lastAngle = -PI/2;
   protected boolean highlight = false;
   private boolean upgradeMode = false;
-  protected boolean canCamo;
   protected int lifetime;
   protected int projSize;
   protected int sellCost;
@@ -18,7 +17,6 @@ abstract class Monkey{
   protected int[][] upgradeCosts = {{0,0,0,0},{0,0,0,0}};
   protected String[][] upgradeNames = {{"","","","",""},{"","","","",""}};
   int[][] upgradePierce = {{0,0,0,0},{0,0,0,0}};
-  int[][] upgradeCamo = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeDamage = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeProjectile = {{0,0,0,0},{0,0,0,0}};
   int[][] upgradeAttacksSpd = {{0,0,0,0},{0,0,0,0}};
@@ -41,7 +39,6 @@ abstract class Monkey{
     
   public void upgrade1(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
     fireRate -= upgradeAttacksSpd[0][upgrade1Prog];
-    canCamo = (upgradeCamo[0][upgrade1Prog] == 1);
     damage += upgradeDamage[0][upgrade1Prog];
     speed += upgradeProjSpeed[0][upgrade1Prog];
     projType = upgradeProjectile[0][upgrade1Prog];
@@ -55,7 +52,6 @@ abstract class Monkey{
   
   public void upgrade2(){ // side is 0 or 1 (0 for path 1, 1 for path 2)
     fireRate -= upgradeAttacksSpd[1][upgrade2Prog];
-    canCamo = (upgradeCamo[1][upgrade2Prog] == 1);
     damage += upgradeDamage[1][upgrade2Prog];
     speed += upgradeProjSpeed[1][upgrade2Prog];
     projType = upgradeProjectile[1][upgrade2Prog];
@@ -83,8 +79,8 @@ abstract class Monkey{
   }
   
   //upgrade progression
-  private int upgrade1Prog = 0;
-  private int upgrade2Prog = 0;
+  protected int upgrade1Prog = 0;
+  protected int upgrade2Prog = 0;
   
   //monkey information
   protected String name;
@@ -122,7 +118,9 @@ abstract class Monkey{
     timeFired ++;
     Bloons b = checkTargets();
     if (b != null){
-      lastAngle = shoot(b);
+      int bloonx = b.getX();
+      int bloony = b.getY();
+      lastAngle = shoot(bloonx, bloony);
     }
     drawMonkey(posx, posy);
   }
@@ -242,17 +240,7 @@ abstract class Monkey{
     return null;
   }
   
-  protected float shoot(Bloons b){
-    if (timeFired >= fireRate){
-      int bloonx = b.getX() - posx;
-      int bloony = b.getY() - posy;
-      timeFired = 0;
-      DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce, lifetime, projSize));
-      dartCount ++;
-      return atan2(bloony, bloonx);
-    }
-    return lastAngle;
-  }
+  abstract float shoot(int x, int y);
   
   protected void drawMonkey(int posX, int posY){
     fill(200, 100, 10);

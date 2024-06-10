@@ -54,7 +54,7 @@ public class Bloons{
       this.type = lead;
     }
     else if (type.equals("Massive Ordinary Air Blimp")){
-      row = y; col = x; this.hp = 272; this.speed = 2;
+      row = y; col = x; this.hp = 265; this.speed = 2;
       this.type = MOAB;
     }
     else{
@@ -108,13 +108,15 @@ public class Bloons{
   public boolean hit(){
     if (IFrame > 0) IFrame--;
     for (Dart d : DartList){
-      if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0 && d.getPierce() > 0){
+      if (dist(getX(), getY(), d.getX(), d.getY()) < 30 && IFrame == 0 && d.getPierce() > 0 && d.dType() != 2){
         d.pierced();
         if (getType() == black && d.getProjType() == 3) return false;
         if (getType() == zebra && d.getProjType() == 3) return false;
         if (getType() == lead && d.getProjType() == 1) return false;
-        POP.play();
-        image(pop, getX()-35, getY()-45);
+        if(type != MOAB){
+          POP.play();
+          image(pop, getX()-35, getY()-45);
+        }
         IFrame = 10;
         D = d;
         return true;
@@ -129,7 +131,7 @@ public class Bloons{
   }
   
   public boolean pop(int dmg){
-    if (dmg >= getHP()) {money += getHP(); return true;}
+    if (dmg >= getHP()) {if(type != MOAB){money += getHP();} return true;}
     if (hp > 18 && hp <= 72){
       Bloons extra = new Bloons(getX(), getY(), "ceram");
       Bloons extra2 = new Bloons(getX()-3, getY()-3, "ceram");
@@ -213,7 +215,9 @@ public class Bloons{
     }
     this.hp -= dmg;
     this.setSpeed();
-    money += dmg;
+    if (type != MOAB){
+      money += dmg;
+    }
     if (hp <= 0) return true;
     return false;
   }

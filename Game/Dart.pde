@@ -6,9 +6,14 @@
   int pierce;
   int size;
   int lifetime;
+  int r;
+  int g;
+  int b;
+  int a = 1000;
+  int dType;
   // 1 = sharp, 2 = all, 3 = bomb
   
-  public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_){
+  public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_, int r_, int g_, int b_){
     position.set(launchx, launchy);
     launch.set(posx, posy);
     launch.normalize();
@@ -18,14 +23,52 @@
     pierce = pierce_;
     lifetime = lifetime_;
     size = projSize_;
+    r = r_;
+    g=g_;
+    b=b_;
+  }
+  
+  public Dart(int dType_, float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_, int r_, int g_, int b_){
+    position.set(launchx, launchy);
+    launch.set(posx, posy);
+    launch.normalize();
+    launch.setMag(speed);
+    damage = damage_;
+    projType = projType_;
+    pierce = pierce_;
+    lifetime = lifetime_;
+    size = projSize_;
+    r = r_;
+    g=g_;
+    b=b_;
+    dType = dType_;
+  }
+  public int dType(){
+    return dType;
+  }
+  
+  public Dart(float posx, float posy, int launchx, int launchy, int speed, int damage_, int projType_, int pierce_, int lifetime_, int projSize_, int r_, int g_, int b_, int a_){
+    position.set(launchx, launchy);
+    launch.set(posx, posy);
+    launch.normalize();
+    launch.setMag(speed);
+    damage = damage_;
+    projType = projType_;
+    pierce = pierce_;
+    lifetime = lifetime_;
+    size = projSize_;
+    r = r_;
+    g=g_;
+    b=b_;
+    a=a_;
   }
     public boolean update(){
       lifetime --;
       if (position.x > width || position.x < 0 || position.y > height || position.y < 0|| pierce <= 0 || lifetime <= 0){
         return true;
       }
-      fill(0);
-      circle(position.x, position.y, 10);
+      fill(r,g,b,a);
+      circle(position.x, position.y, size*2);
       position.add(launch);
       fill(255);
       return false;

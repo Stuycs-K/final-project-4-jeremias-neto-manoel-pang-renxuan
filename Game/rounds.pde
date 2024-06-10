@@ -248,7 +248,8 @@ public class rounds{
   };
   
   private String[] debug = new String[] {
-    "max 1",
+    "max 40",
+    "red", "red","red", "red","red", "red","red", "red","red", "red","red", "red","red", "red","red", "red","red", "red","red", "red", "done","max 1",
     "Massive Ordinary Air Blimp","done"
   };
   
