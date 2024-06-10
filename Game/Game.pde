@@ -18,8 +18,7 @@ boolean playing = false;
 int life = 5;
 int tick = 1;
 int tickMax = 200;
-int money = 100000;
-//int money = 650;
+int money = 650;
 int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;
@@ -392,5 +391,21 @@ void draw(){
 void mouseClicked(){
   if (!gameOver){
     sidebarOnClick();
+  }
+}
+
+void keyReleased(){
+  if (key == 'm'){
+    money += 1000000;
+  }
+  if (key == 'l'){
+    life += 1000;
+  }
+  if (key == 'r'){
+    money = 650; life = 5;
+  }
+  if (key == 'o'){
+    Bloons b = new Bloons(start[0], start[1], "Massive Ordinary Air Blimp");
+    bloons.add(b);
   }
 }
