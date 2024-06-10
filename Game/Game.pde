@@ -19,6 +19,7 @@ int life = 5;
 int tick = 1;
 int tickMax = 200;
 int money = 100000;
+//int money = 650;
 int rounds = 0;
 Monkey placingMonkey;
 Monkey upgradeMonkey;

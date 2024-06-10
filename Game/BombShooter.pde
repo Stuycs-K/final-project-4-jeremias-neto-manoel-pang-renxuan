@@ -45,6 +45,12 @@ public class BombShooter extends Monkey{
   float shoot(int x, int y){
     if (timeFired >= fireRate){
       timeFired = 0;
+      PVector shot = new PVector(x-posx, y-posy);
+      shot.normalize();
+      float angle = atan2(shot.y, shot.x);
+      
+      
+      
       return -PI/2;
     }
     return -PI/2;

@@ -30,15 +30,44 @@ public class SideBar{
         placingMonkey.cashmonkey(200);
         money -= 200;
       }
-      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY<270 && money >= 260){
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 120 && mouseY < 270 && money >= 260){
         placingMonkey = new TackShooter();
         placingMonkey.cashmonkey(260);
         money -= 260;
       }
       if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150 && money >= 525){
+<<<<<<< HEAD
         placingMonkey = new SniperMonkey();
+=======
+        placingMonkey = new BombShooter();
+>>>>>>> 4a5d931ca50cb48442e6d99ac9ad7c279a4eb7ae
         placingMonkey.cashmonkey(525);
-        money -= 500;
+        money -= 525;
+      }
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 285 && mouseY < 285+150 && money >= 315){
+        placingMonkey = new BoomerangMonkey();
+        placingMonkey.cashmonkey(315);
+        money -= 315;
+      }
+      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 450 && mouseY < 450+150 && money >= 350){
+        placingMonkey = new SniperMonkey();
+        placingMonkey.cashmonkey(350);
+        money -= 350;
+      }
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 450 && mouseY < 450+150 && money >= 850){
+        placingMonkey = new DartlingGunner();
+        placingMonkey.cashmonkey(850);
+        money -= 850;
+      }
+      if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 615 && mouseY < 615+150 && money >= 2500){
+        placingMonkey = new SuperMonkey();
+        placingMonkey.cashmonkey(2500);
+        money -= 2500;
+      }
+      if(mouseX > 1665 && mouseX < 1665+125 && mouseY > 615 && mouseY < 615+150 && money >= 1200){
+        placingMonkey = new Village();
+        placingMonkey.cashmonkey(1200);
+        money -= 1200;
       }
       if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){
         started = true;
@@ -194,7 +223,7 @@ public class SideBar{
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Boomerang Monkey", 1515 + 135, 15 + 55);
+        text("Boomer Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
     boomerMonki.resize(0,90);
@@ -208,7 +237,7 @@ public class SideBar{
       fill(133, 228, 255);
     }
     rect(1665, 285, 125, 150);
-    image(temp, 1675, 300);
+    image(temp, 1675, 310);
     fill(255);
     textSize(25);
     text("$" + 315, 1580-3+150, 265+165);
@@ -219,11 +248,24 @@ public class SideBar{
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Tower Five", 1515 + 135, 15 + 55);
+        text("Sniper Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(133, 228, 255);
+    snipiMonki.resize(0,100);
+    PImage temp = snipiMonki.copy();
+    if (money < 350){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = snipiMonki;
+      fill(64,200,2);
+    }
     rect(1515, 450, 125, 150);
+    image(temp, 1540, 470);
+    fill(255);
+    textSize(25);
+    text("$" + 350, 1580-3, 430+165);
   }
   
   private void DisplayTowerSix(){
@@ -231,11 +273,24 @@ public class SideBar{
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Tower Six", 1515 + 135, 15 + 55);
+        text("Dartling Gunner", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(133, 228, 255);
+    dartiGunni.resize(0,90);
+    PImage temp = dartiGunni.copy();
+    if (money < 850){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = dartiGunni;
+      fill(64,200,2);
+    }
     rect(1665, 450, 125, 150);
+    image(temp, 1690, 480);
+    fill(255);
+    textSize(25);
+    text("$" + 850, 1580-3+150, 430+165);
   }
    
   private void DisplayTowerSeven(){
@@ -243,11 +298,24 @@ public class SideBar{
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Tower Seven", 1515 + 135, 15 + 55);
+        text("Super Monkey", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(133, 228, 255);
+    superMonki.resize(0,100);
+    PImage temp = superMonki.copy();
+    if (money < 2500){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = superMonki;
+      fill(204,108,231);
+    }
     rect(1515, 450+165, 125, 150);
+    image(temp, 1535, 470+165);
+    fill(255);
+    textSize(25);
+    text("$" + 2500, 1580-3, 430+165+165);
   }
   
   private void DisplayTowerEight(){
@@ -255,11 +323,24 @@ public class SideBar{
         rectMode(CENTER);
         textSize(30);
         fill(255);
-        text("Tower Eight", 1515 + 135, 15 + 55);
+        text("Monkey Village", 1515 + 135, 15 + 55);
         rectMode(CORNER);
     }
-    fill(133, 228, 255);
-    rect(1665, 615, 125, 150);
+    village.resize(0,100);
+    PImage temp = village.copy();
+    if (money < 1200){
+      temp.filter(GRAY);
+      fill(175,175,175);
+    }
+    else{
+      temp = village;
+      fill(255, 222, 89);
+    }
+    rect(1665, 450+165, 125, 150);
+    image(temp, 1535+155, 470+165);
+    fill(255);
+    textSize(25);
+    text("$" + 1200, 1580-3+150, 430+165+165);
   }
   
   // PG2

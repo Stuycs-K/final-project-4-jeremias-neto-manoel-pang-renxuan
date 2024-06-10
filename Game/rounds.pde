@@ -259,7 +259,7 @@ public class rounds{
   }
   
   public String getInfo(){
-    String text = debug[counter];
+    String text = info[counter];
     counter ++;
     return text;
   }

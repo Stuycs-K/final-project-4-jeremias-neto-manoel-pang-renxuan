@@ -146,9 +146,17 @@ abstract class Monkey{
     rectMode(CENTER);
     text("Sell: $ " + ((int)(sellCost * .5)), 1515 + 135, 895 + 55);
     rectMode(CORNER);
-    PImage display = sidebarImage.copy();
-    display.resize(0,230);
-    image(display, 1550, 170);
+    PImage display;
+    if (sidebarImage == bombShooti || sidebarImage == boomerMonki) {
+      display = sidebarImage.copy();
+      display.resize(0,200);
+      image(display, 1525, 200);
+    }
+    else{
+      display = sidebarImage.copy();
+      display.resize(0,230);
+      image(display, 1550, 170);
+    }
     //text for upgrade
     
     text(upgradeNames[0][upgrade1Prog], 1650, 540);
