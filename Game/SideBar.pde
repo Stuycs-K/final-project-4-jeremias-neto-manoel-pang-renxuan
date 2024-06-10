@@ -255,7 +255,7 @@ public class SideBar{
     }
     else{
       temp = snipiMonki;
-      fill(133, 228, 255);
+      fill(64,200,2);
     }
     rect(1515, 450, 125, 150);
     image(temp, 1540, 470);
@@ -280,7 +280,7 @@ public class SideBar{
     }
     else{
       temp = dartiGunni;
-      fill(133, 228, 255);
+      fill(64,200,2);
     }
     rect(1665, 450, 125, 150);
     image(temp, 1690, 480);
@@ -305,7 +305,7 @@ public class SideBar{
     }
     else{
       temp = superMonki;
-      fill(133, 228, 255);
+      fill(204,108,231);
     }
     rect(1515, 450+165, 125, 150);
     image(temp, 1535, 470+165);
@@ -330,7 +330,7 @@ public class SideBar{
     }
     else{
       temp = village;
-      fill(133, 228, 255);
+      fill(255, 222, 89);
     }
     rect(1665, 450+165, 125, 150);
     image(temp, 1535+155, 470+165);
