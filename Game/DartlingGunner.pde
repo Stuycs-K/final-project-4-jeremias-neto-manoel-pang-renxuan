@@ -1,25 +1,25 @@
 public class DartlingGunner extends Monkey{
   public DartlingGunner(){
-    fireRate = 55;
+    fireRate = 20;
     damage = 1;
-    speed = 15;
+    speed = 20;
     projType = 1;
     size = 40;
-    range = 80;
+    range = 10000;
     pierce = 1;
-    lifetime = 10;
+    lifetime = 100000;
     projSize = 5;
     
     c = color(163, 71, 0);
-    int[][] UpgradeCosts = {{140, 170, 500, 1500},{90, 120, 330, 2000}};
-    String[][] UpgradeNames = {{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut", "Max Upgrades"},{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "SM Fan Club","Max Upgrades"}};
-    int[][] UpgradePierce = {{1,2,18,72},{0,0,0,0}};
-    int[][] UpgradeDamage= {{0,0,2,5},{0,0,0,0}};
-    int[][] UpgradeProjectile= {{1,1,2,3},{1,1,1,1}};
-    int[][] UpgradeAttacksSpd = {{0,0,-3,-5},{0,0,0,100}};
+    int[][] UpgradeCosts = {{250, 1200, 6000, 55000},{510, 1000, 7000, 20000}};
+    String[][] UpgradeNames = {{"Faster Darts", "Faster Barrel", "Laser Cannon", "Ray of Doom", "Max Upgrades"},{"Powerful Darts", "Bloontonium Darts", "Hydra Rocket Pods", "BADS","Max Upgrades"}};
+    int[][] UpgradePierce = {{0,0,12,87},{0,2,2,0}};
+    int[][] UpgradeDamage= {{0,0,2,-2},{0,0,0,0}};
+    int[][] UpgradeProjectile= {{1,1,1,3},{1,1,2,2}};
+    int[][] UpgradeAttacksSpd = {{0,5,2,10000},{0,0,-7,10}};
     int[][] UpgradeRange ={{0,0,0,0},{25,25, 0, 25}};
-    int[][] UpgradeProjSpeed = {{0,0,-2,-1},{0,0,1,1}};
-    int[][] UpgradeProjSize = {{0,0,0,0},{0,0,2,2}};
+    int[][] UpgradeProjSpeed = {{2,0,2,20},{0,0,1,1}};
+    int[][] UpgradeProjSize = {{0,0,2,10},{0,0,5,0}};
     upgradeCosts = UpgradeCosts;
     upgradeNames = UpgradeNames;
     upgradePierce = UpgradePierce;
@@ -43,10 +43,27 @@ public class DartlingGunner extends Monkey{
     P24 = GunnerBase;
   }
   float shoot(int x, int y){
+    PVector shot = new PVector(mouseX-posx, mouseY-posy);
+      shot.normalize();
+      float angle = atan2(shot.y, shot.x);
     if (timeFired >= fireRate){
       timeFired = 0;
-      return -PI/2;
+      if (upgrade1Prog == 3){
+        DartList.add(new Dart(cos(angle), sin(angle), posx+(int)(cos(angle)), posy+(int)(sin(angle)), speed, damage, projType, pierce, lifetime, projSize,255,0,0));
+      }
+      else if(upgrade1Prog > 3){
+        for (int i = 0; i < 300; i += 10){
+          DartList.add(new Dart(cos(angle), sin(angle), posx+(int)(i*cos(angle)), posy+(int)(i*sin(angle)), speed, damage, projType, pierce, lifetime, projSize,255,0,0));
+        }
+      }
+      else if (upgrade2Prog >=3){
+        DartList.add(new Dart(2,cos(angle), sin(angle), posx, posy, speed, damage,3, pierce, lifetime, projSize,0,0,0));
+      }
+      else{
+        DartList.add(new Dart(cos(angle), sin(angle), posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
+        dartCount ++;
+      }
     }
-    return -PI/2;
+    return angle;
   }
 }

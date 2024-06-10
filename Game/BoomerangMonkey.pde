@@ -11,9 +11,9 @@ public class BoomerangMonkey extends Monkey{
     projSize = 5;
     
     c = color(163, 71, 0);
-    int[][] UpgradeCosts = {{140, 170, 500, 1500},{90, 120, 330, 2000}};
-    String[][] UpgradeNames = {{"Sharp Shots", "Razor Sharp Shots", "Spike-O-Pult", "Juggernaut", "Max Upgrades"},{"Long Range Darts", "Enhanced Eyesight", "Triple Darts", "SM Fan Club","Max Upgrades"}};
-    int[][] UpgradePierce = {{1,2,18,72},{0,0,0,0}};
+    int[][] UpgradeCosts = {{250, 280, 1400, 9000},{100, 150, 1600, 3000}};
+    String[][] UpgradeNames = {{"MultiTarget", "Glaive Thrower", "Glaive Ricochet", "Glaive Lord", "Max Upgrades"},{"Sonic Boom", "Red Hot 'Rangs", "Bionic Boomer", "Turbo Charge","Max Upgrades"}};
+    int[][] UpgradePierce = {{0,0,12,87},{0,2,0,0}};
     int[][] UpgradeDamage= {{0,0,2,5},{0,0,0,0}};
     int[][] UpgradeProjectile= {{1,1,2,3},{1,1,1,1}};
     int[][] UpgradeAttacksSpd = {{0,0,-3,-5},{0,0,0,100}};

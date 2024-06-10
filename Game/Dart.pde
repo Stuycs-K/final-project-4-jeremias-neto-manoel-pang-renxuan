@@ -79,8 +79,8 @@
       fill(255);
       if (dType == 2){
         for (Bloons b : bloons){
-          if (dist(b.getX(), b.getY(), position.x, position.y) <= size ){
-            DartList.add(new Dart(position.x, position.y, (int)position.x, (int)position.y, 0, damage, 2, 1000, 7, size*6, 255,150,0, 100));
+          if (dist(b.getX(), b.getY(), position.x, position.y) <= size*3 ){
+            DartList.add(new Dart(position.x, position.y, (int)position.x, (int)position.y, 0, damage, projType, 1000, 7, size*6, 255,150,0, 100));
             DartList.remove(this);
             break;
           }
