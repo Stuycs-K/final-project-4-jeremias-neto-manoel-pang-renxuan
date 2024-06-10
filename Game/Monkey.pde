@@ -3,6 +3,17 @@ abstract class Monkey{
   //monkey info (location, damage, color, angle, highlight)
   protected int posx, posy, dartCount;
   protected int fireRate, damage, speed, projType, size, range, pierce;
+  
+  protected boolean villaged1;
+  protected boolean villaged2;
+  protected boolean villaged3;
+  protected boolean villaged4;
+  protected boolean villaged5;
+  protected boolean villaged6;
+  protected boolean villaged7;
+  protected boolean villaged8;
+  protected boolean villaged9;
+  
   protected int timeFired = 1000;
   protected int placingTimer = 0;
   protected color c; 
@@ -122,6 +133,11 @@ abstract class Monkey{
       int bloony = b.getY();
       lastAngle = shoot(bloonx, bloony);
     }
+    for (Monkey m : monkeyList){
+      if (m.getName().equals("Monkey Village")){
+        m.buff();
+      }
+    }
     drawMonkey(posx, posy);
   }
   
@@ -213,6 +229,7 @@ abstract class Monkey{
       fill(255);
     }
     circle(1725, 570+40+150, 10);
+    
   }
   public boolean placing(){
     highlight = true;
@@ -249,6 +266,7 @@ abstract class Monkey{
   }
   
   abstract float shoot(int x, int y);
+  public void buff(){};
   
   protected void drawMonkey(int posX, int posY){
     fill(200, 100, 10);
@@ -309,5 +327,21 @@ abstract class Monkey{
 
   public boolean getUpgradeMode(){
     return upgradeMode;
+  }
+  
+  public void dmgBuff(int n){
+    damage += n;
+  }
+  
+  public int atkSpdBuff(int n){
+    return fireRate - n;
+  }
+  
+  public void rangeBuff(float n){
+    range = (int)(range * n);
+  }
+  
+  public void pierceBuff(int n){
+    pierce += n; 
   }
 }

@@ -9,6 +9,15 @@ public class BombShooter extends Monkey{
     pierce = 1;
     lifetime = 35;
     projSize = 10;
+    villaged1 = false;
+    villaged2 = false;
+    villaged3 = false;
+    villaged4 = false;
+    villaged5 = false;
+    villaged6 = false;
+    villaged7 = false;
+    villaged8 = false;
+    villaged9 = false;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{200, 300, 800, 4000},{400, 400, 900, 3200}};

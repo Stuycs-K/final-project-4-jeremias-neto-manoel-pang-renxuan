@@ -8,9 +8,18 @@ public class DartMonkey extends Monkey{
     projType = 1;
     size = 40;
     range = 150;
-    pierce = 1;
+    pierce = 2;
     lifetime = 25;
-    projSize = 5;
+    projSize = 7;
+    villaged1 = false;
+    villaged2 = false;
+    villaged3 = false;
+    villaged4 = false;
+    villaged5 = false;
+    villaged6 = false;
+    villaged7 = false;
+    villaged8 = false;
+    villaged9 = false;
     
     //color (not used anymore)
     c = color(163, 71, 0);

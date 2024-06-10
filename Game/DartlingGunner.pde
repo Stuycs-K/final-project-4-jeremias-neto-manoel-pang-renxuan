@@ -9,6 +9,15 @@ public class DartlingGunner extends Monkey{
     pierce = 1;
     lifetime = 100000;
     projSize = 5;
+    villaged1 = false;
+    villaged2 = false;
+    villaged3 = false;
+    villaged4 = false;
+    villaged5 = false;
+    villaged6 = false;
+    villaged7 = false;
+    villaged8 = false;
+    villaged9 = false;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{250, 1200, 6000, 55000},{510, 1000, 7000, 20000}};

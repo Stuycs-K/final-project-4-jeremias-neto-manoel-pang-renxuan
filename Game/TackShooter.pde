@@ -9,6 +9,15 @@ public class TackShooter extends Monkey{
     pierce = 1;
     lifetime = 10;
     projSize = 5;
+    villaged1 = false;
+    villaged2 = false;
+    villaged3 = false;
+    villaged4 = false;
+    villaged5 = false;
+    villaged6 = false;
+    villaged7 = false;
+    villaged8 = false;
+    villaged9 = false;
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{180, 255, 425, 2500},{100, 225, 680, 1000}};

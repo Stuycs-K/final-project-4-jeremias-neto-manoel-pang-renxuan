@@ -281,7 +281,7 @@ VillageP14 = loadImage("MonkeySprites/VillageP1-4.png");
 VillageP14.resize(0,160);
 
 DartP23 = loadImage("MonkeySprites/DartP2-3.png");
-DartP23.resize(0,80);
+DartP23.resize(0,60);
 BoomerangP23 = loadImage("MonkeySprites/BoomerangP2-3.png");
 BoomerangP23.resize(0,80);
 BombP23 = loadImage("MonkeySprites/BombP2-3.png");
@@ -296,7 +296,7 @@ VillageP23 = loadImage("MonkeySprites/VillageP2-3.png");
 VillageP23.resize(0,130);
 
 DartP24 = loadImage("MonkeySprites/DartP2-4.png");
-DartP24.resize(0,80);
+DartP24.resize(0,60);
 BoomerangP24 = loadImage("MonkeySprites/BoomerangP2-4.png");
 BoomerangP24.resize(0,80);
 BombP24 = loadImage("MonkeySprites/BombP2-4.png");
