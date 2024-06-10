@@ -64,6 +64,9 @@
     b=b_;
     a=a_;
   }
+  public int getdType(){
+    return dType;
+  }
     public boolean update(){
       if(dType != 1){
       lifetime --;
@@ -76,8 +79,8 @@
       fill(255);
       if (dType == 2){
         for (Bloons b : bloons){
-          if (dist(b.getX(), b.getY(), position.x, position.y) <= size * 5){
-            DartList.add(new Dart(position.x, position.y, (int)position.x, (int)position.y, 0, damage, 3, 1000, 7, size*20, 255,150,0, 50));
+          if (dist(b.getX(), b.getY(), position.x, position.y) <= size ){
+            DartList.add(new Dart(position.x, position.y, (int)position.x, (int)position.y, 0, damage, 2, 1000, 7, size*6, 255,150,0, 100));
             DartList.remove(this);
             break;
           }
@@ -85,6 +88,7 @@
       }
       return false;
     }
+    //boomerangcode
      altCount --;
       if (position.x > width || position.x < 0 || position.y > height || position.y < 0|| pierce <= 0 || lifetime <= 0){
         return true;
