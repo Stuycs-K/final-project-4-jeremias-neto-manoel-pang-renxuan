@@ -69,7 +69,10 @@ public class SuperMonkey extends Monkey{
         dartCount ++;
       }
       else{
-        DartList.add(new Dart(bloonx, bloony, posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
+        PVector shot = new PVector(bloonx-posx, bloony-posy);
+        shot.normalize();
+        float angle = atan2(shot.y, shot.x);
+        DartList.add(new Dart(cos(angle), sin(angle), posx, posy, speed, damage, projType, pierce, lifetime, projSize,0,0,0));
         dartCount ++;
       }
       return atan2(bloony-posy, bloonx-posx);

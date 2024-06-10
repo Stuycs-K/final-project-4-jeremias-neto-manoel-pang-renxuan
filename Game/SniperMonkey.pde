@@ -12,7 +12,7 @@ public class SniperMonkey extends Monkey{
     
     c = color(163, 71, 0);
     int[][] UpgradeCosts = {{140, 170, 500, 1500},{90, 120, 330, 2000}};
-    String[][] UpgradeNames = {{"FMJ", "Five point Oh", "Deadly Precision", "Juggernaut", "Cripple MOAB"},{"Faster Firing", "Night Vision Goggles", "Semi-Auto Rifle", "Supply Drop","Max Upgrades"}};
+    String[][] UpgradeNames = {{"FMJ", "Five point Oh", "Deadly Precision","Cripple MOAB","Max Upgrades"},{"Faster Firing", "Night Vision Goggles", "Semi-Auto Rifle", "Supply Drop","Max Upgrades"}};
     int[][] UpgradePierce = {{0,0,0,0},{0,0,0,0}};
     int[][] UpgradeDamage= {{2,3,11,42},{0,1,0,1}};
     int[][] UpgradeProjectile= {{2,2,2,2},{1,1,1,1}};
