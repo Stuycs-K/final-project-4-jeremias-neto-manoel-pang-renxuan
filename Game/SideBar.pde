@@ -36,11 +36,7 @@ public class SideBar{
         money -= 260;
       }
       if(mouseX > 1515 && mouseX < 1515+125 && mouseY > 285 && mouseY < 285+150 && money >= 525){
-<<<<<<< HEAD
-        placingMonkey = new SniperMonkey();
-=======
         placingMonkey = new BombShooter();
->>>>>>> 4a5d931ca50cb48442e6d99ac9ad7c279a4eb7ae
         placingMonkey.cashmonkey(525);
         money -= 525;
       }
