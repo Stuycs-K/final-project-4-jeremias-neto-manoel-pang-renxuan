@@ -65,7 +65,7 @@ public class SideBar{
         placingMonkey.cashmonkey(1200);
         money -= 1200;
       }
-      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950){
+      if(mouseX > 1607 && mouseX < 1697 && mouseY > 858 && mouseY < 950 && !started){
         started = true;
         rounds++;
       }

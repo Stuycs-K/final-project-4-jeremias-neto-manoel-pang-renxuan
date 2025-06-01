@@ -108,7 +108,7 @@ public class Bloons{
   public boolean hit(){
     if (IFrame > 0) IFrame--;
     for (Dart d : DartList){
-      if (dist(getX(), getY(), d.getX(), d.getY()) < d.size*2 && IFrame == 0 && d.getPierce() > 0 && d.dType() != 2){
+      if (dist(getX(), getY(), d.getX(), d.getY()) < d.size*2.3 && IFrame == 0 && d.getPierce() > 0 && d.dType() != 2){
         d.pierced();
         if (getType() == black && d.getProjType() == 3) return false;
         if (getType() == zebra && d.getProjType() == 3) return false;

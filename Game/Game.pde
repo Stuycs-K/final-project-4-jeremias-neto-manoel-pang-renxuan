@@ -370,7 +370,12 @@ void draw(){
     }
     //resetting sniper targeting so they dont all attack the same bloon and acomplish nothing (like i do sometimes) ~manoel
     snipertargeting = new ArrayList<Bloons>(15);
-    if (rounds == 40 && bloons.size() == 0) win = true;
+    if (rounds == 40){
+      bloons(start[0], start[1]);
+      if (bloons.size() == 0){
+        win = true;
+      }
+    }
   }
   else if (gameOver) {
     fill(133, 228, 255);
